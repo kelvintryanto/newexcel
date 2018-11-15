@@ -78,25 +78,9 @@
         }
     }
 
-    $(document).on('click','#btn_send', function(){
-        var email = $('#email').text();
-        var gaji = $('#ptkp').text();
-        var nama = $('#nama').text();
+    $(".alert-success").fadeTo(1000, 500).slideUp(500, function()
+    {
+        $(".alert-success").slideUp(500);
     });
-
-    
-function loadXMLDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementByClass("email").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("POST", "Email.php", true);
-  xhttp.send(email,gaji,nama);
-
-
-}
 </script>
 @endsection
