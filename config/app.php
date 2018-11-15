@@ -176,6 +176,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
     ],
 
@@ -225,7 +226,53 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
+
+    'db_fields' => [
+        'no_id',
+        'nama',
+        'no_npwp',
+        'npwp_sejak',
+        'cd_jenishasil',
+        'nama_jenishasil',
+        'kerja_di_1_tempat',
+        'alamat_1',
+        'alamat_2',
+        'no_ktp',
+        'kode_negara',
+        'status',
+        'tanggungan',
+        'kode_status',
+        'jenis_kelamin',
+        'mulai_kerja',
+        'akhir_kerja',
+        'ptkp'
+    ],
+
+    'db_payrolls'=> [
+        'nik',
+        'nama',
+        'divisi',
+        'keterangan_divisi',
+        'kehadiran','gaji_pokok',
+        'insentif','uang_makan',
+        'transport',
+        'asuransi',
+        'lembur',
+        'pengobatan',
+        'lain',
+        'pajak',
+        'bpjs_non_tax',
+        'bpjs_tax',
+        'pot_gaji',
+        'natura',
+        'bantuan',
+        'thr',
+        'sub_total',
+        'bulan',
+        'tahun'
+    ]
 
 ];
