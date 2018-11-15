@@ -16,9 +16,9 @@
                 @endif
             <div>
                 <form action="{{ route('sendEmail') }}" method="POST" enctype="multipart/form-data">
-                <input name="nama" type="text" id="nama">
-                <input name="gaji" type="text" id="gaji">
-                <input name="email" type="text" id="email">
+                <input hidden name="nama" type="text" id="nama">
+                <input hidden name="gaji" type="text" id="gaji">
+                <input hidden name="email" type="text" id="email">
                    {{ csrf_field() }}
                     <table id="table" class="table table-hover" style="font-size: 12px;">
                         <tr>

@@ -49,6 +49,7 @@ class Email extends Controller
 
             //    return back()->with('alert-failed','Gagal Mengirim Email');
             // }
+             
      
 
    } 
