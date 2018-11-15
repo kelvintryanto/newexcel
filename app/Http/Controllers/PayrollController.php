@@ -73,6 +73,5 @@ class PayrollController extends Controller
          header( "refresh:3;url=payroll" );
          exit;
        // return view('admin/home')->with('alert-success','Berhasil Update Database');
-
     }
 }

@@ -100,6 +100,7 @@
                         <th>Bulan</th>
                         <th>Tahun</th>
                     </tr>
+
                     <?php
                     $conn=mysqli_connect("localhost","root","","newexcel");
                     if($conn->connect_error){
@@ -119,7 +120,7 @@
                         echo "0 result";
                     }
                     $conn-> close();
-                    ?> 
+                    ?>
                 </table>
             </div>
             <!-- <div>

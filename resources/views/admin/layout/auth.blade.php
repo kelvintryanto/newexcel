@@ -37,14 +37,14 @@
             
             <div>
                 <ul class="nav flex-column" >
-                    <li>Tetap<i class="caret" style="margin-left: 20px;"></i></li>
+                    <li>TETAP</li>
                 
                     <a href="{{ url('admin/home') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/home') {echo 'active';}?>" >Karyawan</li></a>
                     <a href="{{ url('admin/payroll') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/payroll') {echo 'active';}?>" >Payroll</li></a>
                     <a href="{{ url('admin/sendEmail') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/sendEmail') {echo 'active';}?>">Send E-Slip</li></a>
                     
 
-                    <li style="margin-top: 30px;">Kontrak<span class="caret" style="margin-left: 20px;"></span></li>
+                    <li style="margin-top: 30px;">KONTRAK</li>
 
                     <a href="{{ url('/user/home') }}" class="nav-link"><li class="nav-item">Karyawan</li></a>
                     <a href="{{ url('/user/payroll') }}" class="nav-link"><li class="nav-item">Payroll</li></a>

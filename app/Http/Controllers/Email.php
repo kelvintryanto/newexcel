@@ -33,25 +33,21 @@ class Email extends Controller
                
              
 
-                 //send
-               
-                         Mail::send('email', ['nama' => $nama, 'gaji' =>  $gaji], function ($message) use ($request)
-                         {
-                            $message->subject('Gaji');
-                            $message->from('donotreply@mandiri.com', 'PT.Mandiri Konsultama Perkasa');
-                             $message->to($request->email);
-                         });
+    //send  
+    Mail::send('email', ['nama' => $nama, 'gaji' =>  $gaji], function ($message) use ($request)
+    {
+    $message->subject('Gaji');
+    $message->from('donotreply@mandiri.com', 'PT.Mandiri Konsultama Perkasa');
+        $message->to($request->email);
+    });
 
             
-             return back()->with('alert-success','Berhasil Mengirim Email');
-            //return response (['status' => false,'errors' => $e->getMessage()]);
-            // else{
+    return back()->with('alert-success','Berhasil Mengirim Email');
+    //return response (['status' => false,'errors' => $e->getMessage()]);
+    // else{
 
-            //    return back()->with('alert-failed','Gagal Mengirim Email');
-            // }
-             
-     
-
+    //    return back()->with('alert-failed','Gagal Mengirim Email');
+    // }
    } 
 }
 
