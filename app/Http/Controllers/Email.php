@@ -13,9 +13,9 @@ class Email extends Controller
 {
     public function showEmail()
     {
-        return view('sendEmail');
-
+        return view('admin/sendEmail');
     }
+
     public function sendEmail(Request $request)
 {
 
