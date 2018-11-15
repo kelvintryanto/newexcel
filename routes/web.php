@@ -26,7 +26,7 @@ Route::group(['prefix' => 'admin'], function () {
   //Route::post('/sendEmail', 'Email@sendEmail')->name('sendEmail');
   Route::get('sendEmail', function()
   {
-    return View::make('admin/sendEmail');
+    return view('admin/sendEmail');
   });
   //home
   Route::get('/', 'ImportController@getImport')->name('import');

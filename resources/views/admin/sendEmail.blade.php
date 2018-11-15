@@ -15,10 +15,10 @@
                 </div>
                 @endif
             <div>
-                <form action="{!! url('admin/sendEmail') !!}" method="POST">
-                <input name="nama" type="text" id="nama">
-                <input name="gaji" type="text" id="gaji">
-                <input name="email" type="text" id="email">
+                <form action="{{route('sendEmail')}}" method="POST">
+                <input hidden name="nama" type="text" id="nama">
+                <input hidden name="gaji" type="text" id="gaji">
+                <input hidden name="email" type="text" id="email">
                    {{ csrf_field() }}
                     <table id="table" class="table table-hover" style="font-size: 12px;">
                         <tr>
@@ -78,26 +78,10 @@
         }
     }
 
-    $(document).on('click','#btn_send', function(){
-        var email = $('#email').text();
-        var gaji = $('#ptkp').text();
-        var nama = $('#nama').text();
+    $(".alert-success").fadeTo(1000, 500).slideUp(500, function()
+    {
+        $(".alert-success").slideUp(500);
     });
-
-    
-function loadXMLDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementByClass("email").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("POST", "Email.php", true);
-  xhttp.send(email,gaji,nama);
-
-
-}
 </script>
 
 @endsection

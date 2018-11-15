@@ -11,6 +11,11 @@ use DOMDocument;
 
 class Email extends Controller
 {
+    public function showEmail()
+    {
+        return view('sendEmail');
+
+    }
     public function sendEmail(Request $request)
 {
 
