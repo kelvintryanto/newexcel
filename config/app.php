@@ -228,10 +228,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-<<<<<<< HEAD
-=======
         'HtmlDom' => cucxabeng\HtmlDom\HtmlDom::class,
->>>>>>> d8072e8f4da8077133c7f48b25279b27747c0871
 
     ],
 
