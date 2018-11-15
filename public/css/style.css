@@ -47,6 +47,11 @@
     background: #151719;
     margin: 3px 0px;
 }
+
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: transparent;
+}
+
 /*END SIDEBAR*/
 
 .test::after {

@@ -19,16 +19,19 @@ Route::get('/', function () {
   Route::get('admin/payroll', 'PayrollController@index');
   Route::get('tahun/get/{id}', 'PayrollController@getTahun');
 
-Route::group(['prefix' => 'admin'], function () {
+  Route::group(['prefix' => 'admin'], function () {
   
   //email
   Route::post('/sendEmail','Email@sendEmail')->name('sendEmail');
   //Route::post('/sendEmail', 'Email@sendEmail')->name('sendEmail');
   Route::get('/sendEmail', 'Email@showEmail')->name('showEmail');
+  //Route::get('admin/{slug}','Email@showEmail')->name('showEmail');
+
   //home
   Route::get('/', 'ImportController@getImport')->name('import');
   Route::post('/import_parse','ImportController@parseImport')->name('import_parse');
   Route::post('/import_process','ImportController@processImport')->name('import_process');
+  
 
   //payroll
   Route::get('/', 'PayrollController@getImport')->name('importPayroll');

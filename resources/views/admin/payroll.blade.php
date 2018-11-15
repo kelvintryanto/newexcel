@@ -1,6 +1,7 @@
 @extends('admin.layout.auth')
 
 @section('content')
+<?php $page = 'admin/payroll'?>
 <div class="container" style="margin-left: 0px; margin-right: 0px; padding: 15px; width: 100%;">
     <div class="row">
         <div class="col-md-12">

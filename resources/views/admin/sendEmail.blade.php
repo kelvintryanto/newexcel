@@ -1,6 +1,7 @@
 @extends('admin.layout.auth')
 
 @section('content')
+<?php $page = 'admin/sendEmail'?>
 <div class="container" style="margin-left: 0px; margin-right: 0px; padding: 15px; width: 100%;">
     <div class="row">
         <div class="col-md-12">
@@ -15,11 +16,11 @@
                 </div>
                 @endif
             <div>
-                <form action="{{route('sendEmail')}}" method="POST">
+                <form action="{{ route('sendEmail') }}" method="POST" enctype="multipart/form-data">
                 <input hidden name="nama" type="text" id="nama">
                 <input hidden name="gaji" type="text" id="gaji">
                 <input hidden name="email" type="text" id="email">
-                {{ csrf_field() }}
+                   {{ csrf_field() }}
                     <table id="table" class="table table-hover" style="font-size: 12px;">
                         <tr>
                             <th>Nama</th>

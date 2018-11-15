@@ -34,22 +34,23 @@
                 <br>
                 <p style="font-size: 12px; border-bottom: 1px solid rgba(100,100,100,0.3); margin-bottom: 0px; color: rgba(230,230,230,0.9); padding: 10px">PT. Mandiri Konsultama Perkasa</p>
             </div></a>
-            <ul>
-                <li>Tetap<i class="caret" style="margin-left: 20px;"></i></li>
-                <div>
-                    <a href="{{ url('admin/home') }}"><li class="nav-link">Karyawan</li></a>
-                    <a href="{{ url('admin/payroll') }}"><li class="nav-link">Payroll</li></a>
-                    <a href="{{ url('admin/sendEmail') }}"><li class="nav-link">Send E-Slip</li></a>
-                </div>
+            
+            <div>
+                <ul class="nav flex-column" >
+                    <li>Tetap<i class="caret" style="margin-left: 20px;"></i></li>
+                
+                    <a href="{{ url('admin/home') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/home') {echo 'active';}?>" >Karyawan</li></a>
+                    <a href="{{ url('admin/payroll') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/payroll') {echo 'active';}?>" >Payroll</li></a>
+                    <a href="{{ url('admin/sendEmail') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/sendEmail') {echo 'active';}?>">Send E-Slip</li></a>
+                    
 
-                <li style="margin-top: 30px;">Kontrak<span class="caret" style="margin-left: 20px;"></span></li>
-                <div>
-                    <a href="{{ url('/user/home') }}"><li>Karyawan</li></a>
-                    <a href="{{ url('/user/payroll') }}"><li>Payroll</li></a>
-                    <a href="{{ url('/user/sendEmail') }}"><li>Send E-Slip</li></a>
-                </div>
+                    <li style="margin-top: 30px;">Kontrak<span class="caret" style="margin-left: 20px;"></span></li>
 
-            </ul>
+                    <a href="{{ url('/user/home') }}" class="nav-link"><li class="nav-item">Karyawan</li></a>
+                    <a href="{{ url('/user/payroll') }}" class="nav-link"><li class="nav-item">Payroll</li></a>
+                    <a href="{{ url('/user/sendEmail') }}" class="nav-link"><li class="nav-item">Send E-Slip</li></a>
+                </ul>
+            </div>
 
         </div>
         <!-- tambahan sidebar KT -->
@@ -115,9 +116,21 @@
         @yield('content')
     </div>
     
-
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
+    <!-- <script>
+        var header = document.getElementById("menuBar");
+        var menuRef = header.getElementsByClassName("nav-link");
+        for(var i=0;i < menuRef.length; i++){
+            menuRef[i].addEventListener("click",function(){
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active","");
+                this.className += " active";
+            });
+        }
+    </script> -->
+
+
 </body>
 </html>
