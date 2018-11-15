@@ -22,12 +22,9 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
   
   //email
-  Route::post('sendEmail','Email@sendEmail')->name('sendEmail');
+  Route::post('/sendEmail','Email@sendEmail')->name('sendEmail');
   //Route::post('/sendEmail', 'Email@sendEmail')->name('sendEmail');
-  Route::get('sendEmail', function()
-  {
-    return View::make('admin/sendEmail');
-  });
+  Route::get('/sendEmail', 'Email@showEmail')->name('showEmail');
   //home
   Route::get('/', 'ImportController@getImport')->name('import');
   Route::post('/import_parse','ImportController@parseImport')->name('import_parse');

@@ -38,9 +38,9 @@
             <ul>
                 <li>Tetap<i class="caret" style="margin-left: 20px;"></i></li>
                 <div>
-                    <a href="{{ url('/admin/home') }}"><li class="nav-link">Karyawan</li></a>
-                    <a href="{{ url('/admin/payroll') }}"><li class="nav-link">Payroll</li></a>
-                    <a href="{{ url('/admin/sendEmail') }}"><li class="nav-link">Send E-Slip</li></a>
+                    <a href="{{ url('admin/home') }}"><li class="nav-link">Karyawan</li></a>
+                    <a href="{{ url('admin/payroll') }}"><li class="nav-link">Payroll</li></a>
+                    <a href="{{ url('admin/sendEmail') }}"><li class="nav-link">Send E-Slip</li></a>
                 </div>
 
                 <li style="margin-top: 30px;">Kontrak<span class="caret" style="margin-left: 20px;"></span></li>

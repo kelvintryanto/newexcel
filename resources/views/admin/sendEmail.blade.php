@@ -15,7 +15,7 @@
                 </div>
                 @endif
             <div>
-                <form action="{!! url('admin/sendEmail') !!}" method="POST">
+                <form action="{{ route('sendEmail') }}" method="POST" enctype="multipart/form-data">
                 <input name="nama" type="text" id="nama">
                 <input name="gaji" type="text" id="gaji">
                 <input name="email" type="text" id="email">
@@ -99,5 +99,4 @@ function loadXMLDoc() {
 
 }
 </script>
-
 @endsection
