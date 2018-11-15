@@ -28,7 +28,6 @@
 <body>
     <!-- start navbar default dom dari sini -->
     <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px;">
-
         <!-- tambahan sidebar KT -->
         <div id="sidebar">
             <a href="{{ url('/admin/home') }}"><div style="text-align: center;">

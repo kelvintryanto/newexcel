@@ -15,12 +15,19 @@ Route::get('/', function () {
   return view('welcome');
   
 });
-
+//filter
+  Route::get('admin/payroll', 'PayrollController@index');
+  Route::get('tahun/get/{id}', 'PayrollController@getTahun');
 
 Route::group(['prefix' => 'admin'], function () {
+  
   //email
-  Route::post('/sendEmail', 'Email@sendEmail');
-  Route::get('/sendEmail', function () {return view('admin/sendEmail');});
+  Route::post('sendEmail','Email@sendEmail')->name('sendEmail');
+  //Route::post('/sendEmail', 'Email@sendEmail')->name('sendEmail');
+  Route::get('sendEmail', function()
+  {
+    return View::make('admin/sendEmail');
+  });
   //home
   Route::get('/', 'ImportController@getImport')->name('import');
   Route::post('/import_parse','ImportController@parseImport')->name('import_parse');

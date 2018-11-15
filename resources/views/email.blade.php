@@ -259,9 +259,7 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                    @foreach($nama as $nama)
-                                        <p>Hi {{ $nama->name }}</p>
-                                    @endforeach
+                                        <p>Hi {{ $nama }}</p>
                                         <p>Gaji anda bulan ini adalah :</p>
 
                                         <table border="0" cellpadding="0" cellspacing="0">
@@ -272,9 +270,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td> <div class="container">
-                                                                    @foreach($gaji as $gaji)
-                                                                    <center><p>{{ $gaji->ptkp }}</p></center>
-                                                                    @endforeach
+                                                                    <center><p>{{ $gaji }}</p></center>
                                                                     <hr>
                                                                     <center><p>Terimakasih telah menghubungi kami!</p></center>
                                                                 </div>
