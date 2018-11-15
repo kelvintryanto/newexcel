@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Page</title>
+
+	<style type="text/css">
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		width: 200px;
+		background-color: #f1f1f1;
+	}
+
+	li a {
+		display: block;
+		color: #000;
+		padding: 20px 16px;
+		text-decoration: none;
+		font-size: 20px;
+	}
+
+	/* Change the link color on hover */
+	li a:hover {
+		background-color: #555;
+		color: white;
+	}
+
+	li a:focus{
+		background-color: #555;
+		color: white;
+	}
+
+	li a:active{
+		background-color: #555;
+		color: white;
+	}
+
+	html,body{
+		margin: 0;
+		padding: 0;
+	}
+
+	.sideMenuBar{
+		height: 100%;
+		position: absolute;
+		z-index: 1;
+	}
+
+	.header{
+		width: 100%;
+		background-color: #b7b7b7;
+		display: table;
+	}
+
+	.footer{
+		width: 100%;
+		background-color: #b7b7b7;
+		position: fixed;
+		z-index: 1;
+		bottom: 0;
+		text-align: center;
+		padding: 20px 0px;
+	}
+
+	.profile{
+		display: table-cell;
+		text-align: right;
+		width: 30%;
+		padding: 20px 10px;
+	}
+
+	.bodyKaryawan{
+		display: block;
+		margin-left: 200px;
+		padding: 10px;
+	}
+
+	.myButton {		
+		background-color:#44c767;
+		-moz-border-radius:28px;
+		-webkit-border-radius:28px;
+		border-radius:28px;
+		border:1px solid #18ab29;
+		display:inline-block;
+		cursor:pointer;
+		color:#ffffff;
+		font-family:Trebuchet MS;
+		font-size:14px;
+		padding:10px 48px;
+		text-decoration:none;
+	}
+	.myButton:hover {
+		background-color:#5cbf2a;
+	}
+	.myButton:active {
+		position:relative;
+		top:1px;
+	}
+
+	#t2 {
+		-moz-tab-size: 8; /* Firefox */
+		-o-tab-size: 8; /* Opera 10.6-12.1 */
+		tab-size: 8;
+	}
+</style>
+
+</head>
+<body onload="renderTime();">
+	<div class="header">
+		<table style="padding: 10px; width: 70%;"> 
+			<tr> 
+				<th rowspan="2"><img src="mkp-icon.png" style="padding-right: 20px;"></th> 
+				<td style="padding: 0px; margin: 0px; font-size: 30px;">PT. MANDIRI KONSULTAMA PERKASA</td> 
+			</tr> 
+			<tr>
+				<td style="padding: 0px; margin: 0px; font-size: 30px;">PAYROLL SYSTEM</td> 
+			</tr> 
+		</table> 
+
+		<div class="profile">
+			<table style="float: right;">
+				<tr> 
+					<td style="padding: 10px; margin: 0px; font-size: 20px;">HELLO, 
+						<li class="caret" style="display: inline-block;">[USER]
+							<ul></ul>
+						</li>
+					</td> 
+					<!-- <th rowspan="2"><img src="icon-member.png" style="padding-left: 20px;"></th>  -->
+				</tr> 
+				<tr>
+					<td style="padding: 10px; margin: 10px; font-size: 20px;" ><div id="clockDisplay"></div></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+
+	<ul class="sideMenuBar">
+		<li><a id="karyawan" href="#Karyawan">Karyawan</a></li>
+		<li><a href="#Payroll">Payroll</a></li>
+	</ul>
+
+	<!-- button import -->
+	<div class="bodyKaryawan">
+		<div style="float: right; display: block;">
+			<button class="myButton">Import</button>
+		</div>
+
+		<div>
+			
+		</div>
+	</div>
+
+	<div class="footer">
+		@2018 PT. Mandiri Konsultama Perkasa
+	</div>
+	
+	<script>
+		function renderTime(){
+
+			// Date
+			var mydate = new Date();
+			var year = mydate.getYear();
+				if(year < 1000){
+					year += 1900
+				}
+			var day = mydate.getDay();
+			var month = mydate.getMonth();
+			var daym = mydate.getDate();
+			var dayarray = new Array("Minggu,", "Senin,", "Selasa,", "Rabu,", "Kamis,", "Jumat,", "Sabtu,");
+			var montharray = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "Desember");
+			// Date End
+
+			// Time
+			var currentTime = new Date();
+			var h = currentTime.getHours();
+			var m = currentTime.getMinutes();
+			var s = currentTime.getSeconds();
+				if(h == 24){
+					h=0;
+				} else if(h > 12){
+					h = h - 0;
+				}
+
+				if( h < 10){
+					h = "0" + h;
+				}
+
+				if(m < 10){
+					m = "0" + m;
+				}
+
+				if(s < 10){
+					s = "0" + s;
+				}
+
+				var myClock = document.getElementById("clockDisplay");
+				myClock.textContent = "" +dayarray[day]+ " "+ daym + " " + montharray[month]+ " "+ year+ " | " + h + ";" + m + ":" + s;
+				myClock.innerText = "" +dayarray[day]+ " "+ daym + " " + montharray[month]+ " "+ year+ " | " + h + ":" + m + ":" + s;
+
+				setTimeout("renderTime()", 500);
+		}
+
+		document.getElementById('karyawan').focus();
+		renderTime();
+	</script>
+</body>
+</html>
