@@ -29,3 +29,33 @@ Route::get('/sendEmail', function () {
 
     return view('admin.sendEmail');
 })->name('sendEmail');
+
+Route::get('/kontrakHome', function () {
+    $users[] = Auth::user();
+    $users[] = Auth::guard()->user();
+    $users[] = Auth::guard('admin')->user();
+
+    //dd($users);
+
+    return view('admin.kontrakHome');
+})->name('kontrakHome');
+
+Route::get('/kontrakPayroll', function () {
+    $users[] = Auth::user();
+    $users[] = Auth::guard()->user();
+    $users[] = Auth::guard('admin')->user();
+
+    //dd($users);
+
+    return view('admin.kontrakPayroll');
+})->name('kontrakPayroll');
+
+Route::get('/kontrakSendEmail', function () {
+    $users[] = Auth::user();
+    $users[] = Auth::guard()->user();
+    $users[] = Auth::guard('admin')->user();
+
+    //dd($users);
+
+    return view('admin.kontrakSendEmail');
+})->name('kontrakSendEmail');

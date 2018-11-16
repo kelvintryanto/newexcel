@@ -46,9 +46,9 @@
 
                     <li style="margin-top: 30px;">KONTRAK</li>
 
-                    <a href="{{ url('/user/home') }}" class="nav-link"><li class="nav-item">Karyawan</li></a>
-                    <a href="{{ url('/user/payroll') }}" class="nav-link"><li class="nav-item">Payroll</li></a>
-                    <a href="{{ url('/user/sendEmail') }}" class="nav-link"><li class="nav-item">Send E-Slip</li></a>
+                    <a href="{{ url('admin/kontrakHome') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/kontrakHome') {echo 'active';}?>">Karyawan</li></a>
+                    <a href="{{ url('admin/kontrakPayroll') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/kontrakPayroll') {echo 'active';}?>">Payroll</li></a>
+                    <a href="{{ url('admin/kontrakSendEmail') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/kontrakSendEmail') {echo 'active';}?>">Send E-Slip</li></a>
                 </ul>
             </div>
 
