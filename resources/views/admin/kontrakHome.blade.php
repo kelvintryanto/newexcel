@@ -2,7 +2,6 @@
 
 @section('content')
 <?php $page = 'admin/kontrakHome'?>
-<?php $page = 'admin/home'?>
 <div class="container" style="margin-left: 0px; margin-right: 0px; padding: 15px; width: 100%;">
     <div class="row">
         <div class="col-md-12">

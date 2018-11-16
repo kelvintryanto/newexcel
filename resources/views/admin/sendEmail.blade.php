@@ -22,6 +22,7 @@
                 <input hidden name="email" type="text" id="email">
                    {{ csrf_field() }}
                     <table id="table" class="table table-hover" style="font-size: 12px;">
+                        <!-- kalo ada tambahan edit di sini -->
                         <tr>
                             <th>Nama</th>
                             <th>Gaji</th>
@@ -39,6 +40,7 @@
 
                         if ($result-> num_rows > 0) {
                             while ($row = $result-> fetch_assoc()) {
+                                // kalo ada tambahan edit di sini
                                 echo '<tr><td id="nama">'.$row["nama"].'</td>
                                     <td id="ptkp" data-id1="'.$row["nama"].'">'.$row["ptkp"].'</td>
                                     <td id="email" data-id2="'.$row["nama"].'">'.$row["email"].'</td>
@@ -72,6 +74,7 @@
     {
         table.rows[i].onclick=function()
         {
+            // ada tambahan baru edit di sini lagi
             rIndex = this.rowIndex;
             document.getElementById("nama").value = this.cells[0].innerHTML;
             document.getElementById("gaji").value = this.cells[1].innerHTML;
