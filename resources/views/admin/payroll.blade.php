@@ -44,32 +44,36 @@
                     </form>
                 </div>
             </div>
+
             
             <!-- Pemilihan Bulan dan Tahun -->
             <div style="float: right; padding: 10px;">
+                <form action="payroll.blade.php" method="POST">
                 <b>Bulan</b>
-                <select style="margin-right: 10px;">
-                    <option value="Januari">Januari</option>
-                    <option value="Februari">Februari</option>
-                    <option value="Maret">Maret</option>
-                    <option value="April">April</option>
-                    <option value="Mei">Mei</option>
-                    <option value="Juni">Juni</option>
-                    <option value="Juli">Juli</option>
-                    <option value="Agustus">Agustus</option>
-                    <option value="September">September</option>
-                    <option value="Oktober">Oktober</option>
-                    <option value="November">November</option>
-                    <option value="Desember">Desember</option>
+                <select id="bulan" name="start" style="margin-right: 10px;">
+                    <option value="1">Januari</option>
+                    <option value="2">Februari</option>
+                    <option value="3">Maret</option>
+                    <option value="4">April</option>
+                    <option value="5">Mei</option>
+                    <option value="6">Juni</option>
+                    <option value="7">Juli</option>
+                    <option value="8">Agustus</option>
+                    <option value="9">September</option>
+                    <option value="10">Oktober</option>
+                    <option value="11">November</option>
+                    <option value="12">Desember</option>
                 </select>
 
                 <b>Tahun</b>
-                <select>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                </select>             
+                <select id="tahun">
+                    <option value="1">2018</option>
+                    <option value="2">2019</option>
+                    <option value="3">2020</option>
+                    <option value="4">2021</option>
+                </select>
+                <button class="dom-go">filter</button>  
+                </form>          
             </div>
 
             <div style="margin-top: 20px; overflow-x: auto; width: 100%;">
@@ -115,6 +119,19 @@
 
                         }
                         echo "</table>";
+                    }
+                    if else(isset($_POST['search']))
+                    {
+                        $sql = "SELECT no,nik,nama,divisi,keterangan_divisi,kehadiran,gaji_pokok,insentif,uang_makan,transport,asuransi,lembur,pengobatan,lain,pajak,bpjs_non_tax,bpjs_tax,pot_gaji,natura,bantuan,thr,sub_total,bulan,tahun from payroll WHERE bulan like :start";
+                        $result = $conn-> query($sql);
+
+                        if ($result-> num_rows > 0) {
+                        while ($row = $result-> fetch_assoc()) {
+                            echo "<tr><td>".$row["no"]."</td><td>".$row["nik"]."</td><td>".$row["nama"]."</td><td>".$row["divisi"]."</td><td>".$row["keterangan_divisi"]."</td><td>".$row["kehadiran"]."</td><td>".$row["gaji_pokok"]."</td><td>".$row["insentif"]."</td><td>".$row["uang_makan"]."</td><td>".$row["transport"]."</td><td>".$row["asuransi"]."</td><td>".$row["lembur"]."</td><td>".$row["pengobatan"]."</td><td>".$row["lain"]."</td><td>".$row["pajak"]."</td><td>".$row["bpjs_non_tax"]."</td><td>".$row["bpjs_tax"]."</td><td>".$row["pot_gaji"]."</td><td>".$row["natura"]."</td><td>".$row["bantuan"]."</td><td>".$row["thr"]."</td><td>".$row["sub_total"]."</td><td>".$row["bulan"]."</td><td>".$row["tahun"]."</td></tr>";
+
+                        }
+                        echo "</table>";
+                    }
                     }
                     else{
                         echo "0 result";

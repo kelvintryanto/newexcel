@@ -24,7 +24,7 @@
                     <table id="table" class="table table-hover" style="font-size: 12px;">
                         <tr>
                             <th>Nama</th>
-                            <th>Gaji</th>
+                            <th hidden>Gaji</th>
                             <th>Email</th>
                             <th>Send Email</th>
                         </tr>
@@ -40,9 +40,9 @@
                         if ($result-> num_rows > 0) {
                             while ($row = $result-> fetch_assoc()) {
                                 echo '<tr><td id="nama">'.$row["nama"].'</td>
-                                    <td id="ptkp" data-id1="'.$row["nama"].'">'.$row["ptkp"].'</td>
+                                    <td hidden id="ptkp" data-id1="'.$row["nama"].'">'.$row["ptkp"].'</td>
                                     <td id="email" data-id2="'.$row["nama"].'">'.$row["email"].'</td>
-                                    <td><button name="btn_send" id="btn_send" data-id4="'.$row["nama"].'">send</button></td></tr>';
+                                    <td><button name="btn_send" id="btn_send" data-id3="'.$row["nama"].'">send</button></td></tr>';
 
 
                                /* echo "<tr><td>".$row["nama"]."</td><td>".$row["ptkp"]."</td><td>".$row["email"]."</td><td>"."<button name="btn_send" id="btn_send" data-id3="'.$row["name"].'">send</button>"."</td></tr>";*/
