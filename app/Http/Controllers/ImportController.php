@@ -12,6 +12,7 @@ class ImportController extends Controller
     {
         return view('import');
     }
+
     public function parseImport(CsvImportRequest $request)
     {
         $path = $request->file('csv_file')->getRealPath();
@@ -38,6 +39,7 @@ class ImportController extends Controller
         }
         return view('import_fields', compact( 'csv_header_fields', 'csv_data', 'csv_data_file'));
     }
+    
     public function processImport(Request $request)
     {
         $data = CsvData::find($request->csv_data_file_id);

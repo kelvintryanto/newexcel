@@ -1,7 +1,7 @@
 @extends('admin.layout.auth')
 
 @section('content')
-<?php $page = 'admin/sendEmail'?>
+<?php $page = 'admin/kontrakSendEmail'?>
 <div class="container" style="margin-left: 0px; margin-right: 0px; padding: 15px; width: 100%;">
     <div class="row">
         <div class="col-md-12">
@@ -22,10 +22,9 @@
                 <input hidden name="email" type="text" id="email">
                    {{ csrf_field() }}
                     <table id="table" class="table table-hover" style="font-size: 12px;">
-                        <!-- kalo ada tambahan edit di sini -->
                         <tr>
                             <th>Nama</th>
-                            <th hidden>Gaji</th>
+                            <th>Gaji</th>
                             <th>Email</th>
                             <th>Send Email</th>
                         </tr>
@@ -40,11 +39,10 @@
 
                         if ($result-> num_rows > 0) {
                             while ($row = $result-> fetch_assoc()) {
-                                // kalo ada tambahan edit di sini
                                 echo '<tr><td id="nama">'.$row["nama"].'</td>
-                                    <td hidden id="ptkp" data-id1="'.$row["nama"].'">'.$row["ptkp"].'</td>
+                                    <td id="ptkp" data-id1="'.$row["nama"].'">'.$row["ptkp"].'</td>
                                     <td id="email" data-id2="'.$row["nama"].'">'.$row["email"].'</td>
-                                    <td><button name="btn_send" id="btn_send" data-id3="'.$row["nama"].'">send</button></td></tr>';
+                                    <td><button name="btn_send" id="btn_send" data-id4="'.$row["nama"].'">send</button></td></tr>';
 
 
                                /* echo "<tr><td>".$row["nama"]."</td><td>".$row["ptkp"]."</td><td>".$row["email"]."</td><td>"."<button name="btn_send" id="btn_send" data-id3="'.$row["name"].'">send</button>"."</td></tr>";*/
@@ -74,7 +72,6 @@
     {
         table.rows[i].onclick=function()
         {
-            // ada tambahan baru edit di sini lagi
             rIndex = this.rowIndex;
             document.getElementById("nama").value = this.cells[0].innerHTML;
             document.getElementById("gaji").value = this.cells[1].innerHTML;
@@ -87,5 +84,4 @@
         $(".alert-success").slideUp(500);
     });
 </script>
-
 @endsection
