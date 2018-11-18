@@ -9,6 +9,10 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class PayrollController extends Controller
 {
+    public function index()
+    {
+        return view('admin/payroll');
+    }
     public function getImport()
     {
         return view('importPayroll');

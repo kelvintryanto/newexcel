@@ -20,6 +20,7 @@ Route::get('/payroll', function () {
     return view('admin.payroll');
 })->name('payroll');
 
+
 Route::get('/sendEmail', function () {
     $users[] = Auth::user();
     $users[] = Auth::guard()->user();

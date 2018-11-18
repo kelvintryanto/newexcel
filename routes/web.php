@@ -30,6 +30,7 @@ Route::get('/', function () {
   Route::get('/', 'PayrollController@getImport')->name('importPayroll');
   Route::post('/import_parsePayroll','PayrollController@parseImport')->name('import_parsePayroll');
   Route::post('/import_processPayroll','PayrollController@processImport')->name('import_processPayroll');
+  Route::post('/payroll','PayrollController@index')->name('payroll');
 
   //email karyawan tetap
   Route::post('/sendEmail','Email@sendEmail')->name('sendEmail');
