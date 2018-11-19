@@ -175,30 +175,34 @@
             <div style="margin-top: 20px; overflow-x: auto; width: 100%;">
                 <table class="table table-hover scrollable" style="font-size: 12px;">
                     <tr class="table-head">
-                        <th>No</th>
-                        <th>NIK</th>
-                        <th>Nama</th>
-                        <th>Divisi</th>
-                        <th>Keterangan Divisi</th>
-                        <th>Kehadiran</th>
-                        <th>Gaji Pokok</th>
-                        <th>Insentif</th>
-                        <th>Uang Makan</th>
-                        <th>Transport</th>
-                        <th>Asuransi</th>
-                        <th>Lembur</th>
-                        <th>Pengobatan</th>
-                        <th>Lainnya</th>
-                        <th>Pajak</th>
+                        <th rowspan="2" style="text-align: center;">NO</th>
+                        <th rowspan="2" style="text-align: center;">NIK</th>
+                        <th rowspan="2" style="text-align: center;">NAMA</th>
+                        <th colspan="2">DIVISI</th>
+                        <th rowspan="2" style="text-align: center;">KEHADIRAN</th>
+                        <th rowspan="2" style="text-align: center;">Gaji Pokok</th>
+                        <th rowspan="2" style="text-align: center;">Insentif</th>
+                        <th colspan="11" style="text-align: center;">TUNJANGAN-TUNJANGAN</th>
+                        <th rowspan="2" style="text-align: center;">BANTUAN/RAPEL</th>
+                        <th rowspan="2" style="text-align: center;">THR</th>
+                        <th rowspan="2" style="text-align: center;">SUBTOTAL</th>
+                        <th rowspan="2" style="text-align: center;">BULAN</th>
+                        <th rowspan="2" style="text-align: center;">TAHUN</th>
+                    </tr>
+                    <tr class="table-head">
+                        <th>CD.</th>                        
+                        <th>KETERANGAN</th>
+                        <th>UANG MAKAN</th>
+                        <th>TRANSPORT</th>
+                        <th>ASURANSI</th>
+                        <th>LEMBUR</th>
+                        <th>PENGOBATAN</th>
+                        <th>LAINNYA</th>
+                        <th>PAJAK</th>
                         <th>BPJS NON TAX</th>
                         <th>BPJS TAX</th>
                         <th>POT.GAJI</th>
-                        <th>NATURA</th>
-                        <th>Bantuan</th>
-                        <th>THR</th>
-                        <th>Sub Total</th>
-                        <th>Bulan</th>
-                        <th>Tahun</th>
+                        <th>NATURA</th>                        
                     </tr>
                     <?php
 

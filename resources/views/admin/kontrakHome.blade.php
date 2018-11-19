@@ -47,26 +47,32 @@
 
             <div style="margin-top: 20px; overflow-x: auto; width: 100%;">
                 <table class="table table-hover scrollable" style="font-size: 12px;">
+                    <tr rowspan="2">
+                        <th hidden rowspan="2" style="text-align: center;">NO</th>
+                        <th rowspan="2" style="text-align: center;">NO.ID</th>
+                        <th rowspan="2" style="text-align: center;">NAMA KARYAWAN</th>
+                        <th colspan="2" style="text-align: center;">NPWP</th>
+                        <th colspan="2" style="text-align: center;">JENIS PENGHASILAN</th>
+                        <th>Kerja 1 Tempat</th>
+                        <th rowspan="2" style="text-align: center;">ALAMAT 1</th>
+                        <th rowspan="2" style="text-align: center;">ALAMAT 2</th>
+                        <th rowspan="2" style="text-align: center;">No.KTP/PASPOR</th>
+                        <th style="text-align: center;">KODE NEGARA</th>
+                        <th rowspan="2" style="text-align: center;">STATUS</th>
+                        <th rowspan="2" style="text-align: center;">TANGGUNGAN</th>
+                        <th rowspan="2" style="text-align: center;">KODE STATUS</th>
+                        <th rowspan="2" style="text-align: center;">L/P</th>
+                        <th rowspan="2" style="text-align: center;">MULAI KERJA</th>
+                        <th rowspan="2" style="text-align: center;">AKHIR KERJA</th>
+                        <th rowspan="2" style="text-align: center;">PTKP/BULAN</th>
+                    </tr>
                     <tr class="table-head">
-                        <th hidden>No</th>
-                        <th>NO.ID</th>
-                        <th>NAMA KARYAWAN</th>
-                        <th>NO.NPWP</th>
-                        <th>NPWP Sejak</th>
-                        <th>CD.JENIS PENGHASILAN</th>
-                        <th>NAMA JENIS PENGHASILAN</th>
-                        <th>Kerja di 1 Tempat</th>
-                        <th>ALAMAT 1</th>
-                        <th>ALAMAT 2</th>
-                        <th>No.KTP/PASPOR</th>
-                        <th>KODE NEGARA</th>
-                        <th>STATUS</th>
-                        <th>TANGGUNGAN</th>
-                        <th>KODE STATUS</th>
-                        <th>JENIS KELAMIN(L/P)</th>
-                        <th>MULAI KERJA</th>
-                        <th>AKHIR KERJA</th>
-                        <th>PTKP/BULAN</th>
+                        <th>NO.</th>
+                        <th>SEJAK</th>
+                        <th>CD.</th>
+                        <th>NAMA</th>
+                        <th>Y/T</th>
+                        <th>(DIISI BILA WP LN)</th>
                     </tr>
                     <?php
                     $conn=mysqli_connect("localhost","root","","newexcel");

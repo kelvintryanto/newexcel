@@ -48,45 +48,69 @@
             <div style="margin-top: 20px; overflow-x: auto; width: 100%;">
                 <table class="table table-hover scrollable" style="font-size: 12px;">
                     <tr class="table-head">
-                        <th>NIK</th>
-                        <th>NAMA KARYAWAN</th>
-                        <th>NO.NPWP</th>
-                        <th>NPWP SEJAK</th>
-                        <th>ALAMAT 1</th>
-                        <th>ALAMAT 2</th>
-                        <th>NO.KTP/Paspor</th>
-                        <th>KODE NEGARA</th>
-                        <th>STATUS PINDAH</th>
-                        <th>NO.REKENING</th>
-                        <th>BAGIAN</th>
-                        <th>JABATAN</th>
-                        <th>STATUS K;TK;HB</th>
-                        <th>TANGGUNGAN (MAX:3)</th>
-                        <th>L/P</th>
-                        <th>KA</th>
-                        <th>KODE OBJEK PAJAK</th>
-                        <th>MULAI KERJA</th>
-                        <th>AKHIR KERJA</th>
+                        <th rowspan="2" style="text-align: center;">NIK</th>
+                        <th rowspan="2" style="text-align: center;">NAMA KARYAWAN</th>
+                        <th colspan="2" style="text-align: center;">NPWP</th>
+                        <th rowspan="2" style="text-align: center;">NO.</th>
+                        <th rowspan="2" style="text-align: center;">SEJAK</th>
+                        <th rowspan="2" style="text-align: center;">ALAMAT 1</th>
+                        <th rowspan="2" style="text-align: center;">ALAMAT 2</th>
+                        <th rowspan="2" style="text-align: center;">NO.KTP/Paspor</th>
+                        <th rowspan="2" style="text-align: center;">KODE NEGARA</th>
+                        <th rowspan="2" style="text-align: center;">STATUS PINDAH</th>
+                        <th rowspan="2" style="text-align: center;">NO.REKENING</th>
+                        <th rowspan="2" style="text-align: center;">BAGIAN</th>
+                        <th rowspan="2" style="text-align: center;">JABATAN</th>
+                        <th rowspan="2" style="text-align: center;">STATUS K;TK;HB</th>
+                        <th rowspan="2" style="text-align: center;">TANGGUNGAN (MAX:3)</th>
+                        <th rowspan="2" style="text-align: center;">L/P</th>
+                        <th rowspan="2" style="text-align: center;">KA</th>
+                        <th rowspan="2" style="text-align: center;">KODE OBJEK PAJAK</th>
+                        <th rowspan="2" style="text-align: center;">MULAI KERJA</th>
+                        <th rowspan="2" style="text-align: center;">AKHIR KERJA</th>
+                        <th colspan="6" style="text-align: center;">TUNJANGAN</th>
+                        <th style="text-align: center;">GAJI</th>
+                        <th colspan="4">DISETAHUNKAN-IN</th>
+                        <th colspan="2">DISETAHUNKAN-OUT</th>
+                        <th rowspan="2">TANGGAL LAHIR</th>
+                    </tr>
+                    <tr class="table-head">
+                        <th style="text-align: center;">NOMOR</th>
+                        <th style="text-align: center;">SEJAK</th>
+                        <th style="text-align: center;">KEND.</th>
+                        <th style="text-align: center;">RUMAH</th>
+                        <th style="text-align: center;">OBAT</th>
+                        <th style="text-align: center;">UANG</th>
+                        <th style="text-align: center;">LAIN 2X</th>
+                        <th style="text-align: center;">PL.OBAT</th>
+                        <th style="text-align: center;">G/N/S</th>
+                        <th style="text-align: center;">TANGGAL</th>
+                        <th style="text-align: center;">JML.BLN</th>
+                        <th style="text-align: center;">PENGH.</th>
+                        <th style="text-align: center;">PPH.</th>
+                        <th style="text-align: center;">TANGGAL</th>
+                        <th style="text-align: center;">BULAN</th>
+                        
                     </tr>
                     <?php
-                    // $conn=mysqli_connect("localhost","root","","newexcel");
-                    // if($conn->connect_error){
-                    //     die("Connection failed:". $conn-> connect_error);
-                    // }
-                    // $sql = "SELECT no,no_id,nama,no_npwp,npwp_sejak,cd_jenishasil,nama_jenishasil,kerja_di_1_tempat,alamat_1,alamat_2,no_ktp,kode_negara,status,tanggungan,kode_status,jenis_kelamin,mulai_kerja,akhir_kerja,ptkp from karyawan";
-                    // $result = $conn-> query($sql);
+                    $conn=mysqli_connect("localhost","root","","newexcel");
+                    if($conn->connect_error){
+                        die("Connection failed:". $conn-> connect_error);
+                    }
+                    $sql = "SELECT no,no_id,nama,no_npwp,npwp_sejak,cd_jenishasil,nama_jenishasil,kerja_di_1_tempat,alamat_1,alamat_2,no_ktp,kode_negara,status,tanggungan,kode_status,jenis_kelamin,mulai_kerja,akhir_kerja,ptkp from karyawan";
+                    $result = $conn-> query($sql);
 
-                    // if ($result-> num_rows > 0) {
-                    //     while ($row = $result-> fetch_assoc()) {
-                    //         echo "<tr><td>".$row["no"]."</td><td>".$row["no_id"]."</td><td>".$row["nama"]."</td><td>".$row["no_npwp"]."</td><td>".$row["npwp_sejak"]."</td><td>".$row["cd_jenishasil"]."</td><td>".$row["nama_jenishasil"]."</td><td>".$row["kerja_di_1_tempat"]."</td><td>".$row["alamat_1"]."</td><td>".$row["alamat_2"]."</td><td>".$row["no_ktp"]."</td><td>".$row["kode_negara"]."</td><td>".$row["status"]."</td><td>".$row["tanggungan"]."</td><td>".$row["kode_status"]."</td><td>".$row["jenis_kelamin"]."</td><td>".$row["mulai_kerja"]."</td><td>".$row["akhir_kerja"]."</td><td>".$row["ptkp"]."</td></tr>";
+                    if ($result-> num_rows > 0) {
+                        while ($row = $result-> fetch_assoc()) {
+                            echo "<tr><td>".$row["no"]."</td><td>".$row["no_id"]."</td><td>".$row["nama"]."</td><td>".$row["no_npwp"]."</td><td>".$row["npwp_sejak"]."</td><td>".$row["cd_jenishasil"]."</td><td>".$row["nama_jenishasil"]."</td><td>".$row["kerja_di_1_tempat"]."</td><td>".$row["alamat_1"]."</td><td>".$row["alamat_2"]."</td><td>".$row["no_ktp"]."</td><td>".$row["kode_negara"]."</td><td>".$row["status"]."</td><td>".$row["tanggungan"]."</td><td>".$row["kode_status"]."</td><td>".$row["jenis_kelamin"]."</td><td>".$row["mulai_kerja"]."</td><td>".$row["akhir_kerja"]."</td><td>".$row["ptkp"]."</td></tr>";
 
-                    //     }
-                    //     echo "</table>";
-                    // }
-                    // else{
-                    //     echo "0 result";
-                    // }
-                    // $conn-> close();
+                        }
+                        echo "</table>";
+                    }
+                    else{
+                        echo "0 result";
+                    }
+                    $conn-> close();
                     ?> 
                 </table>
             </div>

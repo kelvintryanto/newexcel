@@ -86,9 +86,6 @@
                         <th rowspan="2">NILAI DIBAYAR</th>
                     </tr>
                     <tr class="table-head">
-                            <!-- <th rowspan="2">NO.BUKTI POTONG</th>
-                            <th rowspan="2">NO.ID</th>
-                            <th rowspan="2">NAMA KARYAWAN</th> -->
                         <th>CD.JENIS PENGHASILAN</th>
                         <th>KETERANGAN JENIS PENGHASILAN</th>
                         <th>CODE</th>
