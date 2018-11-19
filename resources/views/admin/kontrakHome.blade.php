@@ -47,23 +47,23 @@
 
             <div style="margin-top: 20px; overflow-x: auto; width: 100%;">
                 <table class="table table-hover scrollable" style="font-size: 12px;">
-                    <tr>
-                        <th>No</th>
-                        <th>No.ID</th>
-                        <th>Nama Karyawan</th>
-                        <th>No.NPWP</th>
+                    <tr class="table-head">
+                        <th hidden>No</th>
+                        <th>NO.ID</th>
+                        <th>NAMA KARYAWAN</th>
+                        <th>NO.NPWP</th>
                         <th>NPWP Sejak</th>
-                        <th>CD.Jenis Penghasilan</th>
-                        <th>Nama Jenis Penghasilan</th>
+                        <th>CD.JENIS PENGHASILAN</th>
+                        <th>NAMA JENIS PENGHASILAN</th>
                         <th>Kerja di 1 Tempat</th>
-                        <th>Alamat 1</th>
-                        <th>Alamat 2</th>
+                        <th>ALAMAT 1</th>
+                        <th>ALAMAT 2</th>
                         <th>No.KTP/PASPOR</th>
                         <th>KODE NEGARA</th>
                         <th>STATUS</th>
                         <th>TANGGUNGAN</th>
                         <th>KODE STATUS</th>
-                        <th>Jenis Kelamin(L/P)</th>
+                        <th>JENIS KELAMIN(L/P)</th>
                         <th>MULAI KERJA</th>
                         <th>AKHIR KERJA</th>
                         <th>PTKP/BULAN</th>
@@ -78,7 +78,7 @@
 
                     if ($result-> num_rows > 0) {
                         while ($row = $result-> fetch_assoc()) {
-                            echo "<tr><td>".$row["no"]."</td><td>".$row["no_id"]."</td><td>".$row["nama"]."</td><td>".$row["no_npwp"]."</td><td>".$row["npwp_sejak"]."</td><td>".$row["cd_jenishasil"]."</td><td>".$row["nama_jenishasil"]."</td><td>".$row["kerja_di_1_tempat"]."</td><td>".$row["alamat_1"]."</td><td>".$row["alamat_2"]."</td><td>".$row["no_ktp"]."</td><td>".$row["kode_negara"]."</td><td>".$row["status"]."</td><td>".$row["tanggungan"]."</td><td>".$row["kode_status"]."</td><td>".$row["jenis_kelamin"]."</td><td>".$row["mulai_kerja"]."</td><td>".$row["akhir_kerja"]."</td><td>".$row["ptkp"]."</td></tr>";
+                            echo "<tr><td hidden>".$row["no"]."</td><td>".$row["no_id"]."</td><td>".$row["nama"]."</td><td>".$row["no_npwp"]."</td><td>".$row["npwp_sejak"]."</td><td>".$row["cd_jenishasil"]."</td><td>".$row["nama_jenishasil"]."</td><td>".$row["kerja_di_1_tempat"]."</td><td>".$row["alamat_1"]."</td><td>".$row["alamat_2"]."</td><td>".$row["no_ktp"]."</td><td>".$row["kode_negara"]."</td><td>".$row["status"]."</td><td>".$row["tanggungan"]."</td><td>".$row["kode_status"]."</td><td>".$row["jenis_kelamin"]."</td><td>".$row["mulai_kerja"]."</td><td>".$row["akhir_kerja"]."</td><td>".$row["ptkp"]."</td></tr>";
 
                         }
                         echo "</table>";

@@ -22,7 +22,7 @@
                 <input hidden name="email" type="text" id="email">
                    {{ csrf_field() }}
                     <table id="table" class="table table-hover" style="font-size: 12px;">
-                        <tr>
+                        <tr class="table-head">
                             <th>Nama</th>
                             <th>Gaji</th>
                             <th>Email</th>

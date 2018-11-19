@@ -174,7 +174,7 @@
 
             <div style="margin-top: 20px; overflow-x: auto; width: 100%;">
                 <table class="table table-hover scrollable" style="font-size: 12px;">
-                    <tr>
+                    <tr class="table-head">
                         <th>No</th>
                         <th>NIK</th>
                         <th>Nama</th>

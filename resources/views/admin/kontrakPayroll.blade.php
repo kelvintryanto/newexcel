@@ -49,6 +49,7 @@
             <div style="float: right; padding: 10px;">
                 <b>Bulan</b>
                 <select style="margin-right: 10px;">
+                    <option value="All">All</option>
                     <option value="Januari">Januari</option>
                     <option value="Februari">Februari</option>
                     <option value="Maret">Maret</option>
@@ -73,32 +74,50 @@
             </div>
 
             <div style="margin-top: 20px; overflow-x: auto; width: 100%;">
-                <table class="table table-hover scrollable" style="font-size: 12px;">
-                    <tr>
-                        <th>No</th>
-                        <th>NIK</th>
-                        <th>Nama</th>
-                        <th>Divisi</th>
-                        <th>Keterangan Divisi</th>
-                        <th>Kehadiran</th>
-                        <th>Gaji Pokok</th>
-                        <th>Insentif</th>
-                        <th>Uang Makan</th>
-                        <th>Transport</th>
-                        <th>Asuransi</th>
-                        <th>Lembur</th>
-                        <th>Pengobatan</th>
-                        <th>Lainnya</th>
-                        <th>Pajak</th>
-                        <th>BPJS NON TAX</th>
-                        <th>BPJS TAX</th>
-                        <th>POT.GAJI</th>
-                        <th>NATURA</th>
-                        <th>Bantuan</th>
-                        <th>THR</th>
-                        <th>Sub Total</th>
-                        <th>Bulan</th>
-                        <th>Tahun</th>
+                <table class="table table-hover scrollable" style="font-size: 12px; height">
+                    <tr class="table-head">
+                        <th rowspan="2">NO.BUKTI POTONG</th>
+                        <th rowspan="2">NO.ID</th>
+                        <th rowspan="2">NAMA KARYAWAN</th>
+                        <th colspan="2" style="text-align: center;">JENIS PENGHASILAN</th>
+                        <th colspan="3" style="text-align: center;">CHANNEL & JABATAN</th>
+                        <th colspan="12" style="text-align: center">PENERIMAAN</th>
+                        <th colspan="11" style="text-align: center">POTONGAN</th>
+                        <th rowspan="2">NILAI DIBAYAR</th>
+                    </tr>
+                    <tr class="table-head">
+                            <!-- <th rowspan="2">NO.BUKTI POTONG</th>
+                            <th rowspan="2">NO.ID</th>
+                            <th rowspan="2">NAMA KARYAWAN</th> -->
+                        <th>CD.JENIS PENGHASILAN</th>
+                        <th>KETERANGAN JENIS PENGHASILAN</th>
+                        <th>CODE</th>
+                        <th>CHANNEL</th>
+                        <th>JABATAN</th>
+                        <th>JUMLAH HARI KERJA</th>
+                        <th>COMMISION</th>
+                        <th>OVERRIDE</th>
+                        <th>MONTHLY PERFORMANCE</th>
+                        <th>QUARTERLY PRODUCTION</th>
+                        <th>MONTHLY RECRUIT</th>
+                        <th>OPERATIONAL ALLOWANCE</th>
+                        <th>OTHER ALLOWANCE 1</th>
+                        <th>OTHER ALLOWANCE 2</th>
+                        <th>OTHER ALLOWANCE 3</th>
+                        <th>TAX ALLOWANCE</th>
+                        <th>SUB TOTAL</th>
+                        <th>UANG MUKA</th>
+                        <th>PEMOTONGAN 1</th>
+                        <th>PEMOTONGAN 2</th>
+                        <th>PEMOTONGAN 3</th>
+                        <th>PEMOTONGAN 4</th>
+                        <th>PEMOTONGAN 5</th>
+                        <th>PEMOTONGAN 6</th>
+                        <th>PEMOTONGAN 7</th>
+                        <th>PPH 21/26</th>
+                        <th>SANKSI PAJAK</th>
+                        <th>SUB.TOTAL</th>
+                        
                     </tr>
 
                     <?php

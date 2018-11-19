@@ -47,46 +47,46 @@
 
             <div style="margin-top: 20px; overflow-x: auto; width: 100%;">
                 <table class="table table-hover scrollable" style="font-size: 12px;">
-                    <tr>
-                        <th>No</th>
-                        <th>No.ID</th>
-                        <th>Nama Karyawan</th>
-                        <th>No.NPWP</th>
-                        <th>NPWP Sejak</th>
-                        <th>CD.Jenis Penghasilan</th>
-                        <th>Nama Jenis Penghasilan</th>
-                        <th>Kerja di 1 Tempat</th>
-                        <th>Alamat 1</th>
-                        <th>Alamat 2</th>
-                        <th>No.KTP/PASPOR</th>
+                    <tr class="table-head">
+                        <th>NIK</th>
+                        <th>NAMA KARYAWAN</th>
+                        <th>NO.NPWP</th>
+                        <th>NPWP SEJAK</th>
+                        <th>ALAMAT 1</th>
+                        <th>ALAMAT 2</th>
+                        <th>NO.KTP/Paspor</th>
                         <th>KODE NEGARA</th>
-                        <th>STATUS</th>
-                        <th>TANGGUNGAN</th>
-                        <th>KODE STATUS</th>
-                        <th>Jenis Kelamin(L/P)</th>
+                        <th>STATUS PINDAH</th>
+                        <th>NO.REKENING</th>
+                        <th>BAGIAN</th>
+                        <th>JABATAN</th>
+                        <th>STATUS K;TK;HB</th>
+                        <th>TANGGUNGAN (MAX:3)</th>
+                        <th>L/P</th>
+                        <th>KA</th>
+                        <th>KODE OBJEK PAJAK</th>
                         <th>MULAI KERJA</th>
                         <th>AKHIR KERJA</th>
-                        <th>PTKP/BULAN</th>
                     </tr>
                     <?php
-                    $conn=mysqli_connect("localhost","root","","newexcel");
-                    if($conn->connect_error){
-                        die("Connection failed:". $conn-> connect_error);
-                    }
-                    $sql = "SELECT no,no_id,nama,no_npwp,npwp_sejak,cd_jenishasil,nama_jenishasil,kerja_di_1_tempat,alamat_1,alamat_2,no_ktp,kode_negara,status,tanggungan,kode_status,jenis_kelamin,mulai_kerja,akhir_kerja,ptkp from karyawan";
-                    $result = $conn-> query($sql);
+                    // $conn=mysqli_connect("localhost","root","","newexcel");
+                    // if($conn->connect_error){
+                    //     die("Connection failed:". $conn-> connect_error);
+                    // }
+                    // $sql = "SELECT no,no_id,nama,no_npwp,npwp_sejak,cd_jenishasil,nama_jenishasil,kerja_di_1_tempat,alamat_1,alamat_2,no_ktp,kode_negara,status,tanggungan,kode_status,jenis_kelamin,mulai_kerja,akhir_kerja,ptkp from karyawan";
+                    // $result = $conn-> query($sql);
 
-                    if ($result-> num_rows > 0) {
-                        while ($row = $result-> fetch_assoc()) {
-                            echo "<tr><td>".$row["no"]."</td><td>".$row["no_id"]."</td><td>".$row["nama"]."</td><td>".$row["no_npwp"]."</td><td>".$row["npwp_sejak"]."</td><td>".$row["cd_jenishasil"]."</td><td>".$row["nama_jenishasil"]."</td><td>".$row["kerja_di_1_tempat"]."</td><td>".$row["alamat_1"]."</td><td>".$row["alamat_2"]."</td><td>".$row["no_ktp"]."</td><td>".$row["kode_negara"]."</td><td>".$row["status"]."</td><td>".$row["tanggungan"]."</td><td>".$row["kode_status"]."</td><td>".$row["jenis_kelamin"]."</td><td>".$row["mulai_kerja"]."</td><td>".$row["akhir_kerja"]."</td><td>".$row["ptkp"]."</td></tr>";
+                    // if ($result-> num_rows > 0) {
+                    //     while ($row = $result-> fetch_assoc()) {
+                    //         echo "<tr><td>".$row["no"]."</td><td>".$row["no_id"]."</td><td>".$row["nama"]."</td><td>".$row["no_npwp"]."</td><td>".$row["npwp_sejak"]."</td><td>".$row["cd_jenishasil"]."</td><td>".$row["nama_jenishasil"]."</td><td>".$row["kerja_di_1_tempat"]."</td><td>".$row["alamat_1"]."</td><td>".$row["alamat_2"]."</td><td>".$row["no_ktp"]."</td><td>".$row["kode_negara"]."</td><td>".$row["status"]."</td><td>".$row["tanggungan"]."</td><td>".$row["kode_status"]."</td><td>".$row["jenis_kelamin"]."</td><td>".$row["mulai_kerja"]."</td><td>".$row["akhir_kerja"]."</td><td>".$row["ptkp"]."</td></tr>";
 
-                        }
-                        echo "</table>";
-                    }
-                    else{
-                        echo "0 result";
-                    }
-                    $conn-> close();
+                    //     }
+                    //     echo "</table>";
+                    // }
+                    // else{
+                    //     echo "0 result";
+                    // }
+                    // $conn-> close();
                     ?> 
                 </table>
             </div>

@@ -23,7 +23,7 @@
                    {{ csrf_field() }}
                     <table id="table" class="table table-hover" style="font-size: 12px;">
                         <!-- kalo ada tambahan edit di sini -->
-                        <tr>
+                        <tr class="table-head">
                             <th>Nama</th>
                             <th hidden>Gaji</th>
                             <th>Email</th>
