@@ -47,6 +47,8 @@
             
             <!-- Pemilihan Bulan dan Tahun -->
             <div style="float: right; padding: 10px;">
+                <form action="{{route('payroll')}}" method="POST">
+                {{ csrf_field() }}
                 <b>Bulan</b>
                 <select style="margin-right: 10px;">
                     <option value="All">All</option>
@@ -70,7 +72,9 @@
                     <option value="2019">2019</option>
                     <option value="2020">2020</option>
                     <option value="2021">2021</option>
-                </select>             
+                </select>
+                <input type="submit" name="search" value="Filter">
+                </form>
             </div>
 
             <div style="margin-top: 20px; overflow-x: auto; width: 100%;">

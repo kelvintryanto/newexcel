@@ -15,6 +15,40 @@
                     <div>{{Session::get('alert-success')}}</div>
                 </div>
                 @endif
+
+            <!-- Pemilihan Bulan dan Tahun Sending Email Karyawan Tetap -->
+            <div style="float: right; padding: 10px;">
+                <form action="{{route('payroll')}}" method="POST">
+                {{ csrf_field() }}
+                <b>Bulan</b>
+                <select style="margin-right: 10px;">
+                    <option value="All">All</option>
+                    <option value="Januari">Januari</option>
+                    <option value="Februari">Februari</option>
+                    <option value="Maret">Maret</option>
+                    <option value="April">April</option>
+                    <option value="Mei">Mei</option>
+                    <option value="Juni">Juni</option>
+                    <option value="Juli">Juli</option>
+                    <option value="Agustus">Agustus</option>
+                    <option value="September">September</option>
+                    <option value="Oktober">Oktober</option>
+                    <option value="November">November</option>
+                    <option value="Desember">Desember</option>
+                </select>
+
+                <b>Tahun</b>
+                <select>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </select>
+                <input type="submit" name="search" value="Filter">
+                </form>
+            </div>
+
+            <!-- Table Sending Email Karyawan Tetap-->
             <div>
                 <form action="{{ route('sendEmail') }}" method="POST" enctype="multipart/form-data">
                 <input hidden name="nama" type="text" id="nama">
@@ -24,10 +58,10 @@
                     <table id="table" class="table table-hover" style="font-size: 12px;">
                         <!-- kalo ada tambahan edit di sini -->
                         <tr class="table-head">
-                            <th>Nama</th>
+                            <th style="text-align: center;">Nama</th>
                             <th hidden>Gaji</th>
-                            <th>Email</th>
-                            <th>Send Email</th>
+                            <th style="text-align: center;">Email</th>
+                            <th style="text-align: center;">Send Email</th>
                         </tr>
                         <?php
                         $conn=mysqli_connect("localhost","root","","newexcel");
@@ -44,7 +78,7 @@
                                 echo '<tr><td id="nama">'.$row["nama"].'</td>
                                     <td hidden id="ptkp" data-id1="'.$row["nama"].'">'.$row["ptkp"].'</td>
                                     <td id="email" data-id2="'.$row["nama"].'">'.$row["email"].'</td>
-                                    <td><button name="btn_send" id="btn_send" data-id3="'.$row["nama"].'">send</button></td></tr>';
+                                    <td style="text-align: center;"><button name="btn_send" id="btn_send" data-id3="'.$row["nama"].'">send</button></td></tr>';
 
 
                                /* echo "<tr><td>".$row["nama"]."</td><td>".$row["ptkp"]."</td><td>".$row["email"]."</td><td>"."<button name="btn_send" id="btn_send" data-id3="'.$row["name"].'">send</button>"."</td></tr>";*/
