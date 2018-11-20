@@ -51,8 +51,6 @@
                         <th rowspan="2" style="text-align: center;">NIK</th>
                         <th rowspan="2" style="text-align: center;">NAMA KARYAWAN</th>
                         <th colspan="2" style="text-align: center;">NPWP</th>
-                        <th rowspan="2" style="text-align: center;">NO.</th>
-                        <th rowspan="2" style="text-align: center;">SEJAK</th>
                         <th rowspan="2" style="text-align: center;">ALAMAT 1</th>
                         <th rowspan="2" style="text-align: center;">ALAMAT 2</th>
                         <th rowspan="2" style="text-align: center;">NO.KTP/Paspor</th>
