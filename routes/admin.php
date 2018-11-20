@@ -60,13 +60,3 @@ Route::get('/kontrakSendEmail', function () {
 
     return view('admin.kontrakSendEmail');
 })->name('kontrakSendEmail');
-
-Route::get('/import_parse', function () {
-    $users[] = Auth::user();
-    $users[] = Auth::guard()->user();
-    $users[] = Auth::guard('admin')->user();
-
-    //dd($users);
-
-    return view('admin.import_fields');
-})->name('import_parse');
