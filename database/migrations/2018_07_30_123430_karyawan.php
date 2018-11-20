@@ -14,12 +14,11 @@ class Karyawan extends Migration
     public function up()
     {
         Schema::create('karyawan', function (Blueprint $table) {
+            $table->increments('no');
             $table->string('no_id')->nullable();
             $table->string('nama')->nullable();
             $table->string('no_npwp')->nullable();
             $table->string('npwp_sejak')->nullable();
-            $table->increments('no_urut');
-            $table->string('sejak')->nullable();
             $table->string('alamat_1')->nullable();
             $table->string('alamat_2')->nullable();
             $table->string('no_ktp')->nullable();

@@ -236,7 +236,6 @@ return [
         'nama',
         'no_npwp',
         'npwp_sejak',
-        'sejak',
         'alamat_1',
         'alamat_2',
         'no_ktp',
@@ -290,6 +289,27 @@ return [
         'sub_total',
         'bulan',
         'tahun'
+    ],
+
+    'db_fieldsKontrak'=> [
+        'no_id',
+        'nama',
+        'no_npwp',
+        'npwp_sejak',
+        'cd_jenishasil',
+        'nama_jenishasil',
+        'kerja_di_1_tempat',
+        'alamat_1',
+        'alamat_2',
+        'no_ktp',
+        'kode_negara',
+        'status',
+        'tanggungan',
+        'kode_status',
+        'jenis_kelamin',
+        'mulai_kerja',
+        'akhir_kerja',
+        'ptkp'
     ]
 
 ];
