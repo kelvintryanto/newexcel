@@ -177,7 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        cucxabeng\HtmlDom\HtmlDomServiceProvider::class,
+
 
     ],
 
@@ -228,7 +228,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        'HtmlDom' => cucxabeng\HtmlDom\HtmlDom::class,
 
     ],
 
@@ -237,20 +236,36 @@ return [
         'nama',
         'no_npwp',
         'npwp_sejak',
-        'cd_jenishasil',
-        'nama_jenishasil',
-        'kerja_di_1_tempat',
+        'sejak',
         'alamat_1',
         'alamat_2',
         'no_ktp',
         'kode_negara',
-        'status',
+        'status_pindah',
+        'no_rekening',
+        'bagian',
+        'jabatan',
+        'status_k_tk_hb',
         'tanggungan',
-        'kode_status',
         'jenis_kelamin',
+        'ka',
+        'kode_objek_pajak',
         'mulai_kerja',
         'akhir_kerja',
-        'ptkp'
+        'kend',
+        'rumah',
+        'obat',
+        'uang',
+        'lain',
+        'pl_obat',
+        'gaji',
+        'tanggal_in',
+        'jml_bulan_in',
+        'pengh_in',
+        'pph_in',
+        'tanggal_out',
+        'bulan_out',
+        'tanggal_lahir'
     ],
 
     'db_payrolls'=> [

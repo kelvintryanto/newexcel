@@ -59,7 +59,7 @@ class ImportController extends Controller
             if(DB::table('karyawan')->where('no_id', '=', $contact->no_id)->count() > 0) //CHECK WHETHER ID IS EXIST IN DATABASE
             {//EXIST
                 //UPDATE
-                $success = Contact::UpdateContact($temp->no,$contact->no_id,$contact->nama,$contact->no_npwp,$contact->npwp_sejak,$contact->cd_jenishasil,$contact->nama_jenishasil,$contact->kerja_di_1_tempat,$contact->alamat_1,$contact->alamat_2,$contact->no_ktp,$contact->kode_negara,$contact->status,$contact->tanggungan,$contact->kode_status,$contact->jenis_kelamin,$contact->mulai_kerja,$contact->akhir_kerja,$contact->ptkp);
+                $success = Contact::UpdateContact($contact->no_id,$contact->nama,$contact->no_npwp,$contact->npwp_sejak,$temp->no_urut,$contact->sejak,$contact->alamat_1,$contact->alamat_2,$contact->no_ktp,$contact->kode_negara,$contact->status_pindah,$contact->no_rekening,$contact->bagian,$contact->jabatan,$contact->status_k_tk_hb,$contact->tanggungan,$contact->jenis_kelamin,$contact->ka,$contact->kode_objek_pajak,$contact->mulai_kerja,$contact->akhir_kerja,$contact->kend,$contact->rumah,$contact->obat,$contact->uang,$contact->lain,$contact->pl_obat,$contact->gaji,$contact->tanggal_in,$contact->jml_bulan_in,$contact->pengh_in,$contact->pph_in,$contact->tanggal_out,$contact->bulan_out,$contact->tanggal_lahir);
             }
             else
             {//DOES NOT EXIST

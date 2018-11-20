@@ -68,7 +68,7 @@
                         if($conn->connect_error){
                             die("Connection failed:". $conn-> connect_error);
                         }
-                        $sql = "SELECT nama,ptkp,email from karyawan, users WHERE karyawan.nama = users.name";
+                        $sql = "SELECT nama,gaji,email from karyawan, users WHERE karyawan.nama = users.name";
                         $result = $conn-> query($sql);
 
 
