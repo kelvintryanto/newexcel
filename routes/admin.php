@@ -68,5 +68,5 @@ Route::get('/import_parse', function () {
 
     //dd($users);
 
-    return view('import_fields');
+    return view('admin.import_fields');
 })->name('import_parse');
