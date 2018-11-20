@@ -8,7 +8,7 @@
             <div>
                 <button class="accordion">Upload Karyawan <span class="caret"></span></button>
                 <div class="panel-accordion">
-                    <form class="form-horizontal" method="POST" action="{{ route('import_parse') }}" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="POST" action="{{ route('import_parseKaryawanKontrak') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('csv_file') ? ' has-error' : '' }}">
                             <label for="csv_file" class="col-md-4 control-label">CSV file to import</label>
@@ -79,7 +79,7 @@
                     if($conn->connect_error){
                         die("Connection failed:". $conn-> connect_error);
                     }
-                    $sql = "SELECT no,no_id,nama,no_npwp,npwp_sejak,cd_jenishasil,nama_jenishasil,kerja_di_1_tempat,alamat_1,alamat_2,no_ktp,kode_negara,status,tanggungan,kode_status,jenis_kelamin,mulai_kerja,akhir_kerja,ptkp from karyawan";
+                    $sql = "SELECT no,no_id,nama,no_npwp,npwp_sejak,cd_jenishasil,nama_jenishasil,kerja_di_1_tempat,alamat_1,alamat_2,no_ktp,kode_negara,status,tanggungan,kode_status,jenis_kelamin,mulai_kerja,akhir_kerja,ptkp from karyawankontrak";
                     $result = $conn-> query($sql);
 
                     if ($result-> num_rows > 0) {

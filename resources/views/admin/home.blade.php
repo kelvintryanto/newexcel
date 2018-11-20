@@ -95,12 +95,12 @@
                     if($conn->connect_error){
                         die("Connection failed:". $conn-> connect_error);
                     }
-                    $sql = "SELECT no,no_id,nama,no_npwp,npwp_sejak,cd_jenishasil,nama_jenishasil,kerja_di_1_tempat,alamat_1,alamat_2,no_ktp,kode_negara,status,tanggungan,kode_status,jenis_kelamin,mulai_kerja,akhir_kerja,ptkp from karyawan";
+                    $sql = "SELECT no_id,nama,no_npwp,npwp_sejak,alamat_1,alamat_2,no_ktp,kode_negara,status_pindah,no_rekening,bagian,jabatan,status_k_tk_hb,tanggungan,jenis_kelamin,ka,kode_objek_pajak,mulai_kerja,akhir_kerja,kend,rumah,obat,uang,lain,pl_obat,gaji,tanggal_in,jml_bulan_in,pengh_in,pph_in,tanggal_out,bulan_out,tanggal_lahir FROM karyawan";
                     $result = $conn-> query($sql);
 
                     if ($result-> num_rows > 0) {
                         while ($row = $result-> fetch_assoc()) {
-                            echo "<tr><td>".$row["no"]."</td><td>".$row["no_id"]."</td><td>".$row["nama"]."</td><td>".$row["no_npwp"]."</td><td>".$row["npwp_sejak"]."</td><td>".$row["cd_jenishasil"]."</td><td>".$row["nama_jenishasil"]."</td><td>".$row["kerja_di_1_tempat"]."</td><td>".$row["alamat_1"]."</td><td>".$row["alamat_2"]."</td><td>".$row["no_ktp"]."</td><td>".$row["kode_negara"]."</td><td>".$row["status"]."</td><td>".$row["tanggungan"]."</td><td>".$row["kode_status"]."</td><td>".$row["jenis_kelamin"]."</td><td>".$row["mulai_kerja"]."</td><td>".$row["akhir_kerja"]."</td><td>".$row["ptkp"]."</td></tr>";
+                            echo "<tr><td>".$row["no_id"]."</td><td>".$row["nama"]."</td><td>".$row["no_npwp"]."</td><td>".$row["npwp_sejak"]."</td><td>".$row["alamat_1"]."</td><td>".$row["alamat_2"]."</td><td>".$row["no_ktp"]."</td><td>".$row["kode_negara"]."</td><td>".$row["status_pindah"]."</td><td>".$row["no_rekening"]."</td><td>".$row["bagian"]."</td><td>".$row["jabatan"]."</td><td>".$row["status_k_tk_hb"]."</td><td>".$row["tanggungan"]."</td><td>".$row["jenis_kelamin"]."</td><td>".$row["ka"]."</td><td>".$row["kode_objek_pajak"]."</td><td>".$row["mulai_kerja"]."</td><td>".$row["akhir_kerja"]."</td><td>".$row["kend"]."</td><td>".$row["rumah"]."</td><td>".$row["obat"]."</td><td>".$row["uang"]."</td><td>".$row["lain"]."</td><td>".$row["pl_obat"]."</td><td>".$row["gaji"]."</td><td>".$row["tanggal_in"]."</td><td>".$row["jml_bulan_in"]."</td><td>".$row["pengh_in"]."</td><td>".$row["pph_in"]."</td><td>".$row["tanggal_out"]."</td><td>".$row["bulan_out"]."</td><td>".$row["tanggal_lahir"]."</td></tr>";
 
                         }
                         echo "</table>";
