@@ -80,9 +80,9 @@
             <div style="margin-top: 20px; overflow-x: auto; width: 100%;">
                 <table class="table table-hover scrollable" style="font-size: 12px; height">
                     <tr class="table-head">
-                        <th rowspan="2">NO.BUKTI POTONG</th>
-                        <th rowspan="2">NO.ID</th>
-                        <th rowspan="2">NAMA KARYAWAN</th>
+                        <th rowspan="2" style="text-align: center;">NO.BUKTI POTONG</th>
+                        <th rowspan="2" style="text-align: center;">NO.ID</th>
+                        <th rowspan="2" style="text-align: center;">NAMA KARYAWAN</th>
                         <th colspan="2" style="text-align: center;">JENIS PENGHASILAN</th>
                         <th colspan="3" style="text-align: center;">CHANNEL & JABATAN</th>
                         <th colspan="12" style="text-align: center">PENERIMAAN</th>
@@ -90,34 +90,34 @@
                         <th rowspan="2">NILAI DIBAYAR</th>
                     </tr>
                     <tr class="table-head">
-                        <th>CD.JENIS PENGHASILAN</th>
-                        <th>KETERANGAN JENIS PENGHASILAN</th>
-                        <th>CODE</th>
-                        <th>CHANNEL</th>
-                        <th>JABATAN</th>
-                        <th>JUMLAH HARI KERJA</th>
-                        <th>COMMISION</th>
-                        <th>OVERRIDE</th>
-                        <th>MONTHLY PERFORMANCE</th>
-                        <th>QUARTERLY PRODUCTION</th>
-                        <th>MONTHLY RECRUIT</th>
-                        <th>OPERATIONAL ALLOWANCE</th>
-                        <th>OTHER ALLOWANCE 1</th>
-                        <th>OTHER ALLOWANCE 2</th>
-                        <th>OTHER ALLOWANCE 3</th>
-                        <th>TAX ALLOWANCE</th>
-                        <th>SUB TOTAL</th>
-                        <th>UANG MUKA</th>
-                        <th>PEMOTONGAN 1</th>
-                        <th>PEMOTONGAN 2</th>
-                        <th>PEMOTONGAN 3</th>
-                        <th>PEMOTONGAN 4</th>
-                        <th>PEMOTONGAN 5</th>
-                        <th>PEMOTONGAN 6</th>
-                        <th>PEMOTONGAN 7</th>
-                        <th>PPH 21/26</th>
-                        <th>SANKSI PAJAK</th>
-                        <th>SUB.TOTAL</th>
+                        <th style="text-align: center;">CD.JENIS PENGHASILAN</th>
+                        <th style="text-align: center;">KETERANGAN JENIS PENGHASILAN</th>
+                        <th style="text-align: center;">CODE</th>
+                        <th style="text-align: center;">CHANNEL</th>
+                        <th style="text-align: center;">JABATAN</th>
+                        <th style="text-align: center;">JUMLAH HARI KERJA</th>
+                        <th style="text-align: center;">COMMISION</th>
+                        <th style="text-align: center;">OVERRIDE</th>
+                        <th style="text-align: center;">MONTHLY PERFORMANCE</th>
+                        <th style="text-align: center;">QUARTERLY PRODUCTION</th>
+                        <th style="text-align: center;">MONTHLY RECRUIT</th>
+                        <th style="text-align: center;">OPERATIONAL ALLOWANCE</th>
+                        <th style="text-align: center;">OTHER ALLOWANCE 1</th>
+                        <th style="text-align: center;">OTHER ALLOWANCE 2</th>
+                        <th style="text-align: center;">OTHER ALLOWANCE 3</th>
+                        <th style="text-align: center;">TAX ALLOWANCE</th>
+                        <th style="text-align: center;">SUB TOTAL</th>
+                        <th style="text-align: center;">UANG MUKA</th>
+                        <th style="text-align: center;">PEMOTONGAN 1</th>
+                        <th style="text-align: center;">PEMOTONGAN 2</th>
+                        <th style="text-align: center;">PEMOTONGAN 3</th>
+                        <th style="text-align: center;">PEMOTONGAN 4</th>
+                        <th style="text-align: center;">PEMOTONGAN 5</th>
+                        <th style="text-align: center;">PEMOTONGAN 6</th>
+                        <th style="text-align: center;">PEMOTONGAN 7</th>
+                        <th style="text-align: center;">PPH 21/26</th>
+                        <th style="text-align: center;">SANKSI PAJAK</th>
+                        <th style="text-align: center;">SUB.TOTAL</th>
                         
                     </tr>
 

@@ -67,12 +67,12 @@
                         <th rowspan="2" style="text-align: center;">PTKP/BULAN</th>
                     </tr>
                     <tr class="table-head">
-                        <th>NO.</th>
-                        <th>SEJAK</th>
-                        <th>CD.</th>
-                        <th>NAMA</th>
-                        <th>Y/T</th>
-                        <th>(DIISI BILA WP LN)</th>
+                        <th style="text-align: center;">NO.</th>
+                        <th style="text-align: center;">SEJAK</th>
+                        <th style="text-align: center;">CD.</th>
+                        <th style="text-align: center;">NAMA</th>
+                        <th style="text-align: center;">Y/T</th>
+                        <th style="text-align: center;">(DIISI BILA WP LN)</th>
                     </tr>
                     <?php
                     $conn=mysqli_connect("localhost","root","","newexcel");
