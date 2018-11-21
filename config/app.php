@@ -310,6 +310,44 @@ return [
         'mulai_kerja',
         'akhir_kerja',
         'ptkp'
+    ],
+
+    'db_fieldsPayrollKontrak'=> [
+
+        'nbp',
+        'no_id',
+        'nama',
+        'cd_jenispenghasilan',
+        'keterangan_jenispenghasilan',
+        'code',
+        'channel',
+        'jabatan',
+        'jmlhari',
+        'commision',
+        'override',
+        'monthlyperformance',
+        'quarterlyproduction',
+        'monthlyrecruit',
+        'operationalallowance',
+        'allowance1',
+        'allowance2',
+        'allowance3',
+        'tax_allowance',
+        'subtotal_penerimaan',
+        'uangmuka',
+        'pemotongan1',
+        'pemotongan2',
+        'pemotongan3',
+        'pemotongan4',
+        'pemotongan5',
+        'pemotongan6',
+        'pemotongan7',
+        'pph2126',
+        'sanksipajak',
+        'subtotal_potongan',
+        'nilaidibayar',
+        'bulan',
+        'tahun'
     ]
 
 ];

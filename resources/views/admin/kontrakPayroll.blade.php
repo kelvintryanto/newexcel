@@ -8,7 +8,7 @@
             <div>
                 <button class="accordion">Upload Payroll<span class="caret"></span></button>
                 <div class="panel-accordion">
-                    <form class="form-horizontal" method="POST" action="{{ route('import_parsePayroll') }}" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="POST" action="{{ route('import_parsePayrollKontrak') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('csv_file') ? ' has-error' : '' }}">
                             <label for="csv_file" class="col-md-4 control-label">CSV file to import</label>
@@ -126,12 +126,12 @@
                     if($conn->connect_error){
                         die("Connection failed:". $conn-> connect_error);
                     }
-                    $sql = "SELECT no,nik,nama,divisi,keterangan_divisi,kehadiran,gaji_pokok,insentif,uang_makan,transport,asuransi,lembur,pengobatan,lain,pajak,bpjs_non_tax,bpjs_tax,pot_gaji,natura,bantuan,thr,sub_total,bulan,tahun from payroll";
+                    $sql = "SELECT nbp,no_id,nama,cd_jenispenghasilan,keterangan_jenispenghasilan,code,channel,jabatan,jmlhari,commision,override,monthlyperformance,quarterlyproduction,monthlyrecruit,operationalallowance,allowance1,allowance2,allowance3,tax_allowance,subtotal_penerimaan,uangmuka,pemotongan1,pemotongan2,pemotongan3,pemotongan4,pemotongan5,pemotongan6,pemotongan7,pph2126,sanksipajak,subtotal_potongan,nilaidibayar,bulan,tahun from payrollkontrak";
                     $result = $conn-> query($sql);
 
                     if ($result-> num_rows > 0) {
                         while ($row = $result-> fetch_assoc()) {
-                            echo "<tr><td>".$row["no"]."</td><td>".$row["nik"]."</td><td>".$row["nama"]."</td><td>".$row["divisi"]."</td><td>".$row["keterangan_divisi"]."</td><td>".$row["kehadiran"]."</td><td>".$row["gaji_pokok"]."</td><td>".$row["insentif"]."</td><td>".$row["uang_makan"]."</td><td>".$row["transport"]."</td><td>".$row["asuransi"]."</td><td>".$row["lembur"]."</td><td>".$row["pengobatan"]."</td><td>".$row["lain"]."</td><td>".$row["pajak"]."</td><td>".$row["bpjs_non_tax"]."</td><td>".$row["bpjs_tax"]."</td><td>".$row["pot_gaji"]."</td><td>".$row["natura"]."</td><td>".$row["bantuan"]."</td><td>".$row["thr"]."</td><td>".$row["sub_total"]."</td><td>".$row["bulan"]."</td><td>".$row["tahun"]."</td></tr>";
+                            echo "<tr><td>".$row["nbp"]."</td><td>".$row["no_id"]."</td><td>".$row["nama"]."</td><td>".$row["cd_jenispenghasilan"]."</td><td>".$row["keterangan_jenispenghasilan"]."</td><td>".$row["code"]."</td><td>".$row["channel"]."</td><td>".$row["jabatan"]."</td><td>".$row["jmlhari"]."</td><td>".$row["commision"]."</td><td>".$row["override"]."</td><td>".$row["monthlyperformance"]."</td><td>".$row["quarterlyproduction"]."</td><td>".$row["monthlyrecruit"]."</td><td>".$row["operationalallowance"]."</td><td>".$row["allowance1"]."</td><td>".$row["allowance2"]."</td><td>".$row["allowance3"]."</td><td>".$row["tax_allowance"]."</td><td>".$row["subtotal_penerimaan"]."</td><td>".$row["uangmuka"]."</td><td>".$row["pemotongan1"]."</td><td>".$row["pemotongan2"]."</td><td>".$row["pemotongan3"]."</td><td>".$row["pemotongan4"]."</td><td>".$row["pemotongan5"]."</td><td>".$row["pemotongan6"]."</td><td>".$row["pemotongan7"]."</td><td>".$row["pph2126"]."</td><td>".$row["sanksipajak"]."</td><td>".$row["subtotal_potongan"]."</td><td>".$row["nilaidibayar"]."</td><td>".$row["bulan"]."</td><td>".$row["tahun"]."</td></tr>";
 
                         }
                         echo "</table>";
