@@ -44,36 +44,154 @@
                     </form>
                 </div>
             </div>
+
+            <?php
+
+            $dsn = 'mysql:host=localhost;dbname=newexcel';
+            $username = 'root';
+            $password = '';
+
+            try{
+                $con = new PDO($dsn, $username,$password);
+                $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            }catch(Exception $ex){
+
+                echo 'Not Connected '.$ex->getMessage();
+            }
+
+            $tableContent = '';
+            $start = '';
+            $second = '';
+            $selectStmt = $con->prepare('SELECT * FROM payrollkontrak');
+            $selectStmt->execute();
+            $users = $selectStmt->fetchAll();
+
+            foreach ($users as $user) {
+                
+                $tableContent = $tableContent.'<tr>'.
+                '<td>'.$user['nbp'].'</td>'.
+                '<td>'.$user['no_id'].'</td>'.
+                '<td>'.$user['nama'].'</td>'.
+                '<td>'.$user['cd_jenispenghasilan'].'</td>'.
+                '<td>'.$user['keterangan_jenispenghasilan'].'</td>'.
+                '<td>'.$user['code'].'</td>'.
+                '<td>'.$user['channel'].'</td>'.
+                '<td>'.$user['jabatan'].'</td>'.
+                '<td>'.$user['jmlhari'].'</td>'.
+                '<td>'.$user['commision'].'</td>'.
+                '<td>'.$user['override'].'</td>'.
+                '<td>'.$user['monthlyperformance'].'</td>'.
+                '<td>'.$user['quarterlyproduction'].'</td>'.
+                '<td>'.$user['monthlyrecruit'].'</td>'.
+                '<td>'.$user['operationalallowance'].'</td>'.
+                '<td>'.$user['allowance1'].'</td>'.
+                '<td>'.$user['allowance2'].'</td>'.
+                '<td>'.$user['allowance3'].'</td>'.
+                '<td>'.$user['tax_allowance'].'</td>'.
+                '<td>'.$user['subtotal_penerimaan'].'</td>'.
+                '<td>'.$user['uangmuka'].'</td>'.
+                '<td>'.$user['pemotongan1'].'</td>'.
+                '<td>'.$user['pemotongan2'].'</td>'.
+                '<td>'.$user['pemotongan3'].'</td>'.
+                '<td>'.$user['pemotongan4'].'</td>'.
+                '<td>'.$user['pemotongan5'].'</td>'.
+                '<td>'.$user['pemotongan6'].'</td>'.
+                '<td>'.$user['pemotongan7'].'</td>'.
+                '<td>'.$user['pph2126'].'</td>'.
+                '<td>'.$user['sanksipajak'].'</td>'.
+                '<td>'.$user['subtotal_potongan'].'</td>'.
+                '<td>'.$user['nilaidibayar'].'</td>'.
+                '<td>'.$user['bulan'].'</td>'.
+                '<td>'.$user['tahun'].'</td>';
+            }
+
+            if(isset($_POST['search']))
+            {
+
+                $start = $_POST['start'];
+                $second = $_POST['second'];
+                $tableContent = '';
+                $selectStmt = $con->prepare('SELECT * FROM payrollkontrak WHERE bulan like :start AND tahun like :second');
+                $selectStmt->execute(array(
+                    ':start'=>$start,
+                    ':second'=>$second
+                ));
+                $users = $selectStmt->fetchAll();
+
+                foreach ($users as $user) {
+                    
+                    $tableContent = $tableContent.'<tr>'.
+                    '<td>'.$user['nbp'].'</td>'.
+                    '<td>'.$user['no_id'].'</td>'.
+                    '<td>'.$user['nama'].'</td>'.
+                    '<td>'.$user['cd_jenispenghasilan'].'</td>'.
+                    '<td>'.$user['keterangan_jenispenghasilan'].'</td>'.
+                    '<td>'.$user['code'].'</td>'.
+                    '<td>'.$user['channel'].'</td>'.
+                    '<td>'.$user['jabatan'].'</td>'.
+                    '<td>'.$user['jmlhari'].'</td>'.
+                    '<td>'.$user['commision'].'</td>'.
+                    '<td>'.$user['override'].'</td>'.
+                    '<td>'.$user['monthlyperformance'].'</td>'.
+                    '<td>'.$user['quarterlyproduction'].'</td>'.
+                    '<td>'.$user['monthlyrecruit'].'</td>'.
+                    '<td>'.$user['operationalallowance'].'</td>'.
+                    '<td>'.$user['allowance1'].'</td>'.
+                    '<td>'.$user['allowance2'].'</td>'.
+                    '<td>'.$user['allowance3'].'</td>'.
+                    '<td>'.$user['tax_allowance'].'</td>'.
+                    '<td>'.$user['subtotal_penerimaan'].'</td>'.
+                    '<td>'.$user['uangmuka'].'</td>'.
+                    '<td>'.$user['pemotongan1'].'</td>'.
+                    '<td>'.$user['pemotongan2'].'</td>'.
+                    '<td>'.$user['pemotongan3'].'</td>'.
+                    '<td>'.$user['pemotongan4'].'</td>'.
+                    '<td>'.$user['pemotongan5'].'</td>'.
+                    '<td>'.$user['pemotongan6'].'</td>'.
+                    '<td>'.$user['pemotongan7'].'</td>'.
+                    '<td>'.$user['pph2126'].'</td>'.
+                    '<td>'.$user['sanksipajak'].'</td>'.
+                    '<td>'.$user['subtotal_potongan'].'</td>'.
+                    '<td>'.$user['nilaidibayar'].'</td>'.
+                    '<td>'.$user['bulan'].'</td>'.
+                    '<td>'.$user['tahun'].'</td>';
+
+                }
+
+
+            }
+
+            ?>
             
             <!-- Pemilihan Bulan dan Tahun -->
             <div style="float: right; padding: 10px;">
                 <form action="{{route('payroll')}}" method="POST">
-                {{ csrf_field() }}
-                <b>Bulan</b>
-                <select style="margin-right: 10px;">
-                    <option value="All">All</option>
-                    <option value="Januari">Januari</option>
-                    <option value="Februari">Februari</option>
-                    <option value="Maret">Maret</option>
-                    <option value="April">April</option>
-                    <option value="Mei">Mei</option>
-                    <option value="Juni">Juni</option>
-                    <option value="Juli">Juli</option>
-                    <option value="Agustus">Agustus</option>
-                    <option value="September">September</option>
-                    <option value="Oktober">Oktober</option>
-                    <option value="November">November</option>
-                    <option value="Desember">Desember</option>
-                </select>
+                    {{ csrf_field() }}
+                    <b>Bulan</b>
+                    <select style="margin-right: 10px;" name="start" style="margin-right: 10px;">
+                        <option value="All">All</option>
+                        <option value="1" <?php if($start == '1') {echo 'selected';} ?>>Januari</option>
+                        <option value="2" <?php if($start == '2') {echo 'selected';} ?>>Februari</option>
+                        <option value="3" <?php if($start == '3') {echo 'selected';} ?>>Maret</option>
+                        <option value="4" <?php if($start == '4') {echo 'selected';} ?>>April</option>
+                        <option value="5" <?php if($start == '5') {echo 'selected';} ?>>Mei</option>
+                        <option value="6" <?php if($start == '6') {echo 'selected';} ?>>Juni</option>
+                        <option value="7" <?php if($start == '7') {echo 'selected';} ?>>Juli</option>
+                        <option value="8" <?php if($start == '8') {echo 'selected';} ?>>Agustus</option>
+                        <option value="9" <?php if($start == '9') {echo 'selected';} ?>>September</option>
+                        <option value="10" <?php if($start == '10') {echo 'selected';} ?>>Oktober</option>
+                        <option value="11" <?php if($start == '11') {echo 'selected';} ?>>November</option>
+                        <option value="12" <?php if($start == '12') {echo 'selected';} ?>>Desember</option>
+                    </select>
 
-                <b>Tahun</b>
-                <select>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                </select>
-                <input type="submit" name="search" value="Filter">
+                    <b>Tahun</b>
+                    <select id="tahun" name="second">
+                        <option value="2018" <?php if($second == '2018') {echo 'selected';} ?>>2018</option>
+                        <option value="2019" <?php if($second == '2019') {echo 'selected';} ?>>2019</option>
+                        <option value="2020" <?php if($second == '2020') {echo 'selected';} ?>>2020</option>
+                        <option value="2021" <?php if($second == '2021') {echo 'selected';} ?>>2021</option>
+                    </select>
+                    <input type="submit" name="search" value="Filter">
                 </form>
             </div>
 
@@ -124,24 +242,9 @@
                     </tr>
 
                     <?php
-                    $conn=mysqli_connect("localhost","root","","newexcel");
-                    if($conn->connect_error){
-                        die("Connection failed:". $conn-> connect_error);
-                    }
-                    $sql = "SELECT nbp,no_id,nama,cd_jenispenghasilan,keterangan_jenispenghasilan,code,channel,jabatan,jmlhari,commision,override,monthlyperformance,quarterlyproduction,monthlyrecruit,operationalallowance,allowance1,allowance2,allowance3,tax_allowance,subtotal_penerimaan,uangmuka,pemotongan1,pemotongan2,pemotongan3,pemotongan4,pemotongan5,pemotongan6,pemotongan7,pph2126,sanksipajak,subtotal_potongan,nilaidibayar,bulan,tahun from payrollkontrak";
-                    $result = $conn-> query($sql);
 
-                    if ($result-> num_rows > 0) {
-                        while ($row = $result-> fetch_assoc()) {
-                            echo "<tr><td>".$row["nbp"]."</td><td>".$row["no_id"]."</td><td>".$row["nama"]."</td><td>".$row["cd_jenispenghasilan"]."</td><td>".$row["keterangan_jenispenghasilan"]."</td><td>".$row["code"]."</td><td>".$row["channel"]."</td><td>".$row["jabatan"]."</td><td>".$row["jmlhari"]."</td><td>".$row["commision"]."</td><td>".$row["override"]."</td><td>".$row["monthlyperformance"]."</td><td>".$row["quarterlyproduction"]."</td><td>".$row["monthlyrecruit"]."</td><td>".$row["operationalallowance"]."</td><td>".$row["allowance1"]."</td><td>".$row["allowance2"]."</td><td>".$row["allowance3"]."</td><td>".$row["tax_allowance"]."</td><td>".$row["subtotal_penerimaan"]."</td><td>".$row["uangmuka"]."</td><td>".$row["pemotongan1"]."</td><td>".$row["pemotongan2"]."</td><td>".$row["pemotongan3"]."</td><td>".$row["pemotongan4"]."</td><td>".$row["pemotongan5"]."</td><td>".$row["pemotongan6"]."</td><td>".$row["pemotongan7"]."</td><td>".$row["pph2126"]."</td><td>".$row["sanksipajak"]."</td><td>".$row["subtotal_potongan"]."</td><td>".$row["nilaidibayar"]."</td><td>".$row["bulan"]."</td><td>".$row["tahun"]."</td></tr>";
+                    echo $tableContent;
 
-                        }
-                        echo "</table>";
-                    }
-                    else{
-                        echo "0 result";
-                    }
-                    $conn-> close();
                     ?>
                 </table>
             </div>

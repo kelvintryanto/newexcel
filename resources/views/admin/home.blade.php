@@ -68,9 +68,9 @@
                         <th rowspan="2" style="text-align: center;">AKHIR KERJA</th>
                         <th colspan="6" style="text-align: center;">TUNJANGAN</th>
                         <th style="text-align: center;">GAJI</th>
-                        <th colspan="4">DISETAHUNKAN-IN</th>
-                        <th colspan="2">DISETAHUNKAN-OUT</th>
-                        <th rowspan="2">TANGGAL LAHIR</th>
+                        <th colspan="4" style="text-align: center;">DISETAHUNKAN-IN</th>
+                        <th colspan="2" style="text-align: center;">DISETAHUNKAN-OUT</th>
+                        <th rowspan="2" style="text-align: center;">TANGGAL LAHIR</th>
                     </tr>
                     <tr class="table-head">
                         <th style="text-align: center;">NOMOR</th>

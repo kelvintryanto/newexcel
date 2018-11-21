@@ -1,4 +1,4 @@
-@extends('admin.layout.auth')
+    @extends('admin.layout.auth')
 
 @section('content')
 <?php $page = 'admin/payroll'?>
@@ -68,7 +68,7 @@
                     foreach ($users as $user) {
                         
                         $tableContent = $tableContent.'<tr>'.
-                                    '<td>'.$user['no'].'</td>'.
+                                    // '<td>'.$user['no'].'</td>'.
                                     '<td>'.$user['nik'].'</td>'.
                                     '<td>'.$user['nama'].'</td>'.
                                     '<td>'.$user['divisi'].'</td>'.
@@ -110,7 +110,7 @@
                         foreach ($users as $user) {
                             
                             $tableContent = $tableContent.'<tr>'.
-                                        '<td>'.$user['no'].'</td>'.
+                                        // '<td>'.$user['no'].'</td>'.
                                         '<td>'.$user['nik'].'</td>'.
                                         '<td>'.$user['nama'].'</td>'.
                                         '<td>'.$user['divisi'].'</td>'.
@@ -176,10 +176,10 @@
             <div style="margin-top: 20px; overflow-x: auto; width: 100%;">
                 <table class="table table-hover scrollable" style="font-size: 12px;">
                     <tr class="table-head">
-                        <th rowspan="2" style="text-align: center;">NO</th>
+                        <!-- <th rowspan="2" style="text-align: center;">NO</th> -->
                         <th rowspan="2" style="text-align: center;">NIK</th>
                         <th rowspan="2" style="text-align: center;">NAMA</th>
-                        <th colspan="2">DIVISI</th>
+                        <th colspan="2" style="text-align: center;">DIVISI</th>
                         <th rowspan="2" style="text-align: center;">KEHADIRAN</th>
                         <th rowspan="2" style="text-align: center;">Gaji Pokok</th>
                         <th rowspan="2" style="text-align: center;">Insentif</th>
@@ -191,19 +191,19 @@
                         <th rowspan="2" style="text-align: center;">TAHUN</th>
                     </tr>
                     <tr class="table-head">
-                        <th>CD.</th>                        
-                        <th>KETERANGAN</th>
-                        <th>UANG MAKAN</th>
-                        <th>TRANSPORT</th>
-                        <th>ASURANSI</th>
-                        <th>LEMBUR</th>
-                        <th>PENGOBATAN</th>
-                        <th>LAINNYA</th>
-                        <th>PAJAK</th>
-                        <th>BPJS NON TAX</th>
-                        <th>BPJS TAX</th>
-                        <th>POT.GAJI</th>
-                        <th>NATURA</th>                        
+                        <th style="text-align: center;">CD.</th>                        
+                        <th style="text-align: center;">KETERANGAN</th>
+                        <th style="text-align: center;">UANG MAKAN</th>
+                        <th style="text-align: center;">TRANSPORT</th>
+                        <th style="text-align: center;">ASURANSI</th>
+                        <th style="text-align: center;">LEMBUR</th>
+                        <th style="text-align: center;">PENGOBATAN</th>
+                        <th style="text-align: center;">LAINNYA</th>
+                        <th style="text-align: center;">PAJAK</th>
+                        <th style="text-align: center;">BPJS NON TAX</th>
+                        <th style="text-align: center;">BPJS TAX</th>
+                        <th style="text-align: center;">POT.GAJI</th>
+                        <th style="text-align: center;">NATURA</th>                        
                     </tr>
                     <?php
 
