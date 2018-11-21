@@ -1,6 +1,7 @@
 @extends('admin.layout.import')
 
 @section('content')
+<?php $page = 'admin/payroll'?>
     <div class="container" style="width: 100%; padding-top: 15px;">
         <div>
             <!-- <div class="col-md-8 col-md-offset-2"> -->

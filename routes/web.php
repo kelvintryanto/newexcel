@@ -51,7 +51,9 @@ Route::get('/', function () {
   Route::post('/import_processPayrollKontrak','KontrakPayrollController@processImport')->name('import_processPayrollKontrak');
 
   //email karyawan kontrak
-  Route::get('/kontrakSendEmail','KontrakSendEmailController@index');
+  Route::get('/kontrakSendEmail','KontrakSendEmailController@index')->name('showEmail');
+  Route::post('/kontrakSendEmail','KontrakSendEmailController@sendEmail')->name('sendEmail');
+  //Route::post('/sendEmail', 'Email@sendEmail')->name('sendEmail');
 
   
   //login

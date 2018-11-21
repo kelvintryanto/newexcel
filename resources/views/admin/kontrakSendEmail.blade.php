@@ -67,14 +67,14 @@
                         if($conn->connect_error){
                             die("Connection failed:". $conn-> connect_error);
                         }
-                        $sql = "SELECT nama,ptkp,email from karyawan, users WHERE karyawan.nama = users.name";
+                        $sql = "SELECT nama,nilaidibayar,email from payrollkontrak, users WHERE payrollkontrak.nama = users.name";
                         $result = $conn-> query($sql);
 
 
                         if ($result-> num_rows > 0) {
                             while ($row = $result-> fetch_assoc()) {
                                 echo '<tr><td id="nama">'.$row["nama"].'</td>
-                                    <td hidden id="ptkp" data-id1="'.$row["nama"].'">'.$row["ptkp"].'</td>
+                                    <td hidden id="gaji" data-id1="'.$row["nama"].'">'.$row["nilaidibayar"].'</td>
                                     <td id="email" data-id2="'.$row["nama"].'">'.$row["email"].'</td>
                                     <td style="text-align: center;"><button name="btn_send" id="btn_send" data-id4="'.$row["nama"].'">send</button></td></tr>';
 
