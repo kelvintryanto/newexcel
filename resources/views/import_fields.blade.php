@@ -1,4 +1,4 @@
-@extends('admin.layout.auth')
+@extends('admin.layout.import')
 
 @section('content')
 <?php $page = 'admin/home'?>
