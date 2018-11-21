@@ -45,7 +45,7 @@ Route::get('/', function () {
   Route::post('/import_processKaryawanKontrak','KontrakHomeController@processImport')->name('import_processKaryawanKontrak');
   
   //payroll karyawan kontrak
-  Route::get('/kontrakPayroll','KontrakPayrollController@index');
+  Route::post('/kontrakPayroll','KontrakPayrollController@index')->name('kontrakPayroll');
   Route::get('/', 'KontrakPayrollController@getImport')->name('importPayrollKontrak');
   Route::post('/import_parsePayrollKontrak','KontrakPayrollController@parseImport')->name('import_parsePayrollKontrak');
   Route::post('/import_processPayrollKontrak','KontrakPayrollController@processImport')->name('import_processPayrollKontrak');

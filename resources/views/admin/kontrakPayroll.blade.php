@@ -165,11 +165,10 @@
             
             <!-- Pemilihan Bulan dan Tahun -->
             <div style="float: right; padding: 10px;">
-                <form action="{{route('payroll')}}" method="POST">
+                <form action="{{route('kontrakPayroll')}}" method="POST">
                     {{ csrf_field() }}
                     <b>Bulan</b>
                     <select style="margin-right: 10px;" name="start" style="margin-right: 10px;">
-                        <option value="All">All</option>
                         <option value="1" <?php if($start == '1') {echo 'selected';} ?>>Januari</option>
                         <option value="2" <?php if($start == '2') {echo 'selected';} ?>>Februari</option>
                         <option value="3" <?php if($start == '3') {echo 'selected';} ?>>Maret</option>

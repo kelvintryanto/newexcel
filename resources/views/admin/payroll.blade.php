@@ -147,7 +147,6 @@
                 {{ csrf_field() }}
                 <b>Bulan</b>
                 <select id="bulan" name="start" style="margin-right: 10px;">
-                    <option value="All">All</option>
                     <option value="1" <?php if($start == '1') {echo 'selected';} ?>>Januari</option>
                     <option value="2" <?php if($start == '2') {echo 'selected';} ?>>Februari</option>
                     <option value="3" <?php if($start == '3') {echo 'selected';} ?>>Maret</option>

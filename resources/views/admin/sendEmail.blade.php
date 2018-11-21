@@ -22,7 +22,6 @@
                 {{ csrf_field() }}
                 <b>Bulan</b>
                 <select style="margin-right: 10px;">
-                    <option value="All">All</option>
                     <option value="Januari">Januari</option>
                     <option value="Februari">Februari</option>
                     <option value="Maret">Maret</option>
