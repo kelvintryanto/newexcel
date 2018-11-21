@@ -46,6 +46,9 @@ Route::get('/', function () {
   
   //payroll karyawan kontrak
   Route::get('/kontrakPayroll','KontrakPayrollController@index');
+  Route::get('/', 'KontrakPayrollController@getImport')->name('importPayrollKontrak');
+  Route::post('/import_parsePayrollKontrak','KontrakPayrollController@parseImport')->name('import_parsePayrollKontrak');
+  Route::post('/import_processPayrollKontrak','KontrakPayrollController@processImport')->name('import_processPayrollKontrak');
 
   //email karyawan kontrak
   Route::get('/kontrakSendEmail','KontrakSendEmailController@index');
