@@ -1,9 +1,10 @@
-@extends('layout.app')
+@extends('admin.layout.import')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+<?php $page = 'admin/kontrakHome'?>
+    <div class="container" style="width: 100%; padding-top: 15px;">
+        <div>
+            <!-- <div class="col-md-8 col-md-offset-2"> -->
                 <div class="panel panel-default">
                     <div class="panel-heading">CSV Import</div>
 
@@ -45,7 +46,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 @endsection

@@ -88,10 +88,12 @@
                         <th colspan="12" style="text-align: center">PENERIMAAN</th>
                         <th colspan="11" style="text-align: center">POTONGAN</th>
                         <th rowspan="2">NILAI DIBAYAR</th>
+                        <th rowspan="2">BULAN</th>
+                        <th rowspan="2">TAHUN</th>
                     </tr>
                     <tr class="table-head">
-                        <th style="text-align: center;">CD.JENIS PENGHASILAN</th>
-                        <th style="text-align: center;">KETERANGAN JENIS PENGHASILAN</th>
+                        <th style="text-align: center;">CD.</th>
+                        <th style="text-align: center;">KETERANGAN</th>
                         <th style="text-align: center;">CODE</th>
                         <th style="text-align: center;">CHANNEL</th>
                         <th style="text-align: center;">JABATAN</th>
