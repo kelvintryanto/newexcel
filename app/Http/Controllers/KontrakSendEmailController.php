@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mail;
+use App\mail\sendMail;
 
 class KontrakSendEmailController extends Controller
 {
@@ -25,7 +27,7 @@ class KontrakSendEmailController extends Controller
     $nama = $request->input('nama');
     $email = $request->input('email');
                
-             
+
 
     //send  
     Mail::send('email', ['nama' => $nama, 'gaji' =>  $gaji], function ($message) use ($request)

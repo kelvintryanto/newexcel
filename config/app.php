@@ -329,6 +329,7 @@ return [
         'quarterlyproduction',
         'monthlyrecruit',
         'operationalallowance',
+        'otherallowance',
         'allowance1',
         'allowance2',
         'allowance3',

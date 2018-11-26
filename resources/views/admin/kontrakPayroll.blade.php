@@ -84,6 +84,7 @@
                 '<td>'.$user['quarterlyproduction'].'</td>'.
                 '<td>'.$user['monthlyrecruit'].'</td>'.
                 '<td>'.$user['operationalallowance'].'</td>'.
+                '<td>'.$user['otherallowance'].'</td>'.
                 '<td>'.$user['allowance1'].'</td>'.
                 '<td>'.$user['allowance2'].'</td>'.
                 '<td>'.$user['allowance3'].'</td>'.
@@ -136,6 +137,7 @@
                     '<td>'.$user['quarterlyproduction'].'</td>'.
                     '<td>'.$user['monthlyrecruit'].'</td>'.
                     '<td>'.$user['operationalallowance'].'</td>'.
+                    '<td>'.$user['otherallowance'].'</td>'.
                     '<td>'.$user['allowance1'].'</td>'.
                     '<td>'.$user['allowance2'].'</td>'.
                     '<td>'.$user['allowance3'].'</td>'.
@@ -168,7 +170,7 @@
                 <form action="{{route('kontrakPayroll')}}" method="POST">
                     {{ csrf_field() }}
                     <b>Bulan</b>
-                    <select style="margin-right: 10px;" name="start" style="margin-right: 10px;">
+                    <select id="bulan" style="margin-right: 10px;" name="start">
                         <option value="1" <?php if($start == '1') {echo 'selected';} ?>>Januari</option>
                         <option value="2" <?php if($start == '2') {echo 'selected';} ?>>Februari</option>
                         <option value="3" <?php if($start == '3') {echo 'selected';} ?>>Maret</option>
@@ -202,7 +204,7 @@
                         <th rowspan="2" style="text-align: center;">NAMA KARYAWAN</th>
                         <th colspan="2" style="text-align: center;">JENIS PENGHASILAN</th>
                         <th colspan="3" style="text-align: center;">CHANNEL & JABATAN</th>
-                        <th colspan="12" style="text-align: center">PENERIMAAN</th>
+                        <th colspan="13" style="text-align: center">PENERIMAAN</th>
                         <th colspan="11" style="text-align: center">POTONGAN</th>
                         <th rowspan="2">NILAI DIBAYAR</th>
                         <th rowspan="2">BULAN</th>
@@ -221,6 +223,7 @@
                         <th style="text-align: center;">QUARTERLY PRODUCTION</th>
                         <th style="text-align: center;">MONTHLY RECRUIT</th>
                         <th style="text-align: center;">OPERATIONAL ALLOWANCE</th>
+                        <th style="text-align: center;">OTHER ALLOWANCE</th>
                         <th style="text-align: center;">OTHER ALLOWANCE 1</th>
                         <th style="text-align: center;">OTHER ALLOWANCE 2</th>
                         <th style="text-align: center;">OTHER ALLOWANCE 3</th>

@@ -30,6 +30,7 @@ class PayrollKontrak extends Migration
             $table->string('quarterlyproduction')->nullable();
             $table->string('monthlyrecruit')->nullable();
             $table->string('operationalallowance')->nullable();
+            $table->string('otherallowance')->nullable();
             $table->string('allowance1')->nullable();
             $table->string('allowance2')->nullable();
             $table->string('allowance3')->nullable();

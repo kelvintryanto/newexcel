@@ -50,9 +50,6 @@
             <!-- Table Sending Email Karyawan Tetap-->
             <div>
                 <form action="{{ route('sendEmail') }}" method="POST" enctype="multipart/form-data">
-                <input hidden name="nama" type="text" id="nama">
-                <input hidden name="gaji" type="text" id="gaji">
-                <input hidden name="email" type="text" id="email">
                    {{ csrf_field() }}
                     <table id="table" class="table table-hover" style="font-size: 12px;">
                         <!-- kalo ada tambahan edit di sini -->
@@ -92,7 +89,10 @@
                         $conn-> close();
                         ?> 
 
-
+                    <!-- INPUT UNTUK KEBUTUHAN SEND EMAIL -->
+                    <input hidden name="nama" type="text" id="nama">
+                    <input hidden name="gaji" type="text" id="gaji">
+                    <input hidden name="email" type="text" id="email">
                     </table>
                 </form>
             </div>

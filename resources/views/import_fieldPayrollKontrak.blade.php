@@ -1,9 +1,10 @@
-@extends('layout.app')
+@extends('admin.layout.import')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+<?php $page = 'admin/kontrakPayroll'?>
+    <div class="container" style="width: 100%; padding-top: 15px;">
+        <div>
+            <!-- <div class="col-md-8 col-md-offset-2"> -->
                 <div class="panel panel-default">
                     <div class="panel-heading">CSV Import</div>
 
@@ -12,7 +13,7 @@
                             {{ csrf_field() }}
                             <input type="hidden" name="csv_data_file_id" value="{{ $csv_data_file->id }}" />
 
-                            <table class="table">
+                            <table class="table table-hover scrollable" style="overflow-x: auto;">
                                 @if (isset($csv_header_fields))
                                 <tr>
                                     @foreach ($csv_header_fields as $csv_header_field)
@@ -47,7 +48,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 @endsection
