@@ -32,7 +32,7 @@
                 $tableContent = '';
                 $start = '';
                 $second = '';
-                $selectStmt = $con->prepare('SELECT * FROM payroll');
+                $selectStmt = $con->prepare('SELECT * FROM payrollKontrak');
                 $selectStmt->execute();
                 $users = $selectStmt->fetchAll();
 
@@ -40,27 +40,39 @@
                     
                     $tableContent = $tableContent.'<tr>'.
                                 // '<td>'.$user['no'].'</td>'.
-                                '<td>'.$user['nik'].'</td>'.
                                 '<td>'.$user['nama'].'</td>'.
-                                '<td>'.$user['divisi'].'</td>'.
-                                '<td>'.$user['keterangan_divisi'].'</td>'.
-                                '<td>'.$user['kehadiran'].'</td>'.
-                                '<td>'.$user['gaji_pokok'].'</td>'.
-                                '<td>'.$user['insentif'].'</td>'.
-                                '<td>'.$user['uang_makan'].'</td>'.
-                                '<td>'.$user['transport'].'</td>'.
-                                '<td>'.$user['asuransi'].'</td>'.
-                                '<td>'.$user['lembur'].'</td>'.
-                                '<td>'.$user['pengobatan'].'</td>'.
-                                '<td>'.$user['lain'].'</td>'.
-                                '<td>'.$user['pajak'].'</td>'.
-                                '<td>'.$user['bpjs_non_tax'].'</td>'.
-                                '<td>'.$user['bpjs_tax'].'</td>'.
-                                '<td>'.$user['pot_gaji'].'</td>'.
-                                '<td>'.$user['natura'].'</td>'.
-                                '<td>'.$user['bantuan'].'</td>'.
-                                '<td>'.$user['thr'].'</td>'.
-                                '<td>'.$user['sub_total'].'</td>'.
+                                '<td>'.$user['no_id'].'</td>'.
+                                '<td>'.$user['nbp'].'</td>'.                                
+                                '<td>'.$user['cd_jenispenghasilan'].'</td>'.
+                                '<td>'.$user['keterangan_jenispenghasilan'].'</td>'.
+                                '<td>'.$user['code'].'</td>'.
+                                '<td>'.$user['channel'].'</td>'.
+                                '<td>'.$user['jabatan'].'</td>'.
+                                '<td>'.$user['jmlhari'].'</td>'.
+                                '<td>'.$user['commision'].'</td>'.
+                                '<td>'.$user['override'].'</td>'.
+                                '<td>'.$user['monthlyperformance'].'</td>'.
+                                '<td>'.$user['quarterlyproduction'].'</td>'.
+                                '<td>'.$user['monthlyrecruit'].'</td>'.
+                                '<td>'.$user['operationalallowance'].'</td>'.
+                                '<td>'.$user['otherallowance'].'</td>'.
+                                '<td>'.$user['allowance1'].'</td>'.
+                                '<td>'.$user['allowance2'].'</td>'.
+                                '<td>'.$user['allowance3'].'</td>'.
+                                '<td>'.$user['tax_allowance'].'</td>'.
+                                '<td>'.$user['subtotal_penerimaan'].'</td>'.
+                                '<td>'.$user['uangmuka'].'</td>'.
+                                '<td>'.$user['pemotongan1'].'</td>'.
+                                '<td>'.$user['pemotongan2'].'</td>'.
+                                '<td>'.$user['pemotongan3'].'</td>'.
+                                '<td>'.$user['pemotongan4'].'</td>'.
+                                '<td>'.$user['pemotongan5'].'</td>'.
+                                '<td>'.$user['pemotongan6'].'</td>'.
+                                '<td>'.$user['pemotongan7'].'</td>'.
+                                '<td>'.$user['pph2126'].'</td>'.
+                                '<td>'.$user['sanksipajak'].'</td>'.
+                                '<td>'.$user['subtotal_potongan'].'</td>'.
+                                '<td>'.$user['nilaidibayar'].'</td>'.
                                 '<td>'.$user['bulan'].'</td>'.
                                 '<td>'.$user['tahun'].'</td>';
                 }
@@ -71,7 +83,7 @@
                     $start = $_POST['start'];
                     $second = $_POST['second'];
                     $tableContent = '';
-                    $selectStmt = $con->prepare('SELECT * FROM payroll WHERE bulan like :start AND tahun like :second');
+                    $selectStmt = $con->prepare('SELECT * FROM payrollKontrak WHERE bulan like :start AND tahun like :second');
                     $selectStmt->execute(array(
                             ':start'=>$start,
                             ':second'=>$second
@@ -82,36 +94,48 @@
                         
                         $tableContent = $tableContent.'<tr>'.
                                     // '<td>'.$user['no'].'</td>'.
-                                    '<td>'.$user['nik'].'</td>'.
-                                    '<td>'.$user['nama'].'</td>'.
-                                    '<td>'.$user['divisi'].'</td>'.
-                                    '<td>'.$user['keterangan_divisi'].'</td>'.
-                                    '<td>'.$user['kehadiran'].'</td>'.
-                                    '<td>'.$user['gaji_pokok'].'</td>'.
-                                    '<td>'.$user['insentif'].'</td>'.
-                                    '<td>'.$user['uang_makan'].'</td>'.
-                                    '<td>'.$user['transport'].'</td>'.
-                                    '<td>'.$user['asuransi'].'</td>'.
-                                    '<td>'.$user['lembur'].'</td>'.
-                                    '<td>'.$user['pengobatan'].'</td>'.
-                                    '<td>'.$user['lain'].'</td>'.
-                                    '<td>'.$user['pajak'].'</td>'.
-                                    '<td>'.$user['bpjs_non_tax'].'</td>'.
-                                    '<td>'.$user['bpjs_tax'].'</td>'.
-                                    '<td>'.$user['pot_gaji'].'</td>'.
-                                    '<td>'.$user['natura'].'</td>'.
-                                    '<td>'.$user['bantuan'].'</td>'.
-                                    '<td>'.$user['thr'].'</td>'.
-                                    '<td>'.$user['sub_total'].'</td>'.
-                                    '<td>'.$user['bulan'].'</td>'.
-                                    '<td>'.$user['tahun'].'</td>';
+                                '<td>'.$user['nama'].'</td>'.
+                                '<td>'.$user['no_id'].'</td>'.
+                                '<td>'.$user['nbp'].'</td>'.
+                                '<td>'.$user['cd_jenispenghasilan'].'</td>'.
+                                '<td>'.$user['keterangan_jenispenghasilan'].'</td>'.
+                                '<td>'.$user['code'].'</td>'.
+                                '<td>'.$user['channel'].'</td>'.
+                                '<td>'.$user['jabatan'].'</td>'.
+                                '<td>'.$user['jmlhari'].'</td>'.
+                                '<td>'.$user['commision'].'</td>'.
+                                '<td>'.$user['override'].'</td>'.
+                                '<td>'.$user['monthlyperformance'].'</td>'.
+                                '<td>'.$user['quarterlyproduction'].'</td>'.
+                                '<td>'.$user['monthlyrecruit'].'</td>'.
+                                '<td>'.$user['operationalallowance'].'</td>'.
+                                '<td>'.$user['otherallowance'].'</td>'.
+                                '<td>'.$user['allowance1'].'</td>'.
+                                '<td>'.$user['allowance2'].'</td>'.
+                                '<td>'.$user['allowance3'].'</td>'.
+                                '<td>'.$user['tax_allowance'].'</td>'.
+                                '<td>'.$user['subtotal_penerimaan'].'</td>'.
+                                '<td>'.$user['uangmuka'].'</td>'.
+                                '<td>'.$user['pemotongan1'].'</td>'.
+                                '<td>'.$user['pemotongan2'].'</td>'.
+                                '<td>'.$user['pemotongan3'].'</td>'.
+                                '<td>'.$user['pemotongan4'].'</td>'.
+                                '<td>'.$user['pemotongan5'].'</td>'.
+                                '<td>'.$user['pemotongan6'].'</td>'.
+                                '<td>'.$user['pemotongan7'].'</td>'.
+                                '<td>'.$user['pph2126'].'</td>'.
+                                '<td>'.$user['sanksipajak'].'</td>'.
+                                '<td>'.$user['subtotal_potongan'].'</td>'.
+                                '<td>'.$user['nilaidibayar'].'</td>'.
+                                '<td>'.$user['bulan'].'</td>'.
+                                '<td>'.$user['tahun'].'</td>';
                     }
                 }
             ?>
 
             <!-- Pemilihan Bulan dan Tahun Sending Email Karyawan Kontrak -->
             <div style="float: right; padding: 10px;">
-                <form action="{{route('payroll')}}" method="POST">
+                <form action="{{route('kontrakSendEmail')}}" method="POST">
                 {{ csrf_field() }}
                 <b>Bulan</b>
                 <select id="bulan" name="start" style="margin-right: 10px;">

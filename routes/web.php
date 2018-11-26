@@ -53,6 +53,7 @@ Route::get('/', function () {
   //email karyawan kontrak
   Route::get('/kontrakSendEmail','KontrakSendEmailController@index')->name('showEmail');
   Route::post('/kontrakSendEmail','KontrakSendEmailController@sendEmail')->name('sendEmail');
+  Route::post('/kontrakSendEmail','KontrakSendEmailController@index')->name('kontrakSendEmail');
   //Route::post('/sendEmail', 'Email@sendEmail')->name('sendEmail');
 
   
