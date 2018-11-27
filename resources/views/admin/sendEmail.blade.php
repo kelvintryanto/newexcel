@@ -78,7 +78,7 @@
 	                    $start = '';
 	                    $second = '';
 	                            // SELECT INI BERGUNA UNTUK SELECT ALL TANPA FILTER
-	                    $selectStmt = $con->prepare('SELECT * FROM payroll as pk,karyawan as kk,users as u where pk.no_id = kk.no_id and u.name = pk.nama');
+	                    $selectStmt = $con->prepare('SELECT * FROM payroll as p,karyawan as k,users as u where p.nik = k.no_id and u.name = k.nama');
 	                    $selectStmt->execute();
 	                    $users = $selectStmt->fetchAll();
 	        
@@ -170,7 +170,7 @@
                             $second = $_POST['second'];
                             $tableContent = '';
                             // SELECT INI DIGUNAKAN UNTUK SELECT DENGAN FILTER
-                            $selectStmt = $con->prepare('SELECT * FROM payroll as p,karyawan as kk,users as u where bulan like :start AND tahun like :second and p.no_id = kk.no_id and u.name = p.nama');
+                            $selectStmt = $con->prepare('SELECT * FROM payroll as p,karyawan as k,users as u where bulan like :start AND tahun like :second and p.nik = k.no_id and u.name = p.nama');
                             $selectStmt->execute(array(
                                 ':start'=>$start,
                                 ':second'=>$second
