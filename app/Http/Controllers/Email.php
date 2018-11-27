@@ -19,14 +19,7 @@ class Email extends Controller
     public function sendEmail(Request $request)
 {
 
-    //  $email = DB::table('users')->select('email')->where('name','=','kelvin tryanto')->get();
-    //  $nama = DB::table('users')->select('name')->where('email','=','kelvin.tryanto@gmail.com')->get();
-    // $gaji = DB::table('karyawan')->select('ptkp')->where('nama','=','agus handoyo')->get();
-
-
-    // $email = $_POST['email'];
-    // $nama = $_POST['nama'];
-    // $gaji = $_POST['gaji'];
+    // request input dari send email karyawan tetap
     $gaji = $request->input('gaji');
     $nama = $request->input('nama');
     $email = $request->input('email');

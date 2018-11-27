@@ -68,7 +68,6 @@
                     $sql = "SELECT nama,gaji,email from karyawan, users WHERE karyawan.nama = users.name";
                     $result = $conn-> query($sql);
 
-
                     if ($result-> num_rows > 0) {
                         while ($row = $result-> fetch_assoc()) {
                                                 // kalo ada tambahan edit di sini

@@ -8,11 +8,14 @@
         /* -------------------------------------
             GLOBAL RESETS
         ------------------------------------- */
-        img {
+        img 
+        {
             border: none;
             -ms-interpolation-mode: bicubic;
-            max-width: 100%; }
-        body {
+            max-width: 100%; 
+        }
+        body 
+        {
             background-color: #f6f6f6;
             font-family: sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -21,24 +24,33 @@
             margin: 0;
             padding: 0;
             -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%; }
-        table {
+            -webkit-text-size-adjust: 100%; 
+        }
+        table 
+        {
             border-collapse: separate;
             mso-table-lspace: 0pt;
             mso-table-rspace: 0pt;
-            width: 100%; }
-        table td {
+            width: 100%; 
+        }
+        table td 
+        {
             font-family: sans-serif;
             font-size: 14px;
-            vertical-align: top; }
+            vertical-align: top; 
+        }
         /* -------------------------------------
             BODY & CONTAINER
         ------------------------------------- */
-        .body {
+        .body 
+        {
             background-color: #f6f6f6;
-            width: 100%; }
+            width: 100%; 
+        }
+
         /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
-        .container {
+        .container 
+        {
             display: block;
             Margin: 0 auto !important;
             /* makes it centered */

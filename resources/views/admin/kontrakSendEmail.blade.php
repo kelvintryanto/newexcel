@@ -67,7 +67,7 @@
                 '<td>'.$user['nama'].'</td>'. //0
                 '<td hidden>'.$user['no_id'].'</td>'. //1
                 '<td hidden>'.$user['kode_status'].'</td>'.//2
-                '<td hidden>PT MANDIRI KONSULTAMA PERKASA</td>'. //3
+                '<td hidden>PT. MANDIRI KONSULTAMA PERKASA</td>'. //3
                 '<td hidden>'.$periode.'</td>'. //4
                 //slip gaji column 2
                 '<td hidden>'.$user['jabatan'].'</td>'. //5
@@ -112,10 +112,10 @@
                 '<td hidden>'.$user['nilaidibayar'].'</td>'. //32
 
                 //tambahan bulan dan tahun untuk filter
-                '<td style="text-align:center">'.$user['bulan'].'</td>'.
-                '<td style="text-align:center">'.$user['tahun'].'</td>'.
-                '<td>'.$user['email'].'</td>'.
-                '<td name="btn_send" id="btn_send" style="text-align:center"><button>Send</button></td';                                
+                '<td style="text-align:center">'.$user['bulan'].'</td>'. //33
+                '<td style="text-align:center">'.$user['tahun'].'</td>'. //34
+                '<td>'.$user['email'].'</td>'. //35
+                '<td name="btn_send" id="btn_send" style="text-align:center"><button>Send</button></td';                               
             }
 
 
@@ -158,7 +158,7 @@
                     '<td>'.$user['nama'].'</td>'. //0
                     '<td hidden>'.$user['no_id'].'</td>'. //1
                     '<td hidden>'.$user['kode_status'].'</td>'.//2
-                    '<td hidden>PT MANDIRI KONSULTAMA PERKASA</td>'. //3
+                    '<td hidden>PT. MANDIRI KONSULTAMA PERKASA</td>'. //3
                     '<td hidden>'.$periode.'</td>'. //4
                     //slip gaji column 2
                     '<td hidden>'.$user['jabatan'].'</td>'. //5
@@ -203,9 +203,9 @@
                     '<td hidden>'.$user['nilaidibayar'].'</td>'. //32
 
                     //tambahan bulan dan tahun untuk filter
-                    '<td style="text-align:center">'.$user['bulan'].'</td>'.
-                    '<td style="text-align:center">'.$user['tahun'].'</td>'.
-                    '<td>'.$user['email'].'</td>'.
+                    '<td style="text-align:center">'.$user['bulan'].'</td>'. //33
+                    '<td style="text-align:center">'.$user['tahun'].'</td>'. //34
+                    '<td>'.$user['email'].'</td>'. //35
                     '<td name="btn_send" id="btn_send" style="text-align:center"><button>Send</button></td';
                 }
             }
@@ -346,6 +346,9 @@
                         <input hidden name="pph21" type="text" id="pph21">
                         <input hidden name="sanksipajak" type="text" id="sanksipajak">
                         <input hidden name="nilaidibayar" type="text" id="nilaidibayar">
+                        <input hidden name="bulan" type="text" id="bulan">
+                        <input hidden name="tahun" type="text" id="tahun">
+                        <input hidden name="email" type="text" id="email">
 
 
                         <!-- tampilkan table content difilter maupun tidak difilter -->
@@ -358,8 +361,8 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
     var table = document.getElementById('table'),rIndex;
     for(var i = 0; i < table.rows.length;i++)
@@ -401,6 +404,9 @@
             document.getElementById("pph21").value = this.cells[30].innerHTML;
             document.getElementById("sanksipajak").value = this.cells[31].innerHTML;
             document.getElementById("nilaidibayar").value = this.cells[32].innerHTML;
+            document.getElementById("bulan").value = this.cells[33].innerHTML;
+            document.getElementById("tahun").value = this.cells[34].innerHTML;
+            document.getElementById("email").value = this.cells[35].innerHTML;
         }
     }
 
