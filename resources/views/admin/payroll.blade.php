@@ -58,6 +58,7 @@
                 echo 'Not Connected '.$ex->getMessage();
             }
 
+            
             $tableContent = '';
             $start = '';
             $second = '';
@@ -66,7 +67,10 @@
             $users = $selectStmt->fetchAll();
 
             foreach ($users as $user) {
-                
+                $gajipokok="Rp. ".number_format($user["gaji_pokok"],2,',','.');
+                $potgaji="Rp. ".number_format($user["pot_gaji"],2,',','.');
+                $subtotalpenerimaan="Rp. ".number_format($user["sub_total_penerimaan"],2,',','.');
+                $subtotalpengeluaran="Rp. ".number_format($user["sub_total_pengeluaran"],2,',','.');
                 $tableContent = $tableContent.'<tr>'.
                 // '<td>'.$user['no'].'</td>'.
                 '<td>'.$user['nik'].'</td>'. //0
@@ -74,7 +78,7 @@
                 '<td>'.$user['divisi'].'</td>'. //2
                 '<td>'.$user['keterangan_divisi'].'</td>'. //3
                 '<td>'.$user['kehadiran'].'</td>'. //4
-                '<td>'.$user['gaji_pokok'].'</td>'. //5
+                '<td>'.$gajipokok.'</td>'. //5
                 '<td>'.$user['insentif'].'</td>'. //6
                 '<td>'.$user['uang_makan'].'</td>'. //7
                 '<td>'.$user['transport'].'</td>'. //8
@@ -85,11 +89,11 @@
                 '<td>'.$user['pajak_penerimaan'].'</td>'. //13
                 '<td>'.$user['bpjs_non_tax'].'</td>'. //14
                 '<td>'.$user['bpjs_tax'].'</td>'. //15
-                '<td>'.$user['pot_gaji'].'</td>'. //16
+                '<td>'.$potgaji.'</td>'. //16
                 '<td>'.$user['natura_penerimaan'].'</td>'. //17
                 '<td>'.$user['bantuan'].'</td>'. //18
                 '<td>'.$user['thr'].'</td>'. //19
-                '<td>'.$user['sub_total_penerimaan'].'</td>'. //20
+                '<td>'.$subtotalpenerimaan.'</td>'. //20
 
                 '<td>'.$user['iuran'].'</td>'.  //21
                 '<td>'.$user['bpjs_karyawan_tax'].'</td>'. //22
@@ -105,7 +109,7 @@
                 '<td>'.$user['pinjaman_rumah'].'</td>'. //32
                 '<td>'.$user['pinjaman_obat'].'</td>'. //33
                 '<td>'.$user['pinjaman_lain2x'].'</td>'. //34
-                '<td>'.$user['sub_total_pengeluaran'].'</td>'. //35
+                '<td>'.$subtotalpengeluaran.'</td>'. //35
 
                 '<td>'.$user['bulan'].'</td>'. //36
                 '<td>'.$user['tahun'].'</td>'; //37
@@ -125,7 +129,10 @@
                 $users = $selectStmt->fetchAll();
 
                 foreach ($users as $user) {
-                    
+                    $gajipokok="Rp. ".number_format($user["gaji_pokok"],2,',','.');
+                    $potgaji="Rp. ".number_format($user["pot_gaji"],2,',','.');
+                    $subtotalpenerimaan="Rp. ".number_format($user["sub_total_penerimaan"],2,',','.');
+                    $subtotalpengeluaran="Rp. ".number_format($user["sub_total_pengeluaran"],2,',','.');
                     $tableContent = $tableContent.'<tr>'.
                     // '<td>'.$user['no'].'</td>'.
                     '<td>'.$user['nik'].'</td>'. //0
@@ -133,7 +140,7 @@
                     '<td>'.$user['divisi'].'</td>'. //2
                     '<td>'.$user['keterangan_divisi'].'</td>'. //3
                     '<td>'.$user['kehadiran'].'</td>'. //4
-                    '<td>'.$user['gaji_pokok'].'</td>'. //5
+                    '<td>'.$gajipokok.'</td>'. //5
                     '<td>'.$user['insentif'].'</td>'. //6
                     '<td>'.$user['uang_makan'].'</td>'. //7
                     '<td>'.$user['transport'].'</td>'. //8
@@ -144,11 +151,11 @@
                     '<td>'.$user['pajak_penerimaan'].'</td>'. //13
                     '<td>'.$user['bpjs_non_tax'].'</td>'. //14
                     '<td>'.$user['bpjs_tax'].'</td>'. //15
-                    '<td>'.$user['pot_gaji'].'</td>'. //16
+                    '<td>'.$potgaji.'</td>'. //16
                     '<td>'.$user['natura_penerimaan'].'</td>'. //17
                     '<td>'.$user['bantuan'].'</td>'. //18
                     '<td>'.$user['thr'].'</td>'. //19
-                    '<td>'.$user['sub_total_penerimaan'].'</td>'. //20
+                    '<td>'.$subtotalpenerimaan.'</td>'. //20
 
                     '<td>'.$user['iuran'].'</td>'.  //21
                     '<td>'.$user['bpjs_karyawan_tax'].'</td>'. //22
@@ -164,7 +171,7 @@
                     '<td>'.$user['pinjaman_rumah'].'</td>'. //32
                     '<td>'.$user['pinjaman_obat'].'</td>'. //33
                     '<td>'.$user['pinjaman_lain2x'].'</td>'. //34
-                    '<td>'.$user['sub_total_pengeluaran'].'</td>'. //35
+                    '<td>'.$subtotalpengeluaran.'</td>'. //35
 
                     '<td>'.$user['bulan'].'</td>'. //36
                     '<td>'.$user['tahun'].'</td>'; //37

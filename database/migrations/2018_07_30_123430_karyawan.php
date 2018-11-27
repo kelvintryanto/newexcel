@@ -40,7 +40,7 @@ class Karyawan extends Migration
             $table->string('uang')->nullable();
             $table->string('lain')->nullable();
             $table->string('pl_obat')->nullable();
-            $table->string('gaji')->nullable();
+            $table->integer('gaji')->nullable();
             $table->string('tanggal_in')->nullable();
             $table->string('jml_bulan_in')->nullable();
             $table->string('pengh_in')->nullable();

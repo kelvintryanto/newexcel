@@ -35,7 +35,7 @@ class PayrollKontrak extends Migration
             $table->string('allowance2')->nullable();
             $table->string('allowance3')->nullable();
             $table->string('tax_allowance')->nullable();
-            $table->string('subtotal_penerimaan')->nullable();
+            $table->integer('subtotal_penerimaan')->nullable();
             $table->string('uangmuka')->nullable();
             $table->string('pemotongan1')->nullable();
             $table->string('pemotongan2')->nullable();
@@ -46,8 +46,8 @@ class PayrollKontrak extends Migration
             $table->string('pemotongan7')->nullable();
             $table->string('pph2126')->nullable();
             $table->string('sanksipajak')->nullable();
-            $table->string('subtotal_potongan')->nullable();
-            $table->string('nilaidibayar')->nullable();
+            $table->integer('subtotal_potongan')->nullable();
+            $table->integer('nilaidibayar')->nullable();
             $table->string('bulan');
             $table->string('tahun');
             $table->timestamps();
