@@ -213,7 +213,7 @@
 
             <!-- Pemilihan Bulan dan Tahun Sending Email Karyawan Kontrak -->
             <div style="float: right; padding: 10px;">
-                <form action="{{route('kontrakSendEmail')}}" method="POST">
+                <form action="{{route('showEmail')}}" method="POST">
                     {{ csrf_field() }}
                     <b>Bulan</b>
                     <select id="bulan" name="start" style="margin-right: 10px;">
@@ -244,7 +244,7 @@
 
             <!-- Table Sending Email Karyawan Kontrak -->
             <div>
-                <form action="{{ route('sendEmail') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('kontrakSendEmail') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <table id="table" class="table table-hover" style="font-size: 12px;">
                         <tr class="table-head">

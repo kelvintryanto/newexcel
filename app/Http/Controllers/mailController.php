@@ -17,4 +17,8 @@ class mailController extends Controller
     public function email(){
     	return view('email');
     }
+
+    public function emailKontrak(){
+    	return view('emailKontrak');
+    }
 }

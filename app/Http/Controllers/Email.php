@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
-use Illuminate\Support\Facades\DB;
 use App\User;
-
-use DOMDocument;
 
 class Email extends Controller
 {

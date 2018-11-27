@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
-use App\mail\sendMail;
+use App\User;
 
 class KontrakSendEmailController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('admin/kontrakSendEmail');
     }
 
-    public function sendEmail(Request $request)
+    public function kontrakSendEmail(Request $request)
 {
 
     //  $email = DB::table('users')->select('email')->where('name','=','kelvin tryanto')->get();
@@ -30,7 +31,7 @@ class KontrakSendEmailController extends Controller
 
 
     //send  
-    Mail::send('email', ['nama' => $nama, 'gaji' =>  $gaji], function ($message) use ($request)
+    Mail::send('emailKontrak', ['nama' => $nama, 'gaji' =>  $gaji], function ($message) use ($request)
     {
     $message->subject('Gaji');
     $message->from('donotreply@mandiri.com', 'PT.Mandiri Konsultama Perkasa');
