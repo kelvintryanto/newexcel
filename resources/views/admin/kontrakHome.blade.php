@@ -85,24 +85,24 @@
                     if ($result-> num_rows > 0) {
                         while ($row = $result-> fetch_assoc()) {
                             echo "<tr><td hidden>".$row["no"]."</td>
-                                <td style='text-align: center;'>".$row["no_id"]."</td>
-                                <td>".$row["nama"]."</td>
-                                <td>".$row["no_npwp"]."</td>
-                                <td>".$row["npwp_sejak"]."</td>
-                                <td style='text-align: center;'>".$row["cd_jenishasil"]."</td>
-                                <td>".$row["nama_jenishasil"]."</td>
-                                <td style='text-align: center;'>".$row["kerja_di_1_tempat"]."</td>
-                                <td style='text-align: center;'>".$row["alamat_1"]."</td>
-                                <td style='text-align: center;'>".$row["alamat_2"]."</td>
-                                <td style='text-align: center;'>".$row["no_ktp"]."</td>
-                                <td style='text-align: center;'>".$row["kode_negara"]."</td>
-                                <td style='text-align: center;'>".$row["status"]."</td>
-                                <td style='text-align: center;'>".$row["tanggungan"]."</td>
-                                <td style='text-align: center;'>".$row["kode_status"]."</td>
-                                <td style='text-align: center;'>".$row["jenis_kelamin"]."</td>
-                                <td style='text-align: center;'>".$row["mulai_kerja"]."</td>
-                                <td style='text-align: center;'>".$row["akhir_kerja"]."</td>
-                                <td>".$row["ptkp"]."</td></tr>";
+                            <td style='text-align: center;'>".$row["no_id"]."</td>
+                            <td>".$row["nama"]."</td>
+                            <td>".$row["no_npwp"]."</td>
+                            <td>".$row["npwp_sejak"]."</td>
+                            <td style='text-align: center;'>".$row["cd_jenishasil"]."</td>
+                            <td>".$row["nama_jenishasil"]."</td>
+                            <td style='text-align: center;'>".$row["kerja_di_1_tempat"]."</td>
+                            <td style='text-align: center;'>".$row["alamat_1"]."</td>
+                            <td style='text-align: center;'>".$row["alamat_2"]."</td>
+                            <td style='text-align: center;'>".$row["no_ktp"]."</td>
+                            <td style='text-align: center;'>".$row["kode_negara"]."</td>
+                            <td style='text-align: center;'>".$row["status"]."</td>
+                            <td style='text-align: center;'>".$row["tanggungan"]."</td>
+                            <td style='text-align: center;'>".$row["kode_status"]."</td>
+                            <td style='text-align: center;'>".$row["jenis_kelamin"]."</td>
+                            <td style='text-align: center;'>".$row["mulai_kerja"]."</td>
+                            <td style='text-align: center;'>".$row["akhir_kerja"]."</td>
+                            <td>".$row["ptkp"]."</td></tr>";
 
                         }
                         echo "</table>";

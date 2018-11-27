@@ -330,8 +330,12 @@
                                     Forgot Your Password? 
                                 </a>
                                 <br>
-                                <a class="btn btn-link" href="{{ url('/admin/register') }}"> 
-                                    register 
+                                <a class="btn btn-link" href="{{ url('/admin/register') }}" style="font-size: 12px;"> 
+                                    register Admin
+                                </a>
+                                <br>
+                                <a class="btn btn-link" href="{{ url('/user/register') }}" style="font-size: 12px;"> 
+                                    register User
                                 </a>
                             </div> 
                         </div> 
