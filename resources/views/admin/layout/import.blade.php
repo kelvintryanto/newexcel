@@ -24,7 +24,7 @@
     </script>
     <!-- end script -->
 </head>
-<body>
+<body onload="renderTime();">
     <!-- start navbar default dom dari sini -->
     <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px;">
         <!-- tambahan sidebar KT -->
@@ -49,6 +49,9 @@
                     <a href="{{ url('admin/kontrakHome') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/kontrakHome') {echo 'active';}?>">Karyawan</li></a>
                     <a href="{{ url('admin/kontrakPayroll') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/kontrakPayroll') {echo 'active';}?>">Payroll</li></a>
                     <a href="{{ url('admin/kontrakSendEmail') }}" class="nav-link"><li class="nav-item <?php if($page=='admin/kontrakSendEmail') {echo 'active';}?>">Send E-Slip</li></a>
+
+                    <li style="margin-top: 30px;">REGISTER</li>
+                    <a href="{{ url('/user/register') }}" class="nav-link"><li class="nav-item <?php if($page=='user/register') {echo 'active';}?>">Register User</li></a>
                 </ul>
             </div>
 
@@ -81,6 +84,7 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
+                    <li id="clockDisplay" style="padding-top: 13px; padding-right: 13px;"></li>
                     <!-- Authentication Links -->
                     <!-- @if (Auth::guest())
                     <li><a href="{{ url('/admin/login') }}">Login</a></li>
@@ -119,17 +123,53 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
-    <!-- <script>
-        var header = document.getElementById("menuBar");
-        var menuRef = header.getElementsByClassName("nav-link");
-        for(var i=0;i < menuRef.length; i++){
-            menuRef[i].addEventListener("click",function(){
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active","");
-                this.className += " active";
-            });
-        }
-    </script> -->
+    <script>
+		function renderTime(){
+
+			// Date
+			var mydate = new Date();
+			var year = mydate.getYear();
+				if(year < 1000){
+					year += 1900
+				}
+			var day = mydate.getDay();
+			var month = mydate.getMonth();
+			var daym = mydate.getDate();
+			var dayarray = new Array("Minggu,", "Senin,", "Selasa,", "Rabu,", "Kamis,", "Jumat,", "Sabtu,");
+			var montharray = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "Desember");
+			// Date End
+
+			// Time
+			var currentTime = new Date();
+			var h = currentTime.getHours();
+			var m = currentTime.getMinutes();
+			var s = currentTime.getSeconds();
+				if(h == 24){
+					h=0;
+				} else if(h > 12){
+					h = h - 0;
+				}
+
+				if( h < 10){
+					h = "0" + h;
+				}
+
+				if(m < 10){
+					m = "0" + m;
+				}
+
+				if(s < 10){
+					s = "0" + s;
+				}
+
+				var myClock = document.getElementById("clockDisplay");
+				myClock.textContent = "" +dayarray[day]+ " "+ daym + " " + montharray[month]+ " "+ year+ " | " + h + ";" + m + ":" + s;
+				myClock.innerText = "" +dayarray[day]+ " "+ daym + " " + montharray[month]+ " "+ year+ " | " + h + ":" + m + ":" + s;
+
+				setTimeout("renderTime()", 500);
+		}
+		renderTime();
+	</script>
 
 
 </body>

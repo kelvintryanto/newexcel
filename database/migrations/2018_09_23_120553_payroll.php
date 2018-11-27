@@ -32,10 +32,27 @@ class Payroll extends Migration
             $table->string('bpjs_non_tax')->nullable();
             $table->string('bpjs_tax')->nullable();
             $table->string('pot_gaji')->nullable();
-            $table->string('natura')->nullable();
+            $table->string('natura_penerimaan')->nullable();
             $table->string('bantuan')->nullable();
             $table->string('thr')->nullable();
-            $table->string('sub_total')->nullable();
+            $table->string('sub_total_penerimaan')->nullable();
+
+            $table->string('iuran')->nullable();
+            $table->string('bpjs_karyawan_tax')->nullable();
+            $table->string('uangmuka')->nullable();
+            $table->string('pajak')->nullable();
+            $table->string('sanksipajak')->nullable();
+            $table->string('tax')->nullable();
+            $table->string('nontax')->nullable();
+            $table->string('bpjs_karyawan_non_tax')->nullable();
+            $table->string('iuran2')->nullable();
+            $table->string('natura_pemotongan')->nullable();
+            $table->string('pinjaman_kendaraan')->nullable();
+            $table->string('pinjaman_rumah')->nullable();
+            $table->string('pinjaman_obat')->nullable();
+            $table->string('pinjaman_lain2x')->nullable();
+            $table->string('sub_total_pengeluaran')->nullable();
+
             $table->string('bulan')->nullable();
             $table->string('tahun')->nullable();
             $table->timestamps();

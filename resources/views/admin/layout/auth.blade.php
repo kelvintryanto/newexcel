@@ -128,7 +128,6 @@
     <script src="/js/app.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
     <script src="/js/jquery-3.3.1.min.js"></script>
-
     <script>
 		function renderTime(){
 
