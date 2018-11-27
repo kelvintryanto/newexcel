@@ -9,6 +9,7 @@
          <div class="alert alert-failed">
             <div>{{Session::get('alert-failed')}}</div>
         </div>
+
         @endif
         @if(\Session::has('alert-success'))
         <div class="alert alert-success">
@@ -50,8 +51,8 @@
         <!-- Table Sending Email Karyawan Tetap-->
         <div>
             <form action="{{ route('sendEmail') }}" method="POST" enctype="multipart/form-data">
-               {{ csrf_field() }}
-               <table id="table" class="table table-hover" style="font-size: 12px;">
+                {{ csrf_field() }}
+                <table id="table" class="table table-hover" style="font-size: 12px;">
                     <!-- kalo ada tambahan edit di sini -->
                     <tr class="table-head">
                         <th style="text-align: center;">Nama</th>
@@ -60,39 +61,207 @@
                         <th style="text-align: center;">Send Email</th>
                     </tr>
 
+                   	<!-- Tampilkan Tabel -->
                     <?php
-                    $conn=mysqli_connect("localhost","root","","newexcel");
-                    if($conn->connect_error){
-                        die("Connection failed:". $conn-> connect_error);
-                    }
-                    $sql = "SELECT nama,gaji,email from karyawan, users WHERE karyawan.nama = users.name";
-                    $result = $conn-> query($sql);
-
-                    if ($result-> num_rows > 0) {
-                        while ($row = $result-> fetch_assoc()) {
-                                                // kalo ada tambahan edit di sini
-                            echo '<tr><td id="nama">'.$row["nama"].'</td>
-                            <td hidden id="ptkp" data-id1="'.$row["nama"].'">'.$row["ptkp"].'</td>
-                            <td id="email" data-id2="'.$row["nama"].'">'.$row["email"].'</td>
-                            <td style="text-align: center;"><button name="btn_send" id="btn_send" data-id3="'.$row["nama"].'">send</button></td></tr>';
-
-
-                            /* echo "<tr><td>".$row["nama"]."</td><td>".$row["ptkp"]."</td><td>".$row["email"]."</td><td>"."<button name="btn_send" id="btn_send" data-id3="'.$row["name"].'">send</button>"."</td></tr>";*/
-
-                        }
-                        echo "</table>";
-
-                    }
-                    else{
-                        echo "0 result";
-                    }
-                    $conn-> close();
-                    ?> 
+	                    $dsn = 'mysql:host=localhost;dbname=newexcel';
+	                    $username = 'root';
+	                    $password = '';
+	        
+	                    try{
+	                        $con = new PDO($dsn, $username,$password);
+	                        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	                    }catch(Exception $ex){
+	                        echo 'Not Connected '.$ex->getMessage();
+	                    }
+	        
+	                    $tableContent = '';
+	                    $start = '';
+	                    $second = '';
+	                            // SELECT INI BERGUNA UNTUK SELECT ALL TANPA FILTER
+	                    $selectStmt = $con->prepare('SELECT * FROM payroll as pk,karyawan as kk,users as u where pk.no_id = kk.no_id and u.name = pk.nama');
+	                    $selectStmt->execute();
+	                    $users = $selectStmt->fetchAll();
+	        
+	                    foreach ($users as $user) 
+	                    {
+	                        //mengubah angka bulan menjadi nama bulan
+	                        $bulan = $user['bulan'];
+	        
+	                        switch ($bulan){
+	                            case "1" : $periode = "Januari "; break;
+	                            case "2" : $periode = "Februari "; break;
+	                            case "3" : $periode = "Maret "; break;
+	                            case "4" : $periode = "April "; break;
+	                            case "5" : $periode = "Mei "; break;
+	                            case "6" : $periode = "Juni "; break;
+	                            case "7" : $periode = "Juli "; break;
+	                            case "8" : $periode = "Agustus "; break;
+	                            case "9" : $periode = "September "; break;
+	                            case "10" : $periode = "Oktober "; break;
+	                            case "11" : $periode = "November "; break;
+	                            case "11" : $periode = "Desember "; break;                    
+	                        }
+	        
+	                        // .= fungsinya untuk append bulan dengan tahun
+	                        $periode .= $user['tahun'];
+	        
+	                        $tableContent = $tableContent.'<tr>'.
+	                        // '<td>'.$user['no'].'</td>'.
+	                        //slip gaji column 1
+	                        '<td>'.$user['nama'].'</td>'. //0
+	                        '<td hidden>'.$user['no_id'].'</td>'. //1
+	                        '<td hidden>'.$user['kode_status'].'</td>'.//2
+	                        '<td hidden>PT. MANDIRI KONSULTAMA PERKASA</td>'. //3
+	                        '<td hidden>'.$periode.'</td>'. //4
+	                        //slip gaji column 2
+	                        '<td hidden>'.$user['jabatan'].'</td>'. //5
+	                        '<td hidden>'.$user['channel'].'</td>'. //6
+	                        '<td hidden>'.$user['mulai_kerja'].'</td>'. //7
+	                        '<td hidden>'.$user['kode_negara'].'</td>'. //8
+	                        //space untuk tanda tangan
+	        
+	                        //penerimaan header
+	                        '<td hidden>'.$user['subtotal_penerimaan'].'</td>'. //9
+	                        //penerimaan column 1
+	                        '<td hidden>'.$user['commision'].'</td>'. //10
+	                        '<td hidden>'.$user['override'].'</td>'. //11
+	                        '<td hidden>'.$user['monthlyperformance'].'</td>'. //12
+	                        '<td hidden>'.$user['quarterlyproduction'].'</td>'. //13
+	                        '<td hidden>'.$user['monthlyrecruit'].'</td>'. //14
+	                        '<td hidden>'.$user['operationalallowance'].'</td>'. //15
+	                        //penerimaan column 2
+	                        '<td hidden>'.$user['otherallowance'].'</td>'.//16
+	                        '<td hidden>'.$user['allowance1'].'</td>'. //17
+	                        '<td hidden>'.$user['allowance2'].'</td>'. //18
+	                        '<td hidden>'.$user['allowance3'].'</td>'. //19
+	                        //space kosong
+	                        '<td hidden>'.$user['tax_allowance'].'</td>'. //20
+	                        
+	                        //pemotongan header
+	                        '<td hidden>'.$user['subtotal_potongan'].'</td>'. //21
+	                        // pemotongan column 1
+	                        '<td hidden>'.$user['uangmuka'].'</td>'. //22
+	                        '<td hidden>'.$user['pemotongan1'].'</td>'. //23
+	                        '<td hidden>'.$user['pemotongan2'].'</td>'. //24
+	                        '<td hidden>'.$user['pemotongan3'].'</td>'. //25
+	                        '<td hidden>'.$user['pemotongan4'].'</td>'. //26
+	                        //pemotongan column 2
+	                        '<td hidden>'.$user['pemotongan5'].'</td>'. //27
+	                        '<td hidden>'.$user['pemotongan6'].'</td>'. //28
+	                        '<td hidden>'.$user['pemotongan7'].'</td>'. //29
+	                        '<td hidden>'.$user['pph2126'].'</td>'. //30
+	                        '<td hidden>'.$user['sanksipajak'].'</td>'. //31
+	                        
+	                        // saldo/take home pay
+	                        '<td hidden>'.$user['nilaidibayar'].'</td>'. //32
+	        
+	                        //tambahan bulan dan tahun untuk filter
+	                        '<td style="text-align:center">'.$user['bulan'].'</td>'. //33
+	                        '<td style="text-align:center">'.$user['tahun'].'</td>'. //34
+	                        '<td>'.$user['email'].'</td>'. //35
+	                        '<td name="btn_send" id="btn_send" style="text-align:center"><button>Send</button></td';                               
+	                    }
+	        
+	        
+	                    if(isset($_POST['search']))
+                        {
+        
+                            $start = $_POST['start'];
+                            $second = $_POST['second'];
+                            $tableContent = '';
+                            // SELECT INI DIGUNAKAN UNTUK SELECT DENGAN FILTER
+                            $selectStmt = $con->prepare('SELECT * FROM payroll as p,karyawan as kk,users as u where bulan like :start AND tahun like :second and p.no_id = kk.no_id and u.name = p.nama');
+                            $selectStmt->execute(array(
+                                ':start'=>$start,
+                                ':second'=>$second
+                            ));
+                            $users = $selectStmt->fetchAll();
+        
+                            foreach ($users as $user) 
+                            {
+                                $bulan = $user['bulan'];
+        
+                                switch ($bulan){
+                                    case "1" : $periode = "Januari "; break;
+                                    case "2" : $periode = "Februari "; break;
+                                    case "3" : $periode = "Maret "; break;
+                                    case "4" : $periode = "April "; break;
+                                    case "5" : $periode = "Mei "; break;
+                                    case "6" : $periode = "Juni "; break;
+                                    case "7" : $periode = "Juli "; break;
+                                    case "8" : $periode = "Agustus "; break;
+                                    case "9" : $periode = "September "; break;
+                                    case "10" : $periode = "Oktober "; break;
+                                    case "11" : $periode = "November "; break;
+                                    case "11" : $periode = "Desember "; break;                    
+                                }
+        
+                                $periode .= $user['tahun'];
+                                $tableContent = $tableContent.'<tr>'.
+	                            
+	                            // '<td>'.$user['no'].'</td>'.
+	                            //slip gaji column 1
+	                            '<td>'.$user['nama'].'</td>'. //0
+	                            '<td hidden>'.$user['no_id'].'</td>'. //1
+	                            '<td hidden>'.$user['kode_status'].'</td>'.//2
+	                            '<td hidden>PT. MANDIRI KONSULTAMA PERKASA</td>'. //3
+	                            '<td hidden>'.$periode.'</td>'. //4
+	                            //slip gaji column 2
+	                            '<td hidden>'.$user['jabatan'].'</td>'. //5
+	                            '<td hidden>'.$user['channel'].'</td>'. //6
+	                            '<td hidden>'.$user['mulai_kerja'].'</td>'. //7
+	                            '<td hidden>'.$user['kode_negara'].'</td>'. //8
+	                            //space untuk tanda tangan
+	        
+	                            //penerimaan header
+	                            '<td hidden>'.$user['subtotal_penerimaan'].'</td>'. //9
+	                            //penerimaan column 1
+	                            '<td hidden>'.$user['commision'].'</td>'. //10
+	                            '<td hidden>'.$user['override'].'</td>'. //11
+	                            '<td hidden>'.$user['monthlyperformance'].'</td>'. //12
+	                            '<td hidden>'.$user['quarterlyproduction'].'</td>'. //13
+	                            '<td hidden>'.$user['monthlyrecruit'].'</td>'. //14
+	                            '<td hidden>'.$user['operationalallowance'].'</td>'. //15
+	                            //penerimaan column 2
+	                            '<td hidden>'.$user['otherallowance'].'</td>'.//16
+	                            '<td hidden>'.$user['allowance1'].'</td>'. //17
+	                            '<td hidden>'.$user['allowance2'].'</td>'. //18
+	                            '<td hidden>'.$user['allowance3'].'</td>'. //19
+	                            //space kosong
+	                            '<td hidden>'.$user['tax_allowance'].'</td>'. //20
+	                            
+	                            //pemotongan header
+	                            '<td hidden>'.$user['subtotal_potongan'].'</td>'. //21
+	                            // pemotongan column 1
+	                            '<td hidden>'.$user['uangmuka'].'</td>'. //22
+	                            '<td hidden>'.$user['pemotongan1'].'</td>'. //23
+	                            '<td hidden>'.$user['pemotongan2'].'</td>'. //24
+	                            '<td hidden>'.$user['pemotongan3'].'</td>'. //25
+	                            '<td hidden>'.$user['pemotongan4'].'</td>'. //26
+	                            //pemotongan column 2
+	                            '<td hidden>'.$user['pemotongan5'].'</td>'. //27
+	                            '<td hidden>'.$user['pemotongan6'].'</td>'. //28
+	                            '<td hidden>'.$user['pemotongan7'].'</td>'. //29
+	                            '<td hidden>'.$user['pph2126'].'</td>'. //30
+	                            '<td hidden>'.$user['sanksipajak'].'</td>'. //31
+	                            
+	                            // saldo/take home pay
+	                            '<td hidden>'.$user['nilaidibayar'].'</td>'. //32
+	        
+	                            //tambahan bulan dan tahun untuk filter
+	                            '<td style="text-align:center">'.$user['bulan'].'</td>'. //33
+	                            '<td style="text-align:center">'.$user['tahun'].'</td>'. //34
+	                            '<td>'.$user['email'].'</td>'. //35
+	                            '<td name="btn_send" id="btn_send" style="text-align:center"><button>Send</button></td';
+	                        }
+                    	}
+                    ?> 	
 
                     <!-- INPUT UNTUK KEBUTUHAN SEND EMAIL -->
                     <input hidden name="nama" type="text" id="nama">
                     <input hidden name="gaji" type="text" id="gaji">
                     <input hidden name="email" type="text" id="email">
+
                 </table>
             </form>
         </div>

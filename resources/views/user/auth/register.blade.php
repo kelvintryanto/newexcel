@@ -1,6 +1,7 @@
-@extends('user.layout.auth')
+@extends('admin.layout.import')
 
 @section('content')
+<?php $page = 'user/register'?>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
