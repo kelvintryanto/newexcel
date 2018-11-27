@@ -121,7 +121,6 @@
 
                 if(isset($_POST['search']))
                 {
-
                     $start = $_POST['start'];
                     $second = $_POST['second'];
                     $tableContent = '';

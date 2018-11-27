@@ -254,8 +254,8 @@
                         <th style="text-align: center;">BPJS TAX</th>
                         <th style="text-align: center;">POT.GAJI</th>
                         <th style="text-align: center;">NATURA</th>
-                        <th>TAX</th>
-                        <th>NON TAX</th>
+                        <th style="text-align: center;">TAX</th>
+                        <th style="text-align: center;">NON TAX</th>
                     </tr>
                     <?php
 
