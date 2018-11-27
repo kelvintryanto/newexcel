@@ -84,6 +84,7 @@
 
                     if ($result-> num_rows > 0) {
                         while ($row = $result-> fetch_assoc()) {
+                            $harga="Rp. ".number_format($row["ptkp"],2,',','.');
                             echo "<tr><td hidden>".$row["no"]."</td>
                             <td style='text-align: center;'>".$row["no_id"]."</td>
                             <td>".$row["nama"]."</td>
@@ -102,7 +103,7 @@
                             <td style='text-align: center;'>".$row["jenis_kelamin"]."</td>
                             <td style='text-align: center;'>".$row["mulai_kerja"]."</td>
                             <td style='text-align: center;'>".$row["akhir_kerja"]."</td>
-                            <td>".$row["ptkp"]."</td></tr>";
+                            <td>".$harga."</td></tr>";
 
                         }
                         echo "</table>";

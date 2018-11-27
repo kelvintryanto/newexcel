@@ -32,7 +32,7 @@ class KaryawanKontrak extends Migration
             $table->string('jenis_kelamin')->nullable();
             $table->string('mulai_kerja')->nullable();
             $table->string('akhir_kerja')->nullable();
-            $table->string('ptkp')->nullable();
+            $table->integer('ptkp')->nullable();
             $table->timestamps();
             });
     }
