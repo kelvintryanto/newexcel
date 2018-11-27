@@ -11,6 +11,7 @@
 |
 */
 
+// ROUTING UNTUK ADMIN
 Route::get('/', function () {
   return view('welcome');
   
@@ -74,6 +75,7 @@ Route::get('/', function () {
 
 });
 
+// ROUTING UNTUK USER
 Route::group(['prefix' => 'user'], function () {
 
   //login
