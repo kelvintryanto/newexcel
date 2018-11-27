@@ -60,57 +60,57 @@
                                 // '<td>'.$user['no'].'</td>'.
                                 //slip gaji column 1
                                 '<td>'.$user['nama'].'</td>'. //0
-                                '<td>'.$user['no_id'].'</td>'. //1
-                                '<td>'.$user['kode_status'].'</td>'.//2
-                                '<td>PT MANDIRI KONSULTAMA PERKASA</td>'. //3
-                                '<td>'.$periode.'</td>'. //4
+                                '<td hidden>'.$user['no_id'].'</td>'. //1
+                                '<td hidden>'.$user['kode_status'].'</td>'.//2
+                                '<td hidden>PT MANDIRI KONSULTAMA PERKASA</td>'. //3
+                                '<td hidden>'.$periode.'</td>'. //4
                                 //slip gaji column 2
-                                '<td>'.$user['jabatan'].'</td>'. //5
-                                '<td>'.$user['channel'].'</td>'. //6
-                                '<td>'.$user['mulai_kerja'].'</td>'. //7
-                                '<td>'.$user['kode_negara'].'</td>'. //8
+                                '<td hidden>'.$user['jabatan'].'</td>'. //5
+                                '<td hidden>'.$user['channel'].'</td>'. //6
+                                '<td hidden>'.$user['mulai_kerja'].'</td>'. //7
+                                '<td hidden>'.$user['kode_negara'].'</td>'. //8
                                 //space untuk tanda tangan
 
                                 //penerimaan header
-                                '<td>'.$user['subtotal_penerimaan'].'</td>'. //9
+                                '<td hidden>'.$user['subtotal_penerimaan'].'</td>'. //9
                                 //penerimaan column 1
-                                '<td>'.$user['commision'].'</td>'. //10
-                                '<td>'.$user['override'].'</td>'. //11
-                                '<td>'.$user['monthlyperformance'].'</td>'. //12
-                                '<td>'.$user['quarterlyproduction'].'</td>'. //13
-                                '<td>'.$user['monthlyrecruit'].'</td>'. //14
-                                '<td>'.$user['operationalallowance'].'</td>'. //15
+                                '<td hidden>'.$user['commision'].'</td>'. //10
+                                '<td hidden>'.$user['override'].'</td>'. //11
+                                '<td hidden>'.$user['monthlyperformance'].'</td>'. //12
+                                '<td hidden>'.$user['quarterlyproduction'].'</td>'. //13
+                                '<td hidden>'.$user['monthlyrecruit'].'</td>'. //14
+                                '<td hidden>'.$user['operationalallowance'].'</td>'. //15
                                 //penerimaan column 2
-                                '<td>'.$user['otherallowance'].'</td>'.//16
-                                '<td>'.$user['allowance1'].'</td>'. //17
-                                '<td>'.$user['allowance2'].'</td>'. //18
-                                '<td>'.$user['allowance3'].'</td>'. //19
+                                '<td hidden>'.$user['otherallowance'].'</td>'.//16
+                                '<td hidden>'.$user['allowance1'].'</td>'. //17
+                                '<td hidden>'.$user['allowance2'].'</td>'. //18
+                                '<td hidden>'.$user['allowance3'].'</td>'. //19
                                 //space kosong
-                                '<td>'.$user['tax_allowance'].'</td>'. //20
+                                '<td hidden>'.$user['tax_allowance'].'</td>'. //20
                                 
                                 //pemotongan header
-                                '<td>'.$user['subtotal_potongan'].'</td>'. //21
+                                '<td hidden>'.$user['subtotal_potongan'].'</td>'. //21
                                 // pemotongan column 1
-                                '<td>'.$user['uangmuka'].'</td>'. //22
-                                '<td>'.$user['pemotongan1'].'</td>'. //23
-                                '<td>'.$user['pemotongan2'].'</td>'. //24
-                                '<td>'.$user['pemotongan3'].'</td>'. //25
-                                '<td>'.$user['pemotongan4'].'</td>'. //26
+                                '<td hidden>'.$user['uangmuka'].'</td>'. //22
+                                '<td hidden>'.$user['pemotongan1'].'</td>'. //23
+                                '<td hidden>'.$user['pemotongan2'].'</td>'. //24
+                                '<td hidden>'.$user['pemotongan3'].'</td>'. //25
+                                '<td hidden>'.$user['pemotongan4'].'</td>'. //26
                                 //pemotongan column 2
-                                '<td>'.$user['pemotongan5'].'</td>'. //27
-                                '<td>'.$user['pemotongan6'].'</td>'. //28
-                                '<td>'.$user['pemotongan7'].'</td>'. //29
-                                '<td>'.$user['pph2126'].'</td>'. //30
-                                '<td>'.$user['sanksipajak'].'</td>'. //31
+                                '<td hidden>'.$user['pemotongan5'].'</td>'. //27
+                                '<td hidden>'.$user['pemotongan6'].'</td>'. //28
+                                '<td hidden>'.$user['pemotongan7'].'</td>'. //29
+                                '<td hidden>'.$user['pph2126'].'</td>'. //30
+                                '<td hidden>'.$user['sanksipajak'].'</td>'. //31
                                 
                                 // saldo/take home pay
-                                '<td>'.$user['nilaidibayar'].'</td>'. //32
+                                '<td hidden>'.$user['nilaidibayar'].'</td>'. //32
 
                                 //tambahan bulan dan tahun untuk filter
-                                '<td>'.$user['bulan'].'</td>'.
-                                '<td>'.$user['tahun'].'</td>'.
+                                '<td style="text-align:center">'.$user['bulan'].'</td>'.
+                                '<td style="text-align:center">'.$user['tahun'].'</td>'.
                                 '<td>'.$user['email'].'</td>'.
-                                '<td><button>Send</button></td';
+                                '<td name="btn_send" id="btn_send" style="text-align:center"><button>Send</button></td';
                                 
                 }
 
@@ -120,7 +120,7 @@
                     $start = $_POST['start'];
                     $second = $_POST['second'];
                     $tableContent = '';
-                    $selectStmt = $con->prepare('SELECT * FROM payrollKontrak as pk,karyawankontrak as kk WHERE bulan like :start AND tahun like :second AND pk.no_id = kk.no_id');
+                    $selectStmt = $con->prepare('SELECT * FROM payrollKontrak as pk,karyawankontrak as kk,users as u where bulan like :start AND tahun like :second and pk.no_id = kk.no_id and u.name = pk.nama');
                     $selectStmt->execute(array(
                             ':start'=>$start,
                             ':second'=>$second
@@ -145,62 +145,62 @@
                             case "11" : $periode = "Desember "; break;                    
                         }
 
-                        $periode += $user['tahun'];
+                        $periode .= $user['tahun'];
                         $tableContent = $tableContent.'<tr>'.
                                 // '<td>'.$user['no'].'</td>'.
                                 //slip gaji column 1
-                                '<td>'.$user['nama'].'</td>'. //namakaryawan done TIDAK DIHIDDEN
-                                '<td>'.$user['no_id'].'</td>'. //no.id done
-                                '<td>'.$user['kode_status'].'</td>'. //status done
-                                '<td>PT MANDIRI KONSULTAMA PERKASA</td>'.//nama perusahaan done
-                                '<td>'.$periode.'</td>'. //periode payroll done
+                                '<td>'.$user['nama'].'</td>'. //0
+                                '<td hidden>'.$user['no_id'].'</td>'. //1
+                                '<td hidden>'.$user['kode_status'].'</td>'.//2
+                                '<td hidden>PT MANDIRI KONSULTAMA PERKASA</td>'. //3
+                                '<td hidden>'.$periode.'</td>'. //4
                                 //slip gaji column 2
-                                '<td>'.$user['jabatan'].'</td>'. //position done
-                                '<td>'.$user['channel'].'</td>'. //channel done
-                                '<td>'.$user['mulai_kerja'].'</td>'. //tanggal masuk done
-                                '<td>'.$user['kode_negara'].'</td>'. //kode negara done
+                                '<td hidden>'.$user['jabatan'].'</td>'. //5
+                                '<td hidden>'.$user['channel'].'</td>'. //6
+                                '<td hidden>'.$user['mulai_kerja'].'</td>'. //7
+                                '<td hidden>'.$user['kode_negara'].'</td>'. //8
                                 //space untuk tanda tangan
 
                                 //penerimaan header
-                                '<td>'.$user['subtotal_penerimaan'].'</td>'.
+                                '<td hidden>'.$user['subtotal_penerimaan'].'</td>'. //9
                                 //penerimaan column 1
-                                '<td>'.$user['commision'].'</td>'.
-                                '<td>'.$user['override'].'</td>'.
-                                '<td>'.$user['monthlyperformance'].'</td>'.
-                                '<td>'.$user['quarterlyproduction'].'</td>'.
-                                '<td>'.$user['monthlyrecruit'].'</td>'.
-                                '<td>'.$user['operationalallowance'].'</td>'.                                
+                                '<td hidden>'.$user['commision'].'</td>'. //10
+                                '<td hidden>'.$user['override'].'</td>'. //11
+                                '<td hidden>'.$user['monthlyperformance'].'</td>'. //12
+                                '<td hidden>'.$user['quarterlyproduction'].'</td>'. //13
+                                '<td hidden>'.$user['monthlyrecruit'].'</td>'. //14
+                                '<td hidden>'.$user['operationalallowance'].'</td>'. //15
                                 //penerimaan column 2
-                                '<td>'.$user['otherallowance'].'</td>'.
-                                '<td>'.$user['allowance1'].'</td>'.
-                                '<td>'.$user['allowance2'].'</td>'.
-                                '<td>'.$user['allowance3'].'</td>'.
+                                '<td hidden>'.$user['otherallowance'].'</td>'.//16
+                                '<td hidden>'.$user['allowance1'].'</td>'. //17
+                                '<td hidden>'.$user['allowance2'].'</td>'. //18
+                                '<td hidden>'.$user['allowance3'].'</td>'. //19
                                 //space kosong
-                                '<td>'.$user['tax_allowance'].'</td>'.
+                                '<td hidden>'.$user['tax_allowance'].'</td>'. //20
                                 
                                 //pemotongan header
-                                '<td>'.$user['subtotal_potongan'].'</td>'.
+                                '<td hidden>'.$user['subtotal_potongan'].'</td>'. //21
                                 // pemotongan column 1
-                                '<td>'.$user['uangmuka'].'</td>'.
-                                '<td>'.$user['pemotongan1'].'</td>'.
-                                '<td>'.$user['pemotongan2'].'</td>'.
-                                '<td>'.$user['pemotongan3'].'</td>'.
-                                '<td>'.$user['pemotongan4'].'</td>'.
+                                '<td hidden>'.$user['uangmuka'].'</td>'. //22
+                                '<td hidden>'.$user['pemotongan1'].'</td>'. //23
+                                '<td hidden>'.$user['pemotongan2'].'</td>'. //24
+                                '<td hidden>'.$user['pemotongan3'].'</td>'. //25
+                                '<td hidden>'.$user['pemotongan4'].'</td>'. //26
                                 //pemotongan column 2
-                                '<td>'.$user['pemotongan5'].'</td>'.
-                                '<td>'.$user['pemotongan6'].'</td>'.
-                                '<td>'.$user['pemotongan7'].'</td>'.
-                                '<td>'.$user['pph2126'].'</td>'.
-                                '<td>'.$user['sanksipajak'].'</td>'.
+                                '<td hidden>'.$user['pemotongan5'].'</td>'. //27
+                                '<td hidden>'.$user['pemotongan6'].'</td>'. //28
+                                '<td hidden>'.$user['pemotongan7'].'</td>'. //29
+                                '<td hidden>'.$user['pph2126'].'</td>'. //30
+                                '<td hidden>'.$user['sanksipajak'].'</td>'. //31
                                 
                                 // saldo/take home pay
-                                '<td>'.$user['nilaidibayar'].'</td>'.
+                                '<td hidden>'.$user['nilaidibayar'].'</td>'. //32
 
                                 //tambahan bulan dan tahun untuk filter
-                                '<td>'.$user['bulan'].'</td>'.
-                                '<td>'.$user['tahun'].'</td>'.
+                                '<td style="text-align:center">'.$user['bulan'].'</td>'.
+                                '<td style="text-align:center">'.$user['tahun'].'</td>'.
                                 '<td>'.$user['email'].'</td>'.
-                                '<td><button>Send</button></td';
+                                '<td name="btn_send" id="btn_send" style="text-align:center"><button>Send</button></td';
                     }
                 }
             ?>
@@ -242,60 +242,67 @@
                    {{ csrf_field() }}
                     <table id="table" class="table table-hover" style="font-size: 12px;">
                         <tr class="table-head">
-                            <th colspan="9" style="text-align: center;">SLIP GAJI</th>
-                            <th colspan="12" style="text-align: center;">PENERIMAAN</th>
-                            <th colspan="11" style="text-align: center;">PEMOTONGAN</th>
+                            <th hidden colspan="9" style="text-align: center;">SLIP GAJI</th>
+                            <th hidden colspan="12" style="text-align: center;">PENERIMAAN</th>
+                            <th hidden colspan="11" style="text-align: center;">PEMOTONGAN</th>
                             <!-- HEADER + SALDO/TAKE HOME PAY -->
-                            <th rowspan="2" style="text-align: center;">Take Home Pay</th>
-                            <th rowspan="2" style="text-align: center;">Bulan</th>                                                   
-                            <th rowspan="2" style="text-align: center;">Tahun</th>
-                            <th rowspan="2" style="text-align: center;">Email</th>
-                            <th rowspan="2" style="text-align: center;">Send Email</th>
+                            <th hidden rowspan="2" style="text-align: center;">Take Home Pay</th>
+                            <!-- <th  style="text-align: center;">Bulan</th>                                                   
+                            <th  style="text-align: center;">Tahun</th>
+                            <th  style="text-align: center;">Email</th>
+                            <th  style="text-align: center;">Send Email</th> -->
                         </tr>
                         <tr class="table-head">
                             <!-- Slip Gaji Column 1-->
                             <th style="text-align: center;">Nama Karyawan</th>
-                            <th style="text-align: center;">No.ID</th>
-                            <th style="text-align: center;">Status</th>
-                            <th style="text-align: center;">Nama Perusahaan</th>
-                            <th style="text-align: center;">Periode Payroll</th>
+                            <!-- setelah dihidden -->
+                            <th  style="text-align: center;">Bulan</th>                                                   
+                            <th  style="text-align: center;">Tahun</th>
+                            <th  style="text-align: center;">Email</th>
+                            <th  style="text-align: center;">Send Email</th>
+                            <!-- setelah dihidden -->
+
+                            <th hidden style="text-align: center;">No.ID</th>
+                            <th hidden style="text-align: center;">Status</th>
+                            <th hidden style="text-align: center;">Nama Perusahaan</th>
+                            <th hidden style="text-align: center;">Periode Payroll</th>
                             <!-- Slip Gaji Column 2 -->
-                            <th style="text-align: center;">Position</th>
-                            <th style="text-align: center;">Channel</th>
-                            <th style="text-align: center;">Tgl.Masuk</th>
-                            <th style="text-align: center;">Kode Negara</th>
+                            <th hidden style="text-align: center;">Position</th>
+                            <th hidden style="text-align: center;">Channel</th>
+                            <th hidden style="text-align: center;">Tgl.Masuk</th>
+                            <th hidden style="text-align: center;">Kode Negara</th>
                             <!-- Space Column -->
 
                             <!-- HEADER + PENERIMAAN -->
-                            <th style="text-align: center;">Penerimaan</th>
+                            <th hidden style="text-align: center;">Penerimaan</th>
                             <!-- Penerimaan Column 1-->
-                            <th style="text-align: center;">Commision</th>
-                            <th style="text-align: center;">Override</th>
-                            <th style="text-align: center;">Monthly Performance Allowance</th>
-                            <th style="text-align: center;">Quarterly Production Allowance</th>
-                            <th style="text-align: center;">Monthly Recruit Bonus</th>
-                            <th style="text-align: center;">Operational Allowance</th>
+                            <th hidden style="text-align: center;">Commision</th>
+                            <th hidden style="text-align: center;">Override</th>
+                            <th hidden style="text-align: center;">Monthly Performance Allowance</th>
+                            <th hidden style="text-align: center;">Quarterly Production Allowance</th>
+                            <th hidden style="text-align: center;">Monthly Recruit Bonus</th>
+                            <th hidden style="text-align: center;">Operational Allowance</th>
                             <!-- Penerimaan Column 2 -->
-                            <th style="text-align: center;">Other Allowance</th>
-                            <th style="text-align: center;">Other Allowance 1</th>
-                            <th style="text-align: center;">Other Allowance 2</th>
-                            <th style="text-align: center;">Other Allowance 3</th>
+                            <th hidden style="text-align: center;">Other Allowance</th>
+                            <th hidden style="text-align: center;">Other Allowance 1</th>
+                            <th hidden style="text-align: center;">Other Allowance 2</th>
+                            <th hidden style="text-align: center;">Other Allowance 3</th>
                             <!-- Space Column -->                            
-                            <th style="text-align: center;">Tax Allowance</th>
+                            <th hidden style="text-align: center;">Tax Allowance</th>
 
                             <!-- HEADER + PEMOTONGAN -->
-                            <th style="text-align: center;">Pemotongan</th>
+                            <th hidden style="text-align: center;">Pemotongan</th>
                             <!-- Pemotongan Column 1 -->
-                            <th style="text-align: center;">Uang Muka</th>
-                            <th style="text-align: center;">Pemotongan 1</th>
-                            <th style="text-align: center;">Pemotongan 2</th>
-                            <th style="text-align: center;">Pemotongan 3</th>
-                            <th style="text-align: center;">Pemotongan 4</th>
-                            <th style="text-align: center;">Pemotongan 5</th>
-                            <th style="text-align: center;">Pemotongan 6</th>
-                            <th style="text-align: center;">Pemotongan 7</th>
-                            <th style="text-align: center;">PPh 21</th>
-                            <th style="text-align: center;">Sanksi Pajak</th>
+                            <th hidden style="text-align: center;">Uang Muka</th>
+                            <th hidden style="text-align: center;">Pemotongan 1</th>
+                            <th hidden style="text-align: center;">Pemotongan 2</th>
+                            <th hidden style="text-align: center;">Pemotongan 3</th>
+                            <th hidden style="text-align: center;">Pemotongan 4</th>
+                            <th hidden style="text-align: center;">Pemotongan 5</th>
+                            <th hidden style="text-align: center;">Pemotongan 6</th>
+                            <th hidden style="text-align: center;">Pemotongan 7</th>
+                            <th hidden style="text-align: center;">PPh 21</th>
+                            <th hidden style="text-align: center;">Sanksi Pajak</th>
                         </tr>
 
                         <!-- input untuk menampung nilai variable payroll kontrak -->
@@ -306,7 +313,7 @@
                         <input hidden name="periode" type="text" id="periode">
                         <input hidden name="position" type="text" id="position">
                         <input hidden name="channel" type="text" id="channel">
-                        <input hidden name="mulai_kerja" type="text" id="tgl_kerja">
+                        <input hidden name="mulai_kerja" type="text" id="mulai_kerja">
                         <input hidden name="kode_negara" type="text" id="kode_negara">
                         <input hidden name="penerimaan" type="text" id="penerimaan">
                         <input hidden name="commision" type="text" id="commision">

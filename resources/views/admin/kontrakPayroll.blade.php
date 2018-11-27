@@ -157,7 +157,6 @@
                     '<td>'.$user['nilaidibayar'].'</td>'.
                     '<td>'.$user['bulan'].'</td>'.
                     '<td>'.$user['tahun'].'</td>';
-
                 }
 
 
@@ -250,16 +249,6 @@
                     ?>
                 </table>
             </div>
-            <!-- <div>
-                <form action="send" method="post">
-                    {{csrf_field()}}
-                    to: <input type="text" name="to">
-                    message: <textarea name="message" cols="30" rows="10"></textarea>
-                    <input type="submit" value="Send">
-                </form>
-            </div> -->
-
-            <!-- </div> -->
         </div>
     </div>
 </div>

@@ -84,7 +84,7 @@
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                     <!-- Clock Display -->
-                    <li id="clockDisplay"></li>
+                    <li id="clockDisplay" style="padding-top: 13px;"></li>
                     <li><a href="{{ url('/admin/login') }}">Login</a></li>
                     <li><a href="{{ url('/admin/register') }}">Register</a></li>
                     @else
@@ -123,6 +123,8 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+
     <script>
 		function renderTime(){
 
