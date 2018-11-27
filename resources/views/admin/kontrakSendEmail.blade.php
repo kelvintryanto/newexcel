@@ -32,11 +32,13 @@
                 $tableContent = '';
                 $start = '';
                 $second = '';
+                // SELECT INI BERGUNA UNTUK SELECT ALL TANPA FILTER
                 $selectStmt = $con->prepare('SELECT * FROM payrollKontrak as pk,karyawankontrak as kk,users as u where pk.no_id = kk.no_id and u.name = pk.nama');
                 $selectStmt->execute();
                 $users = $selectStmt->fetchAll();
 
                 foreach ($users as $user) {
+                    //mengubah angka bulan menjadi nama bulan
                     $bulan = $user['bulan'];
                         
                         switch ($bulan){
@@ -54,6 +56,7 @@
                             case "11" : $periode = "Desember "; break;                    
                         }
 
+                        // .= fungsinya untuk append bulan dengan tahun
                         $periode .= $user['tahun'];
                     
                     $tableContent = $tableContent.'<tr>'.
@@ -120,6 +123,7 @@
                     $start = $_POST['start'];
                     $second = $_POST['second'];
                     $tableContent = '';
+                    // SELECT INI DIGUNAKAN UNTUK SELECT DENGAN FILTER
                     $selectStmt = $con->prepare('SELECT * FROM payrollKontrak as pk,karyawankontrak as kk,users as u where bulan like :start AND tahun like :second and pk.no_id = kk.no_id and u.name = pk.nama');
                     $selectStmt->execute(array(
                             ':start'=>$start,
