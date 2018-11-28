@@ -302,6 +302,7 @@ return [
         'pinjaman_obat',
         'pinjaman_lain2x',
         'sub_total_pengeluaran',
+        'take_home_pay',
         'bulan',
         'tahun'
     ],

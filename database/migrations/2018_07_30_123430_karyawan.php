@@ -34,12 +34,12 @@ class Karyawan extends Migration
             $table->string('kode_objek_pajak')->nullable();
             $table->string('mulai_kerja')->nullable();
             $table->string('akhir_kerja')->nullable();
-            $table->string('kend')->nullable();
-            $table->string('rumah')->nullable();
-            $table->string('obat')->nullable();
-            $table->string('uang')->nullable();
-            $table->string('lain')->nullable();
-            $table->string('pl_obat')->nullable();
+            $table->integer('kend')->nullable();
+            $table->integer('rumah')->nullable();
+            $table->integer('obat')->nullable();
+            $table->integer('uang')->nullable();
+            $table->integer('lain')->nullable();
+            $table->integer('pl_obat')->nullable();
             $table->integer('gaji')->nullable();
             $table->string('tanggal_in')->nullable();
             $table->string('jml_bulan_in')->nullable();

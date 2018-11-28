@@ -101,9 +101,50 @@
 
                     if ($result-> num_rows > 0) {
                         while ($row = $result-> fetch_assoc()) {
-                            $harga="Rp. ".number_format($row["gaji"],2,',','.');
+                            $gaji="Rp ".number_format($row["gaji"],2,',','.');
+                            $kend="Rp ".number_format($row["kend"],2,',','.');
+                            $rumah="Rp ".number_format($row["rumah"],2,',','.');
+                            $obat="Rp ".number_format($row["obat"],2,',','.');
+                            $uang="Rp ".number_format($row["uang"],2,',','.');
+                            $lain2x="Rp ".number_format($row["lain"],2,',','.');
+                            $pl_obat="Rp ".number_format($row["pl_obat"],2,',','.');
 
-                            echo "<tr><td>".$row["no_id"]."</td><td>".$row["nama"]."</td><td>".$row["no_npwp"]."</td><td>".$row["npwp_sejak"]."</td><td>".$row["alamat_1"]."</td><td>".$row["alamat_2"]."</td><td>".$row["no_ktp"]."</td><td>".$row["kode_negara"]."</td><td>".$row["status_pindah"]."</td><td>".$row["no_rekening"]."</td><td>".$row["bagian"]."</td><td>".$row["jabatan"]."</td><td>".$row["status_k_tk_hb"]."</td><td>".$row["tanggungan"]."</td><td>".$row["jenis_kelamin"]."</td><td>".$row["ka"]."</td><td>".$row["kode_objek_pajak"]."</td><td>".$row["mulai_kerja"]."</td><td>".$row["akhir_kerja"]."</td><td>".$row["kend"]."</td><td>".$row["rumah"]."</td><td>".$row["obat"]."</td><td>".$row["uang"]."</td><td>".$row["lain"]."</td><td>".$row["pl_obat"]."</td><td>".$harga."</td><td>".$row["tanggal_in"]."</td><td>".$row["jml_bulan_in"]."</td><td>".$row["pengh_in"]."</td><td>".$row["pph_in"]."</td><td>".$row["tanggal_out"]."</td><td>".$row["bulan_out"]."</td><td>".$row["tanggal_lahir"]."</td></tr>";
+                            echo 
+                            "<tr>
+                                <td>".$row["no_id"]."</td>
+                                <td>".$row["nama"]."</td>
+                                <td>".$row["no_npwp"]."</td>
+                                <td>".$row["npwp_sejak"]."</td>
+                                <td>".$row["alamat_1"]."</td>
+                                <td>".$row["alamat_2"]."</td>
+                                <td>".$row["no_ktp"]."</td>
+                                <td>".$row["kode_negara"]."</td>
+                                <td>".$row["status_pindah"]."</td>
+                                <td>".$row["no_rekening"]."</td>
+                                <td>".$row["bagian"]."</td>
+                                <td>".$row["jabatan"]."</td>
+                                <td>".$row["status_k_tk_hb"]."</td>
+                                <td>".$row["tanggungan"]."</td>
+                                <td>".$row["jenis_kelamin"]."</td>
+                                <td>".$row["ka"]."</td>
+                                <td>".$row["kode_objek_pajak"]."</td>
+                                <td>".$row["mulai_kerja"]."</td>
+                                <td>".$row["akhir_kerja"]."</td>
+                                <td>".$kend."</td>
+                                <td>".$rumah."</td>
+                                <td>".$obat."</td>
+                                <td>".$uang."</td>
+                                <td>".$lain2x."</td>
+                                <td>".$pl_obat."</td>
+                                <td>".$gaji."</td>
+                                <td>".$row["tanggal_in"]."</td>
+                                <td>".$row["jml_bulan_in"]."</td>
+                                <td>".$row["pengh_in"]."</td>
+                                <td>".$row["pph_in"]."</td>
+                                <td>".$row["tanggal_out"]."</td>
+                                <td>".$row["bulan_out"]."</td>
+                                <td>".$row["tanggal_lahir"]."</td>
+                            </tr>";
 
                         }
                         echo "</table>";

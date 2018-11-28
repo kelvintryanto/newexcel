@@ -68,8 +68,8 @@
 
             foreach ($users as $user) {
 
-                $subtotalpenerimaan="Rp. ".number_format($user["subtotal_penerimaan"],2,',','.');
-                $subtotalpotongan="Rp. ".number_format($user["subtotal_potongan"],2,',','.');
+                $subtotal_penerimaan="Rp. ".number_format($user["subtotal_penerimaan"],2,',','.');
+                $subtotal_potongan="Rp. ".number_format($user["subtotal_potongan"],2,',','.');
                 $nilaidibayar="Rp. ".number_format($user["nilaidibayar"],2,',','.');
                 
                 $tableContent = $tableContent.'<tr>'.
@@ -93,7 +93,7 @@
                 '<td>'.$user['allowance2'].'</td>'.
                 '<td>'.$user['allowance3'].'</td>'.
                 '<td>'.$user['tax_allowance'].'</td>'.
-                '<td>'.$subtotalpenerimaan.'</td>'.
+                '<td>'.$subtotal_penerimaan.'</td>'.
                 '<td>'.$user['uangmuka'].'</td>'.
                 '<td>'.$user['pemotongan1'].'</td>'.
                 '<td>'.$user['pemotongan2'].'</td>'.
@@ -104,7 +104,7 @@
                 '<td>'.$user['pemotongan7'].'</td>'.
                 '<td>'.$user['pph2126'].'</td>'.
                 '<td>'.$user['sanksipajak'].'</td>'.
-                '<td>'.$subtotalpotongan.'</td>'.
+                '<td>'.$subtotal_potongan.'</td>'.
                 '<td>'.$nilaidibayar.'</td>'.
                 '<td>'.$user['bulan'].'</td>'.
                 '<td>'.$user['tahun'].'</td>';

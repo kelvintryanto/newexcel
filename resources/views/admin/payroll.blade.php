@@ -67,10 +67,42 @@
             $users = $selectStmt->fetchAll();
 
             foreach ($users as $user) {
-                $gajipokok="Rp. ".number_format($user["gaji_pokok"],2,',','.');
-                $potgaji="Rp. ".number_format($user["pot_gaji"],2,',','.');
-                $subtotalpenerimaan="Rp. ".number_format($user["sub_total_penerimaan"],2,',','.');
-                $subtotalpengeluaran="Rp. ".number_format($user["sub_total_pengeluaran"],2,',','.');
+                
+                // number format table
+                $gaji_pokok="Rp ".number_format($user["gaji_pokok"],2,',','.');
+                $insentif="Rp ".number_format($user["insentif"],2,',','.');
+                $uang_makan="Rp ".number_format($user["uang_makan"],2,',','.');
+                $transport="Rp ".number_format($user["transport"],2,',','.');
+                $asuransi="Rp ".number_format($user["asuransi"],2,',','.');
+                $lembur="Rp ".number_format($user["lembur"],2,',','.');
+                $pengobatan="Rp ".number_format($user["pengobatan"],2,',','.');
+                $lain="Rp ".number_format($user["lain"],2,',','.');
+                $pajak_penerimaan="Rp ".number_format($user["pajak_penerimaan"],2,',','.');
+                $bpjs_non_tax="Rp ".number_format($user["bpjs_non_tax"],2,',','.');
+                $bpjs_tax="Rp ".number_format($user["bpjs_tax"],2,',','.');
+                $pot_gaji="Rp ".number_format($user["pot_gaji"],2,',','.');
+                $natura_penerimaan="Rp ".number_format($user["natura_penerimaan"],2,',','.');
+                $bantuan="Rp ".number_format($user["bantuan"],2,',','.');
+                $thr="Rp ".number_format($user["thr"],2,',','.');
+                $sub_total_penerimaan="Rp ".number_format($user["sub_total_penerimaan"],2,',','.');
+
+                $iuran="Rp ".number_format($user["iuran"],2,',','.');
+                $bpjs_karyawan_tax="Rp ".number_format($user["bpjs_karyawan_tax"],2,',','.');
+                $uangmuka="Rp ".number_format($user["uangmuka"],2,',','.');
+                $pajak_pemotongan="Rp ".number_format($user["pajak_pemotongan"],2,',','.');
+                $sanksipajak="Rp ".number_format($user["sanksipajak"],2,',','.');
+                $tax="Rp ".number_format($user["tax"],2,',','.');
+                $nontax="Rp ".number_format($user["nontax"],2,',','.');
+                $bpjs_karyawan_non_tax="Rp ".number_format($user["bpjs_karyawan_non_tax"],2,',','.');
+                $iuran2="Rp ".number_format($user["iuran2"],2,',','.');
+                $natura_pemotongan="Rp ".number_format($user["natura_pemotongan"],2,',','.');
+                $pinjaman_kendaraan="Rp ".number_format($user["pinjaman_kendaraan"],2,',','.');
+                $pinjaman_rumah="Rp ".number_format($user["pinjaman_rumah"],2,',','.');
+                $pinjaman_obat="Rp ".number_format($user["pinjaman_obat"],2,',','.');
+                $pinjaman_lain2x="Rp ".number_format($user["pinjaman_lain2x"],2,',','.');                
+                $sub_total_pengeluaran="Rp ".number_format($user["sub_total_pengeluaran"],2,',','.');
+                $take_home_pay="Rp ".number_format($user["take_home_pay"],2,',','.');
+
                 $tableContent = $tableContent.'<tr>'.
                 // '<td>'.$user['no'].'</td>'.
                 '<td>'.$user['nik'].'</td>'. //0
@@ -78,46 +110,46 @@
                 '<td>'.$user['divisi'].'</td>'. //2
                 '<td>'.$user['keterangan_divisi'].'</td>'. //3
                 '<td>'.$user['kehadiran'].'</td>'. //4
-                '<td>'.$gajipokok.'</td>'. //5
-                '<td>'.$user['insentif'].'</td>'. //6
-                '<td>'.$user['uang_makan'].'</td>'. //7
-                '<td>'.$user['transport'].'</td>'. //8
-                '<td>'.$user['asuransi'].'</td>'. //9
-                '<td>'.$user['lembur'].'</td>'. //10
-                '<td>'.$user['pengobatan'].'</td>'. //11
-                '<td>'.$user['lain'].'</td>'. //12
-                '<td>'.$user['pajak_penerimaan'].'</td>'. //13
-                '<td>'.$user['bpjs_non_tax'].'</td>'. //14
-                '<td>'.$user['bpjs_tax'].'</td>'. //15
-                '<td>'.$potgaji.'</td>'. //16
-                '<td>'.$user['natura_penerimaan'].'</td>'. //17
-                '<td>'.$user['bantuan'].'</td>'. //18
-                '<td>'.$user['thr'].'</td>'. //19
-                '<td>'.$subtotalpenerimaan.'</td>'. //20
+                '<td style="text-align:right">'.$gaji_pokok.'</td>'. //5
+                '<td style="text-align:right">'.$insentif.'</td>'. //6
+                '<td style="text-align:right">'.$uang_makan.'</td>'. //7
+                '<td style="text-align:right">'.$transport.'</td>'. //8
+                '<td style="text-align:right">'.$asuransi.'</td>'. //9
+                '<td style="text-align:right">'.$lembur.'</td>'. //10
+                '<td style="text-align:right">'.$pengobatan.'</td>'. //11
+                '<td style="text-align:right">'.$lain.'</td>'. //12
+                '<td style="text-align:right">'.$pajak_penerimaan.'</td>'. //13
+                '<td style="text-align:right">'.$bpjs_non_tax.'</td>'. //14
+                '<td style="text-align:right">'.$bpjs_tax.'</td>'. //15
+                '<td style="text-align:right">'.$pot_gaji.'</td>'. //16
+                '<td style="text-align:right">'.$natura_penerimaan.'</td>'. //17
+                '<td style="text-align:right">'.$bantuan.'</td>'. //18
+                '<td style="text-align:right">'.$thr.'</td>'. //19
+                '<td style="text-align:right">'.$sub_total_penerimaan.'</td>'. //20
 
-                '<td>'.$user['iuran'].'</td>'.  //21
-                '<td>'.$user['bpjs_karyawan_tax'].'</td>'. //22
-                '<td>'.$user['uangmuka'].'</td>'. //23
-                '<td>'.$user['pajak_pemotongan'].'</td>'. //24
-                '<td>'.$user['sanksipajak'].'</td>'. //25
-                '<td>'.$user['tax'].'</td>'. //26
-                '<td>'.$user['nontax'].'</td>'. //27
-                '<td>'.$user['bpjs_karyawan_non_tax'].'</td>'. //28
-                '<td>'.$user['iuran2'].'</td>'. //29
-                '<td>'.$user['natura_pemotongan'].'</td>'. //30
-                '<td>'.$user['pinjaman_kendaraan'].'</td>'. //31
-                '<td>'.$user['pinjaman_rumah'].'</td>'. //32
-                '<td>'.$user['pinjaman_obat'].'</td>'. //33
-                '<td>'.$user['pinjaman_lain2x'].'</td>'. //34
-                '<td>'.$subtotalpengeluaran.'</td>'. //35
+                '<td style="text-align:right">'.$iuran.'</td>'.  //21
+                '<td style="text-align:right">'.$bpjs_karyawan_tax.'</td>'. //22
+                '<td style="text-align:right">'.$uangmuka.'</td>'. //23
+                '<td style="text-align:right">'.$pajak_pemotongan.'</td>'. //24
+                '<td style="text-align:right">'.$sanksipajak.'</td>'. //25
+                '<td style="text-align:right">'.$tax.'</td>'. //26
+                '<td style="text-align:right">'.$nontax.'</td>'. //27
+                '<td style="text-align:right">'.$bpjs_karyawan_non_tax.'</td>'. //28
+                '<td style="text-align:right">'.$iuran2.'</td>'. //29
+                '<td style="text-align:right">'.$natura_pemotongan.'</td>'. //30
+                '<td style="text-align:right">'.$pinjaman_kendaraan.'</td>'. //31
+                '<td style="text-align:right">'.$pinjaman_rumah.'</td>'. //32
+                '<td style="text-align:right">'.$pinjaman_obat.'</td>'. //33
+                '<td style="text-align:right">'.$pinjaman_lain2x.'</td>'. //34
+                '<td style="text-align:right">'.$sub_total_pengeluaran.'</td>'. //35
+                '<td style="text-align:right">'.$take_home_pay.'</td>'. //36
 
-                '<td>'.$user['bulan'].'</td>'. //36
-                '<td>'.$user['tahun'].'</td>'; //37
+                '<td style="text-align:center">'.$user['bulan'].'</td>'. //37
+                '<td style="text-align:center">'.$user['tahun'].'</td>'; //38
             }
 
             if(isset($_POST['search']))
             {
-
                 $start = $_POST['start'];
                 $second = $_POST['second'];
                 $tableContent = '';
@@ -129,52 +161,84 @@
                 $users = $selectStmt->fetchAll();
 
                 foreach ($users as $user) {
-                    $gajipokok="Rp. ".number_format($user["gaji_pokok"],2,',','.');
-                    $potgaji="Rp. ".number_format($user["pot_gaji"],2,',','.');
-                    $subtotalpenerimaan="Rp. ".number_format($user["sub_total_penerimaan"],2,',','.');
-                    $subtotalpengeluaran="Rp. ".number_format($user["sub_total_pengeluaran"],2,',','.');
-                    $tableContent = $tableContent.'<tr>'.
-                    // '<td>'.$user['no'].'</td>'.
-                    '<td>'.$user['nik'].'</td>'. //0
-                    '<td>'.$user['nama'].'</td>'. //1
-                    '<td>'.$user['divisi'].'</td>'. //2
-                    '<td>'.$user['keterangan_divisi'].'</td>'. //3
-                    '<td>'.$user['kehadiran'].'</td>'. //4
-                    '<td>'.$gajipokok.'</td>'. //5
-                    '<td>'.$user['insentif'].'</td>'. //6
-                    '<td>'.$user['uang_makan'].'</td>'. //7
-                    '<td>'.$user['transport'].'</td>'. //8
-                    '<td>'.$user['asuransi'].'</td>'. //9
-                    '<td>'.$user['lembur'].'</td>'. //10
-                    '<td>'.$user['pengobatan'].'</td>'. //11
-                    '<td>'.$user['lain'].'</td>'. //12
-                    '<td>'.$user['pajak_penerimaan'].'</td>'. //13
-                    '<td>'.$user['bpjs_non_tax'].'</td>'. //14
-                    '<td>'.$user['bpjs_tax'].'</td>'. //15
-                    '<td>'.$potgaji.'</td>'. //16
-                    '<td>'.$user['natura_penerimaan'].'</td>'. //17
-                    '<td>'.$user['bantuan'].'</td>'. //18
-                    '<td>'.$user['thr'].'</td>'. //19
-                    '<td>'.$subtotalpenerimaan.'</td>'. //20
 
-                    '<td>'.$user['iuran'].'</td>'.  //21
-                    '<td>'.$user['bpjs_karyawan_tax'].'</td>'. //22
-                    '<td>'.$user['uangmuka'].'</td>'. //23
-                    '<td>'.$user['pajak_pemotongan'].'</td>'. //24
-                    '<td>'.$user['sanksipajak'].'</td>'. //25
-                    '<td>'.$user['tax'].'</td>'. //26
-                    '<td>'.$user['nontax'].'</td>'. //27
-                    '<td>'.$user['bpjs_karyawan_non_tax'].'</td>'. //28
-                    '<td>'.$user['iuran2'].'</td>'. //29
-                    '<td>'.$user['natura_pemotongan'].'</td>'. //30
-                    '<td>'.$user['pinjaman_kendaraan'].'</td>'. //31
-                    '<td>'.$user['pinjaman_rumah'].'</td>'. //32
-                    '<td>'.$user['pinjaman_obat'].'</td>'. //33
-                    '<td>'.$user['pinjaman_lain2x'].'</td>'. //34
-                    '<td>'.$subtotalpengeluaran.'</td>'. //35
+                    // number format table
+                $gaji_pokok="Rp ".number_format($user["gaji_pokok"],2,',','.');
+                $insentif="Rp ".number_format($user["insentif"],2,',','.');
+                $uang_makan="Rp ".number_format($user["uang_makan"],2,',','.');
+                $transport="Rp ".number_format($user["transport"],2,',','.');
+                $asuransi="Rp ".number_format($user["asuransi"],2,',','.');
+                $lembur="Rp ".number_format($user["lembur"],2,',','.');
+                $pengobatan="Rp ".number_format($user["pengobatan"],2,',','.');
+                $lain="Rp ".number_format($user["lain"],2,',','.');
+                $pajak_penerimaan="Rp ".number_format($user["pajak_penerimaan"],2,',','.');
+                $bpjs_non_tax="Rp ".number_format($user["bpjs_non_tax"],2,',','.');
+                $bpjs_tax="Rp ".number_format($user["bpjs_tax"],2,',','.');
+                $pot_gaji="Rp ".number_format($user["pot_gaji"],2,',','.');
+                $natura_penerimaan="Rp ".number_format($user["natura_penerimaan"],2,',','.');
+                $bantuan="Rp ".number_format($user["bantuan"],2,',','.');
+                $thr="Rp ".number_format($user["thr"],2,',','.');
+                $sub_total_penerimaan="Rp ".number_format($user["sub_total_penerimaan"],2,',','.');
 
-                    '<td>'.$user['bulan'].'</td>'. //36
-                    '<td>'.$user['tahun'].'</td>'; //37
+                $iuran="Rp ".number_format($user["iuran"],2,',','.');
+                $bpjs_karyawan_tax="Rp ".number_format($user["bpjs_karyawan_tax"],2,',','.');
+                $uangmuka="Rp ".number_format($user["uangmuka"],2,',','.');
+                $pajak_pemotongan="Rp ".number_format($user["pajak_pemotongan"],2,',','.');
+                $sanksipajak="Rp ".number_format($user["sanksipajak"],2,',','.');
+                $tax="Rp ".number_format($user["tax"],2,',','.');
+                $nontax="Rp ".number_format($user["nontax"],2,',','.');
+                $bpjs_karyawan_non_tax="Rp ".number_format($user["bpjs_karyawan_non_tax"],2,',','.');
+                $iuran2="Rp ".number_format($user["iuran2"],2,',','.');
+                $natura_pemotongan="Rp ".number_format($user["natura_pemotongan"],2,',','.');
+                $pinjaman_kendaraan="Rp ".number_format($user["pinjaman_kendaraan"],2,',','.');
+                $pinjaman_rumah="Rp ".number_format($user["pinjaman_rumah"],2,',','.');
+                $pinjaman_obat="Rp ".number_format($user["pinjaman_obat"],2,',','.');
+                $pinjaman_lain2x="Rp ".number_format($user["pinjaman_lain2x"],2,',','.');                
+                $sub_total_pengeluaran="Rp ".number_format($user["sub_total_pengeluaran"],2,',','.');
+
+                $tableContent = $tableContent.'<tr>'.
+                // '<td>'.$user['no'].'</td>'.
+                '<td>'.$user['nik'].'</td>'. //0
+                '<td>'.$user['nama'].'</td>'. //1
+                '<td>'.$user['divisi'].'</td>'. //2
+                '<td>'.$user['keterangan_divisi'].'</td>'. //3
+                '<td>'.$user['kehadiran'].'</td>'. //4
+                '<td style="text-align:right">'.$gaji_pokok.'</td>'. //5
+                '<td style="text-align:right">'.$insentif.'</td>'. //6
+                '<td style="text-align:right">'.$uang_makan.'</td>'. //7
+                '<td style="text-align:right">'.$transport.'</td>'. //8
+                '<td style="text-align:right">'.$asuransi.'</td>'. //9
+                '<td style="text-align:right">'.$lembur.'</td>'. //10
+                '<td style="text-align:right">'.$pengobatan.'</td>'. //11
+                '<td style="text-align:right">'.$lain.'</td>'. //12
+                '<td style="text-align:right">'.$pajak_penerimaan.'</td>'. //13
+                '<td style="text-align:right">'.$bpjs_non_tax.'</td>'. //14
+                '<td style="text-align:right">'.$bpjs_tax.'</td>'. //15
+                '<td style="text-align:right">'.$pot_gaji.'</td>'. //16
+                '<td style="text-align:right">'.$natura_penerimaan.'</td>'. //17
+                '<td style="text-align:right">'.$bantuan.'</td>'. //18
+                '<td style="text-align:right">'.$thr.'</td>'. //19
+                '<td style="text-align:right">'.$sub_total_penerimaan.'</td>'. //20
+
+                '<td style="text-align:right">'.$iuran.'</td>'.  //21
+                '<td style="text-align:right">'.$bpjs_karyawan_tax.'</td>'. //22
+                '<td style="text-align:right">'.$uangmuka.'</td>'. //23
+                '<td style="text-align:right">'.$pajak_pemotongan.'</td>'. //24
+                '<td style="text-align:right">'.$sanksipajak.'</td>'. //25
+                '<td style="text-align:right">'.$tax.'</td>'. //26
+                '<td style="text-align:right">'.$nontax.'</td>'. //27
+                '<td style="text-align:right">'.$bpjs_karyawan_non_tax.'</td>'. //28
+                '<td style="text-align:right">'.$iuran2.'</td>'. //29
+                '<td style="text-align:right">'.$natura_pemotongan.'</td>'. //30
+                '<td style="text-align:right">'.$pinjaman_kendaraan.'</td>'. //31
+                '<td style="text-align:right">'.$pinjaman_rumah.'</td>'. //32
+                '<td style="text-align:right">'.$pinjaman_obat.'</td>'. //33
+                '<td style="text-align:right">'.$pinjaman_lain2x.'</td>'. //34
+                '<td style="text-align:right">'.$sub_total_pengeluaran.'</td>'. //35
+                '<td style="text-align:right">'.$take_home_pay.'</td>'. //36
+
+                '<td style="text-align:center">'.$user['bulan'].'</td>'. //37
+                '<td style="text-align:center">'.$user['tahun'].'</td>'; //38
                 }
             }
 
@@ -218,15 +282,17 @@
                         <th rowspan="3" style="text-align: center;">NAMA</th>
                         <th colspan="19" style="text-align: center;">PENERIMAAN</th>
                         <th colspan="15" style="text-align: center;">PENGELUARAN</th>
+                        <th rowspan="3" style="text-align: center;">TAKE HOME PAY</th>
                         <th rowspan="3" style="text-align: center;">BULAN</th>
                         <th rowspan="3" style="text-align: center;">TAHUN</th>
                     </tr>
+
                     <tr class="table-head">
                         <!-- <th rowspan="2" style="text-align: center;">NO</th> -->
                         <th colspan="2" style="text-align: center;">DIVISI</th>
                         <th rowspan="2" style="text-align: center;">KEHADIRAN</th>
-                        <th rowspan="2" style="text-align: center;">Gaji Pokok</th>
-                        <th rowspan="2" style="text-align: center;">Insentif</th>
+                        <th rowspan="2" style="text-align: center;">GAJI POKOK</th>
+                        <th rowspan="2" style="text-align: center;">INSENTIF</th>
                         <th colspan="11" style="text-align: center;">TUNJANGAN-TUNJANGAN</th>
                         <th rowspan="2" style="text-align: center;">BANTUAN/RAPEL</th>
                         <th rowspan="2" style="text-align: center;">THR</th>
@@ -244,11 +310,11 @@
                         <th rowspan="2" style="text-align: center;">PINJAMAN RUMAH</th>
                         <th rowspan="2" style="text-align: center;">PINJAMAN OBAT</th>
                         <th rowspan="2" style="text-align: center;">PINJAMAN LAIN 2X</th>
-                        <th rowspan="2" style="text-align: center;">SUB TOTAL II</th>
-                        
+                        <th rowspan="2" style="text-align: center;">SUB TOTAL II</th>                        
                     </tr>
+
                     <tr class="table-head">
-                        <th style="text-align: center;">CD.</th>                        
+                        <th style="text-align: center;">CD.</th>
                         <th style="text-align: center;">KETERANGAN</th>
                         <th style="text-align: center;">UANG MAKAN</th>
                         <th style="text-align: center;">TRANSPORT</th>
@@ -265,9 +331,7 @@
                         <th style="text-align: center;">NON TAX</th>
                     </tr>
                     <?php
-
-                    echo $tableContent;
-
+                        echo $tableContent;
                     ?>
                     
                 </table>

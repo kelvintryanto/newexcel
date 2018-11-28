@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Payroll extends Model
 {
    protected $table = 'payroll';
-	public $fillable = ['nik','nama','divisi','keterangan_divisi','kehadiran','gaji_pokok','insentif','uang_makan','transport','asuransi','lembur','pengobatan','lain','pajak_penerimaan','bpjs_non_tax','bpjs_tax','pot_gaji','natura_penerimaan','bantuan','thr','sub_total_penerimaan','iuran','bpjs_karyawan_tax','uangmuka','pajak_pemotongan','sanksipajak','tax','nontax','bpjs_karyawan_non_tax','iuran2','natura_pemotongan','pinjaman_kendaraan','pinjaman_rumah','pinjaman_obat','pinjaman_lain2x','sub_total_pengeluaran','bulan','tahun'];
+	public $fillable = ['nik','nama','divisi','keterangan_divisi','kehadiran','gaji_pokok','insentif','uang_makan','transport','asuransi','lembur','pengobatan','lain','pajak_penerimaan','bpjs_non_tax','bpjs_tax','pot_gaji','natura_penerimaan','bantuan','thr','sub_total_penerimaan','iuran','bpjs_karyawan_tax','uangmuka','pajak_pemotongan','sanksipajak','tax','nontax','bpjs_karyawan_non_tax','iuran2','natura_pemotongan','pinjaman_kendaraan','pinjaman_rumah','pinjaman_obat','pinjaman_uang','pinjaman_lain2x','sub_total_pengeluaran','bulan','tahun'];
 
-	public static function UpdateContact($no,$nik,$nama,$divisi,$keterangan_divisi,$kehadiran,$gaji_pokok,$insentif,$uang_makan,$transport,$asuransi,$lembur,$pengobatan,$lain,$pajak_penerimaan,$bpjs_non_tax,$bpjs_tax,$pot_gaji,$natura_penerimaan,$bantuan,$thr,$sub_total_penerimaan,$iuran,$bpjs_karyawan_tax,$uangmuka,$pajak_pemotongan,$sanksipajak,$tax,$nontax,$bpjs_karyawan_non_tax,$iuran2,$natura_pemotongan,$pinjaman_kendaraan,$pinjaman_rumah,$pinjaman_obat,$pinjaman_lain2x,$sub_total_pengeluaran,$bulan,$tahun){
+	public static function UpdateContact($no,$nik,$nama,$divisi,$keterangan_divisi,$kehadiran,$gaji_pokok,$insentif,$uang_makan,$transport,$asuransi,$lembur,$pengobatan,$lain,$pajak_penerimaan,$bpjs_non_tax,$bpjs_tax,$pot_gaji,$natura_penerimaan,$bantuan,$thr,$sub_total_penerimaan,$iuran,$bpjs_karyawan_tax,$uangmuka,$pajak_pemotongan,$sanksipajak,$tax,$nontax,$bpjs_karyawan_non_tax,$iuran2,$natura_pemotongan,$pinjaman_kendaraan,$pinjaman_rumah,$pinjaman_obat,$pinjaman_uang,$pinjaman_lain2x,$sub_total_pengeluaran,$bulan,$tahun){
 		$data = array(
 			'nik' => $nik, //0
 			'nama' => $nama, //1
@@ -46,11 +46,13 @@ class Payroll extends Model
 			'pinjaman_kendaraan' => $pinjaman_kendaraan, //31
 			'pinjaman_rumah' => $pinjaman_rumah, //32
 			'pinjaman_obat' => $pinjaman_obat, //33
-			'pinjaman_lain2x' => $pinjaman_lain2x, //34
-			'sub_total_pengeluaran' => $sub_total_pengeluaran, //35
+			'pinjaman_uang' => $pinjaman_uang, //34
+			'pinjaman_lain2x' => $pinjaman_lain2x, //35
+			'sub_total_pengeluaran' => $sub_total_pengeluaran, //36
+			'take_home_pay' => $take_home_pay, //37
 
-			'bulan' => $bulan, //36
-			'tahun' => $tahun, //37
+			'bulan' => $bulan, //38
+			'tahun' => $tahun, //39
 		);
 		return self::where('no', '=', $no)
 				->update($data);

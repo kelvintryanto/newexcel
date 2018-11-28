@@ -21,40 +21,42 @@ class Payroll extends Migration
             $table->string('keterangan_divisi')->nullable(); //3
             $table->string('kehadiran')->nullable(); //4
             $table->integer('gaji_pokok')->nullable(); //5
-            $table->string('insentif')->nullable(); //6
-            $table->string('uang_makan')->nullable(); //7
-            $table->string('transport')->nullable(); //8
-            $table->string('asuransi')->nullable(); //9
-            $table->string('lembur')->nullable(); //10
-            $table->string('pengobatan')->nullable(); //11
-            $table->string('lain')->nullable(); //12
-            $table->string('pajak_penerimaan')->nullable(); //13
-            $table->string('bpjs_non_tax')->nullable(); //14
-            $table->string('bpjs_tax')->nullable(); //15
+            $table->integer('insentif')->nullable(); //6
+            $table->integer('uang_makan')->nullable(); //7
+            $table->integer('transport')->nullable(); //8
+            $table->integer('asuransi')->nullable(); //9
+            $table->integer('lembur')->nullable(); //10
+            $table->integer('pengobatan')->nullable(); //11
+            $table->integer('lain')->nullable(); //12
+            $table->integer('pajak_penerimaan')->nullable(); //13
+            $table->integer('bpjs_non_tax')->nullable(); //14
+            $table->integer('bpjs_tax')->nullable(); //15
             $table->integer('pot_gaji')->nullable(); //16
-            $table->string('natura_penerimaan')->nullable(); //17
-            $table->string('bantuan')->nullable(); //18
-            $table->string('thr')->nullable(); //19
+            $table->integer('natura_penerimaan')->nullable(); //17
+            $table->integer('bantuan')->nullable(); //18
+            $table->integer('thr')->nullable(); //19
             $table->integer('sub_total_penerimaan')->nullable(); //20
 
-            $table->string('iuran')->nullable(); //21
-            $table->string('bpjs_karyawan_tax')->nullable(); //22
-            $table->string('uangmuka')->nullable(); //23
-            $table->string('pajak_pemotongan')->nullable(); //24
-            $table->string('sanksipajak')->nullable(); //25
-            $table->string('tax')->nullable(); //26
-            $table->string('nontax')->nullable(); //27
-            $table->string('bpjs_karyawan_non_tax')->nullable(); //28
-            $table->string('iuran2')->nullable(); //29
-            $table->string('natura_pemotongan')->nullable(); //30
-            $table->string('pinjaman_kendaraan')->nullable(); //31
-            $table->string('pinjaman_rumah')->nullable(); //32
-            $table->string('pinjaman_obat')->nullable(); //33
-            $table->string('pinjaman_lain2x')->nullable(); //34
-            $table->integer('sub_total_pengeluaran')->nullable(); //35
+            $table->integer('iuran')->nullable(); //21
+            $table->integer('bpjs_karyawan_tax')->nullable(); //22
+            $table->integer('uangmuka')->nullable(); //23
+            $table->integer('pajak_pemotongan')->nullable(); //24
+            $table->integer('sanksipajak')->nullable(); //25
+            $table->integer('tax')->nullable(); //26
+            $table->integer('nontax')->nullable(); //27
+            $table->integer('bpjs_karyawan_non_tax')->nullable(); //28
+            $table->integer('iuran2')->nullable(); //29
+            $table->integer('natura_pemotongan')->nullable(); //30
+            $table->integer('pinjaman_kendaraan')->nullable(); //31
+            $table->integer('pinjaman_rumah')->nullable(); //32
+            $table->integer('pinjaman_obat')->nullable(); //33
+            $table->integer('pinjaman_uang')->nullable(); //34
+            $table->integer('pinjaman_lain2x')->nullable(); //35
+            $table->integer('sub_total_pengeluaran')->nullable(); //36
+            $table->integer('take_home_pay')->nullable(); //37
 
-            $table->string('bulan')->nullable(); //36
-            $table->string('tahun')->nullable(); //37
+            $table->string('bulan')->nullable(); //38
+            $table->string('tahun')->nullable(); //39
             $table->timestamps();
             });
     }

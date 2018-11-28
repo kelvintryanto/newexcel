@@ -33,7 +33,7 @@
             $tableContent = '';
             $start = '';
             $second = '';
-                    // SELECT INI BERGUNA UNTUK SELECT ALL TANPA FILTER
+            // SELECT INI BERGUNA UNTUK SELECT ALL TANPA FILTER
             $selectStmt = $con->prepare('SELECT * FROM payrollKontrak as pk,karyawankontrak as kk,users as u where pk.no_id = kk.no_id and u.name = pk.nama');
             $selectStmt->execute();
             $users = $selectStmt->fetchAll();
